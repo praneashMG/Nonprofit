@@ -1,0 +1,1937 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Groww Charity- Our comprehensive services for community development, education, healthcare, and sustainable empowerment programs.">
+    <title>Groww Charity | Our Services</title>
+<link rel="icon" type="image/jpeg" href="images/growwpark_logo.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Add Arabic font for RTL support -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    screens: {
+                        'sm': '640px',
+                        'md': '768px',
+                        'lg': '1024px',
+                        'xl': '1280px',
+                        '2xl': '1536px',
+                    },
+                    colors: {
+                        'earth': '#8B4513',
+                        'sage': '#90A955',
+                        'sky': '#4A90E2',
+                        'sun': '#FFB347',
+                        'clay': '#D2691E',
+                        'ocean': '#2E8B57',
+                        'storm': '#4682B4',
+                        'sand': '#F4A460',
+                        'dark-bg': '#0f172a',
+                        'dark-card': '#1e293b',
+                        'dark-text': '#cbd5e1'
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Nunito', 'sans-serif'],
+                        'arabic': ['Amiri', 'serif'],
+                    },
+                    animation: {
+                        'wave': 'wave 8s linear infinite',
+                        'ripple': 'ripple 3s linear infinite',
+                        'float-slow': 'float-slow 6s ease-in-out infinite',
+                        'pulse-gentle': 'pulse-gentle 4s ease-in-out infinite',
+                        'slide-in': 'slideIn 0.8s ease-out forwards',
+                        'fade-up': 'fadeUp 1s ease-out forwards'
+                    },
+                    keyframes: {
+                        wave: {
+                            '0%': { transform: 'translateX(0) translateY(0) rotate(0deg)' },
+                            '50%': { transform: 'translateX(-25px) translateY(-10px) rotate(2deg)' },
+                            '100%': { transform: 'translateX(0) translateY(0) rotate(0deg)' }
+                        },
+                        ripple: {
+                            '0%': { transform: 'scale(1)', opacity: '1' },
+                            '100%': { transform: 'scale(1.5)', opacity: '0' }
+                        },
+                        'float-slow': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        'pulse-gentle': {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0.7' }
+                        },
+                        slideIn: {
+                            '0%': { transform: 'translateX(-100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' }
+                        },
+                        fadeUp: {
+                            '0%': { transform: 'translateY(30px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        body.dark {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #cbd5e1;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, 
+                rgba(144, 169, 85, 0.9) 0%, 
+                rgba(74, 144, 226, 0.85) 50%, 
+                rgba(46, 139, 87, 0.8) 100%),
+                url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .dark .hero-gradient {
+            background: linear-gradient(135deg, 
+                rgba(144, 169, 85, 0.9) 0%, 
+                rgba(74, 144, 226, 0.85) 50%, 
+                rgba(46, 139, 87, 0.8) 100%),
+                url('https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .hero-wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 300%;
+            height: 150px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            animation: wave 25s linear infinite;
+        }
+        
+        .dark .hero-wave {
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%230f172a" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+        }
+        
+        .section-curve {
+            border-radius: 0 0 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-curve-reverse {
+            border-radius: 100px 0 0 0;
+        }
+        
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+            height: 100%;
+        }
+        
+        .dark .service-card {
+            background: #1e293b;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .service-card:hover {
+            transform: translateY(-15px) scale(1.02);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .dark .service-card:hover {
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 24px;
+            font-size: 32px;
+            transition: all 0.3s ease;
+        }
+        
+        .service-card:hover .service-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+        
+        .process-step {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 40px;
+        }
+        
+        .process-step::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 18px;
+        }
+        
+        .process-step:nth-child(1)::before {
+            content: '1';
+            background: linear-gradient(135deg, #4A90E2, #2E8B57);
+            color: white;
+        }
+        
+        .process-step:nth-child(2)::before {
+            content: '2';
+            background: linear-gradient(135deg, #90A955, #4A90E2);
+            color: white;
+        }
+        
+        .process-step:nth-child(3)::before {
+            content: '3';
+            background: linear-gradient(135deg, #FFB347, #90A955);
+            color: white;
+        }
+        
+        .process-step:nth-child(4)::before {
+            content: '4';
+            background: linear-gradient(135deg, #2E8B57, #FFB347);
+            color: white;
+        }
+        
+        .impact-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+        }
+        
+        .dark .impact-card {
+            background: #1e293b;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .impact-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .dark .impact-card:hover {
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+        
+        /* Updated btn-service class for specific buttons */
+        .btn-service-special {
+            background: #0de292;
+            color: white;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .btn-service-special:hover {
+            background: #0bc87d;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(13, 226, 146, 0.3);
+        }
+        
+        .dark .btn-service-special:hover {
+            box-shadow: 0 15px 30px rgba(13, 226, 146, 0.5);
+        }
+        
+        .btn-service {
+            background: linear-gradient(135deg, #4A90E2 0%, #2E8B57 100%);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn-service::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #2E8B57 0%, #4A90E2 100%);
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+        
+        .btn-service:hover::before {
+            left: 0;
+        }
+        
+        .btn-service:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(46, 139, 87, 0.3);
+        }
+        
+        .dark .btn-service:hover {
+            box-shadow: 0 15px 30px rgba(46, 139, 87, 0.5);
+        }
+        
+        .btn-login {
+            background: transparent;
+            color: #4A90E2;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid #4A90E2;
+        }
+        
+        .dark .btn-login {
+            color: #4A90E2;
+            border-color: #4A90E2;
+        }
+        
+        .btn-login:hover {
+            background: #4A90E2;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .dark .btn-login:hover {
+            background: #4A90E2;
+            color: white;
+        }
+        
+        .btn-signup {
+            background: #4A90E2;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-signup:hover {
+            background: #3a80d2;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(74, 144, 226, 0.2);
+        }
+        
+        .dark .btn-signup:hover {
+            box-shadow: 0 10px 20px rgba(74, 144, 226, 0.4);
+        }
+        
+        .nav-link {
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #4A90E2, #2E8B57);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .dark .nav-link {
+            color: #cbd5e1;
+        }
+        
+        .floating-elements .element {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: float-slow ease-in-out infinite;
+        }
+        
+        .observable {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .observable.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .observable-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease;
+        }
+        
+        .observable-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .observable-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease;
+        }
+        
+        .observable-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        /* Dropdown animation */
+        .group:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* Custom arrow for dropdown */
+        .dropdown-arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .group:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+        
+        /* RTL Support Styles */
+        [dir="rtl"] .text-left { text-align: right; }
+        [dir="rtl"] .text-right { text-align: left; }
+        [dir="rtl"] .ml-auto { margin-left: 0; margin-right: auto; }
+        [dir="rtl"] .mr-auto { margin-right: 0; margin-left: auto; }
+        [dir="rtl"] .space-x-3 > :not([hidden]) ~ :not([hidden]) { margin-left: 0; margin-right: 0.75rem; }
+        [dir="rtl"] .space-x-4 > :not([hidden]) ~ :not([hidden]) { margin-left: 0; margin-right: 1rem; }
+        [dir="rtl"] .space-x-8 > :not([hidden]) ~ :not([hidden]) { margin-left: 0; margin-right: 2rem; }
+        
+        /* Adjust flex order for RTL */
+        [dir="rtl"] .flex-row-reverse { flex-direction: row-reverse; }
+        
+        /* Adjust dropdown positioning for RTL */
+        [dir="rtl"] .dropdown-content { left: auto; right: 0; }
+        
+        /* Tablet-specific styles */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            /* Tablet navigation will use hamburger menu */
+            .tablet-nav {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+            }
+            
+            .tablet-desktop-nav {
+                display: none !important;
+            }
+            
+            /* Adjust hero section for tablet */
+            .hero-gradient h1 {
+                font-size: 3.5rem !important;
+            }
+            
+            /* Adjust grid layouts for tablet */
+            .tablet-grid-1 {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .tablet-grid-2 {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+            
+            .tablet-grid-3 {
+                grid-template-columns: repeat(3, 1fr) !important;
+            }
+            
+            /* Adjust padding for tablet */
+            .tablet-py-16 {
+                padding-top: 4rem !important;
+                padding-bottom: 4rem !important;
+            }
+            
+            .tablet-px-6 {
+                padding-left: 1.5rem !important;
+                padding-right: 1.5rem !important;
+            }
+            
+            /* Adjust service cards for tablet */
+            .tablet-service-card {
+                height: auto;
+            }
+        }
+        
+        /* Fixed Hamburger Menu Styles */
+        #mobileMenuBtn {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 24px;
+            height: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: transparent;
+            border: none;
+            padding: 0;
+        }
+        
+        #mobileMenuBtn .hamburger-line {
+            width: 100%;
+            height: 2px;
+            background-color: #4682B4;
+            transition: all 0.3s ease;
+            transform-origin: left center;
+        }
+        
+        .dark #mobileMenuBtn .hamburger-line {
+            background-color: #cbd5e1;
+        }
+        
+        #mobileMenuBtn.active .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translateY(1px);
+            background-color: #4682B4;
+        }
+        
+        .dark #mobileMenuBtn.active .hamburger-line:nth-child(1) {
+            background-color: #cbd5e1;
+        }
+        
+        #mobileMenuBtn.active .hamburger-line:nth-child(2) {
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+        
+        #mobileMenuBtn.active .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translateY(-1px);
+            background-color: #4682B4;
+        }
+        
+        .dark #mobileMenuBtn.active .hamburger-line:nth-child(3) {
+            background-color: #cbd5e1;
+        }
+        
+        /* Mobile Menu Styles */
+        #mobileMenu {
+            display: none;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            position: static;
+            margin-top: 8px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .dark #mobileMenu {
+            background: #1e293b;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        #mobileMenu.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Mobile dropdown animation */
+        .mobile-dropdown-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        /* Make sure the mobile menu content has proper spacing */
+        #mobileMenu .p-6 {
+            padding: 1.5rem;
+        }
+        
+        .mobile-dropdown-content.active {
+            max-height: 200px;
+        }
+        
+        /* Prevent body scroll when menu is open */
+        body.menu-open {
+            overflow: hidden;
+        }
+        
+        /* Backdrop for mobile menu - FIXED */
+        .mobile-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 40;
+            display: none;
+        }
+        
+        .mobile-backdrop.active {
+            display: block;
+        }
+        
+        /* Dark mode styles for sections */
+        .dark section.bg-white {
+            background-color: #0f172a;
+            color: #cbd5e1;
+        }
+        
+        .dark section.bg-gray-50 {
+            background-color: #1e293b;
+        }
+        
+        .dark .bg-gray-50 {
+            background-color: #1e293b;
+        }
+        
+        .dark .bg-white {
+            background-color: #1e293b;
+            color: #cbd5e1;
+        }
+        
+        .dark .text-gray-600 {
+            color: #94a3b8;
+        }
+        
+        .dark .text-gray-700 {
+            color: #cbd5e1;
+        }
+        
+        .dark .text-gray-800 {
+            color: #e2e8f0;
+        }
+        
+        .dark .border-gray-100 {
+            border-color: #334155;
+        }
+        
+        .dark .border-gray-300 {
+            border-color: #475569;
+        }
+        
+        .dark .bg-gray-900 {
+            background-color: #0f172a;
+        }
+        
+        .dark .bg-gray-800 {
+            background-color: #1e293b;
+        }
+        
+        .dark .text-gray-400 {
+            color: #94a3b8;
+        }
+        
+        .dark .text-gray-500 {
+            color: #94a3b8;
+        }
+        
+        .dark .border-gray-800 {
+            border-color: #334155;
+        }
+        
+        .dark .shadow-lg {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+        
+        .dark .shadow-xl {
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.5);
+        }
+        
+        .dark .shadow-sm {
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Dark mode toggle button */
+        .theme-toggle {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .theme-toggle:hover {
+            background: rgba(0, 0, 0, 0.1);
+        }
+        
+        .dark .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .theme-toggle i {
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .dark .theme-toggle i.fa-sun {
+            display: block;
+        }
+        
+        .dark .theme-toggle i.fa-moon {
+            display: none;
+        }
+        
+        .theme-toggle i.fa-sun {
+            display: none;
+            color: #FFB347;
+        }
+        
+        .theme-toggle i.fa-moon {
+            display: block;
+            color: #4A90E2;
+        }
+        
+        .dark .theme-toggle i.fa-sun {
+            display: block;
+        }
+        
+        .dark .theme-toggle i.fa-moon {
+            display: none;
+        }
+        
+        /* Fix for floating elements in dark mode */
+        .dark .floating-elements .element {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        /* Mobile dropdown animation for dashboard */
+        #mobileDashboardDropdown {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        #mobileDashboardDropdown.active {
+            max-height: 200px;
+        }
+        
+        /* Service specific styles */
+        .service-feature-list li {
+            position: relative;
+            padding-left: 30px;
+            margin-bottom: 10px;
+        }
+        
+        .service-feature-list li:before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #2E8B57;
+            font-weight: bold;
+        }
+        
+        .dark .service-feature-list li:before {
+            color: #90A955;
+        }
+        
+        .service-badge {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        
+        /* CHANGED: Normal numbers for impact stats - removed Playfair Display font */
+        .impact-number {
+            font-family: 'Nunito', sans-serif;
+            font-weight: 700;
+            font-size: 3rem;
+            color: #2E8B57;
+            display: block;
+        }
+        
+        .dark .impact-number {
+            color: #90A955;
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm dark:bg-dark-card/95">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-3">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-sky to-ocean flex items-center justify-center">
+                        <i class="fas fa-hands-helping text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-serif text-2xl font-bold text-storm dark:text-sky">Groww Charity</h1>
+                    </div>
+                </a>
+                
+                <!-- Desktop Navigation (hidden on tablet and mobile) -->
+                <div class="hidden xl:flex items-center space-x-6 tablet-desktop-nav">
+                    <!-- Home Dropdown -->
+                    <div class="relative group">
+                        <button class="nav-link text-gray-700 font-medium flex items-center space-x-1 focus:outline-none dark:text-dark-text">
+                            <span>Home</span>
+                            <i class="fas fa-chevron-down text-xs dropdown-arrow"></i>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 -translate-y-2 z-50 dropdown-content dark:bg-dark-card dark:border-gray-700">
+                            <div class="py-2">
+                                <a href="index.html" class="block px-4 py-3 text-gray-700 hover:bg-sky/10 hover:text-sky transition-colors flex items-center dark:text-dark-text dark:hover:bg-sky/20">
+                                    <i class="fas fa-home mr-3 text-sky"></i>
+                                    Home 1
+                                </a>
+                                <a href="Home2.html" class="block px-4 py-3 text-gray-700 hover:bg-sky/10 hover:text-sky transition-colors flex items-center dark:text-dark-text dark:hover:bg-sky/20">
+                                    <i class="fas fa-home mr-3 text-ocean"></i>
+                                    Home 2
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="About.html" class="nav-link text-gray-700 font-medium dark:text-dark-text">About us</a>
+                    <a href="Mission.html" class="nav-link text-gray-700 font-medium dark:text-dark-text">Mission</a>
+                    <a href="Service.html" class="nav-link text-gray-700 font-medium dark:text-dark-text text-sky font-semibold">Service</a>
+                    <a href="Pricing.html" class="nav-link text-gray-700 font-medium dark:text-dark-text">Pricing</a>
+                    <a href="Stories.html" class="nav-link text-gray-700 font-medium dark:text-dark-text">Stories</a>
+                    <a href="Contact.html" class="nav-link text-gray-700 font-medium dark:text-dark-text">Contact</a>
+                    
+                    <!-- Dashboard Dropdown -->
+                    <div class="relative group">
+                        <button class="nav-link text-gray-700 font-medium flex items-center space-x-1 focus:outline-none dark:text-dark-text">
+                            <span>Dashboard</span>
+                            <i class="fas fa-chevron-down text-xs dropdown-arrow"></i>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 -translate-y-2 z-50 dropdown-content dark:bg-dark-card dark:border-gray-700">
+                            <div class="py-2">
+                                <div class="px-4 py-2 text-xs text-gray-500 dark:text-gray-400 font-semibold">Access Areas</div>
+                                <a href="Admin.html" class="block px-4 py-3 text-gray-700 hover:bg-sky/10 hover:text-sky transition-colors flex items-center dark:text-dark-text dark:hover:bg-sky/20">
+                                    <i class="fas fa-user-shield mr-3 text-sky"></i>
+                                    Admin Dashboard
+                                </a>
+                                <a href="Client.html" class="block px-4 py-3 text-gray-700 hover:bg-sky/10 hover:text-sky transition-colors flex items-center dark:text-dark-text dark:hover:bg-sky/20">
+                                    <i class="fas fa-users mr-3 text-ocean"></i>
+                                    Client Portal
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Theme Toggle Button -->
+                    <button id="themeToggle" class="theme-toggle" title="Toggle Dark Mode">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun"></i>
+                    </button>
+                    
+                    <!-- RTL Toggle Button -->
+                    <button id="rtl-toggle" class="p-2 rounded-full hover:bg-gray-100 transition-colors dark:hover:bg-gray-700" title="Toggle Text Direction">
+                        <i class="fas fa-globe text-storm dark:text-sky"></i>
+                    </button>
+                    
+                    <!-- Login/Signup Buttons -->
+                    <div class="flex items-center space-x-3">
+                        <a href="login.html" class="btn-login">
+                            <i class="fas fa-sign-in-alt mr-2"></i>Login
+                        </a>
+                        <a href="signup.html" class="btn-signup">
+                            <i class="fas fa-user-plus mr-2"></i>Sign Up
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Tablet and Mobile menu button (shows on tablet and mobile) -->
+                <div class="flex items-center space-x-4 tablet-nav xl:hidden">
+                    <!-- Theme Toggle Button for Tablet/Mobile -->
+                    <button id="themeToggleMobile" class="theme-toggle" title="Toggle Dark Mode">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun"></i>
+                    </button>
+                    
+                    <!-- RTL Toggle for Tablet/Mobile -->
+                    <button id="rtl-toggle-tablet" class="p-2 rounded-full hover:bg-gray-100 transition-colors dark:hover:bg-gray-700" title="Toggle Text Direction">
+                        <i class="fas fa-globe text-storm dark:text-sky"></i>
+                    </button>
+                    
+                    <button id="mobileMenuBtn" class="text-storm dark:text-dark-text">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation - Shows on tablet and mobile -->
+            <div id="mobileMenu" class="xl:hidden">
+                <div class="p-6">
+                    <div class="flex flex-col space-y-4">
+                        <!-- Home dropdown in mobile -->
+                        <div class="mb-2">
+                            <div class="text-gray-700 font-medium py-2 flex items-center justify-between cursor-pointer dark:text-dark-text" id="mobileHomeBtn">
+                                <span>Home</span>
+                                <i class="fas fa-chevron-down text-sm"></i>
+                            </div>
+                            <div id="mobileHomeDropdown" class="mobile-dropdown-content pl-4 space-y-2 mt-2 border-l-2 border-sky/30">
+                                <a href="index.html" class="block text-gray-600 hover:text-sky py-2 transition-colors dark:text-gray-400 dark:hover:text-sky">Home 1</a>
+                                <a href="Home2.html" class="block text-gray-600 hover:text-sky py-2 transition-colors dark:text-gray-400 dark:hover:text-sky">Home 2</a>
+                            </div>
+                        </div>
+                        <a href="About.html" class="text-gray-700 font-medium py-2 hover:text-sky transition-colors dark:text-dark-text dark:hover:text-sky">About us</a>
+                        <a href="Mission.html" class="text-gray-700 font-medium py-2 hover:text-sky transition-colors dark:text-dark-text dark:hover:text-sky">Mission</a>
+                        <a href="Service.html" class="text-gray-700 font-medium py-2 hover:text-sky transition-colors dark:text-dark-text dark:hover:text-sky font-bold text-sky">Service</a>
+                        <a href="Pricing.html" class="text-gray-700 font-medium py-2 hover:text-sky transition-colors dark:text-dark-text dark:hover:text-sky">Pricing</a>
+                        <a href="Stories.html" class="text-gray-700 font-medium py-2 hover:text-sky transition-colors dark:text-dark-text dark:hover:text-sky">Stories</a>
+                        <a href="Contact.html" class="text-gray-700 font-medium py-2 hover:text-sky transition-colors dark:text-dark-text dark:hover:text-sky">Contact</a>
+                        
+                        <!-- Dashboard dropdown in mobile -->
+                        <div class="mb-2">
+                            <div class="text-gray-700 font-medium py-2 flex items-center justify-between cursor-pointer dark:text-dark-text" id="mobileDashboardBtn">
+                                <span>Dashboard</span>
+                                <i class="fas fa-chevron-down text-sm"></i>
+                            </div>
+                            <div id="mobileDashboardDropdown" class="mobile-dropdown-content pl-4 space-y-2 mt-2 border-l-2 border-sky/30">
+                                <a href="Admin.html" class="block text-gray-600 hover:text-sky py-2 transition-colors dark:text-gray-400 dark:hover:text-sky">Admin Dashboard</a>
+                                <a href="Client.html" class="block text-gray-600 hover:text-sky py-2 transition-colors dark:text-gray-400 dark:hover:text-sky">Client Portal</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Login/Signup for Tablet/Mobile -->
+                        <div class="pt-4 border-t border-gray-100 dark:border-gray-700">
+                            <div class="flex flex-col space-y-3">
+                                <a href="login.html" class="btn-login text-center">
+                                    <i class="fas fa-sign-in-alt mr-2"></i>Login
+                                </a>
+                                <a href="signup.html" class="btn-signup text-center">
+                                    <i class="fas fa-user-plus mr-2"></i>Sign Up
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Backdrop -->
+    <div class="mobile-backdrop" id="mobileBackdrop"></div>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white pt-20 pb-32 relative overflow-hidden">
+        <div class="floating-elements">
+            <div class="element w-24 h-24 -top-10 -left-10 animate-float-slow"></div>
+            <div class="element w-16 h-16 top-1/4 right-1/4 animate-float-slow" style="animation-delay: 1000ms"></div>
+            <div class="element w-20 h-20 bottom-1/4 left-1/3 animate-float-slow" style="animation-delay: 2000ms"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 tablet-px-6 relative z-10">
+            <div class="max-w-4xl mx-auto text-center">
+                <div class="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+                    <span class="w-2 h-2 rounded-full bg-sun"></span>
+                    <span class="text-sm font-medium">Our Comprehensive Services</span>
+                </div>
+                
+                <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                    Transforming Communities
+                    <span class="text-sun">Through Service</span>
+                </h1>
+                
+                <p class="text-xl mb-10 text-white/90 max-w-3xl mx-auto">
+                    AtGroww Charity, we provide comprehensive, sustainable solutions to address the most pressing challenges facing underserved communities worldwide.
+                </p>
+                
+                <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                    <a href="#services" class="btn-service-special inline-flex items-center justify-center">
+                        <i class="fas fa-list mr-3"></i>
+                        Explore Our Services
+                    </a>
+                    <a href="#contact" class="btn-service-special inline-flex items-center justify-center">
+                        <i class="fas fa-handshake mr-3"></i>
+                        Partner With Us
+                    </a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-wave"></div>
+    </section>
+
+    <!-- Services Overview -->
+    <section id="services" class="py-24 tablet-py-16 bg-white dark:bg-dark-bg">
+        <div class="container mx-auto px-4 tablet-px-6">
+            <div class="text-center mb-16 observable">
+                <div class="inline-flex items-center space-x-2 bg-sky/10 text-sky rounded-full px-4 py-2 mb-4">
+                    <i class="fas fa-cogs"></i>
+                    <span class="font-medium">What We Offer</span>
+                </div>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6 dark:text-dark-text">Our Core Services</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto dark:text-gray-400">
+                    We deliver integrated solutions that address the interconnected challenges of poverty, education, healthcare, and economic development.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 tablet-grid-2">
+                <!-- Service 1 - Education & Literacy Programs -->
+                <div class="observable-left">
+                    <div class="service-card p-8 tablet-service-card">
+                        <div class="service-icon bg-sky/10 text-sky">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-center dark:text-dark-text">Education & Literacy Programs</h3>
+                        <p class="text-gray-600 mb-6 dark:text-gray-400">
+                            Building schools, training teachers, and providing scholarships so every child has access to education.
+                        </p>
+                        <ul class="service-feature-list mb-8">
+                            <li>School construction and renovation</li>
+                            <li>Teacher training and development</li>
+                            <li>Scholarship programs for underserved students</li>
+                            <li>Adult literacy and vocational training</li>
+                            <li>Digital literacy and technology access</li>
+                        </ul>
+                        <div class="text-center">
+                            <!-- UPDATED: Link to Service-details.html with #education anchor -->
+                            <a href="Service-details.html#education" class="btn-service-special">
+                                <i class="fas fa-info-circle mr-2"></i>Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 2 - Clean Water & Sanitation -->
+                <div class="observable">
+                    <div class="service-card p-8 tablet-service-card">
+                        <div class="service-icon bg-ocean/10 text-ocean">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-center dark:text-dark-text">Clean Water & Sanitation</h3>
+                        <p class="text-gray-600 mb-6 dark:text-gray-400">
+                            Installing wells, water purification systems, and sanitation facilities to combat waterborne diseases.
+                        </p>
+                        <ul class="service-feature-list mb-8">
+                            <li>Well drilling and water system installation</li>
+                            <li>Water purification and filtration systems</li>
+                            <li>Sanitation facility construction</li>
+                            <li>Hygiene education programs</li>
+                            <li>Community water management training</li>
+                        </ul>
+                        <div class="text-center">
+                            <!-- UPDATED: Link to Service-details.html with #water anchor -->
+                            <a href="Service-details.html#water" class="btn-service-special">
+                                <i class="fas fa-info-circle mr-2"></i>Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 3 - Healthcare & Medical Services -->
+                <div class="observable-right">
+                    <div class="service-card p-8 tablet-service-card">
+                        <div class="service-icon bg-sage/10 text-sage">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-center dark:text-dark-text">Healthcare & Medical Services</h3>
+                        <p class="text-gray-600 mb-6 dark:text-gray-400">
+                            Providing accessible healthcare through mobile clinics, vaccination drives, and maternal health programs.
+                        </p>
+                        <ul class="service-feature-list mb-8">
+                            <li>Mobile medical clinics in remote areas</li>
+                            <li>Vaccination and immunization programs</li>
+                            <li>Maternal and child health services</li>
+                            <li>Malnutrition prevention and treatment</li>
+                            <li>Community health worker training</li>
+                        </ul>
+                        <div class="text-center">
+                            <!-- UPDATED: Link to Service-details.html with #healthcare anchor -->
+                            <a href="Service-details.html#healthcare" class="btn-service-special">
+                                <i class="fas fa-info-circle mr-2"></i>Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 4 - Food Security & Agriculture -->
+                <div class="observable-left">
+                    <div class="service-card p-8 tablet-service-card">
+                        <div class="service-icon bg-sun/10 text-clay">
+                            <i class="fas fa-seedling"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-center dark:text-dark-text">Food Security & Agriculture</h3>
+                        <p class="text-gray-600 mb-6 dark:text-gray-400">
+                            Promoting sustainable agriculture, nutrition programs, and food security initiatives to combat hunger.
+                        </p>
+                        <ul class="service-feature-list mb-8">
+                            <li>Agricultural training and resources</li>
+                            <li>Nutrition education and programs</li>
+                            <li>Community garden development</li>
+                            <li>Food preservation techniques</li>
+                            <li>Emergency food distribution</li>
+                        </ul>
+                        <div class="text-center">
+                            <!-- UPDATED: Link to Service-details.html with #food anchor -->
+                            <a href="Service-details.html#food" class="btn-service-special">
+                                <i class="fas fa-info-circle mr-2"></i>Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 5 - Economic Empowerment -->
+                <div class="observable">
+                    <div class="service-card p-8 tablet-service-card">
+                        <div class="service-icon bg-storm/10 text-storm">
+                            <i class="fas fa-hands-helping"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-center dark:text-dark-text">Economic Empowerment</h3>
+                        <p class="text-gray-600 mb-6 dark:text-gray-400">
+                            Creating sustainable livelihoods through vocational training, micro-loans, and business development.
+                        </p>
+                        <ul class="service-feature-list mb-8">
+                            <li>Vocational skills training programs</li>
+                            <li>Micro-loan and small business support</li>
+                            <li>Women's economic empowerment</li>
+                            <li>Market access and value chain development</li>
+                            <li>Financial literacy education</li>
+                        </ul>
+                        <div class="text-center">
+                            <!-- UPDATED: Link to Service-details.html with #economic anchor -->
+                            <a href="Service-details.html#economic" class="btn-service-special">
+                                <i class="fas fa-info-circle mr-2"></i>Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Service 6 - Shelter & Infrastructure -->
+                <div class="observable-right">
+                    <div class="service-card p-8 tablet-service-card">
+                        <div class="service-icon bg-earth/10 text-earth">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 text-center dark:text-dark-text">Shelter & Infrastructure</h3>
+                        <p class="text-gray-600 mb-6 dark:text-gray-400">
+                            Building safe housing, community centers, and essential infrastructure for vulnerable populations.
+                        </p>
+                        <ul class="service-feature-list mb-8">
+                            <li>Affordable housing construction</li>
+                            <li>Community center development</li>
+                            <li>Disaster-resistant infrastructure</li>
+                            <li>Renewable energy solutions</li>
+                            <li>Disaster preparedness training</li>
+                        </ul>
+                        <div class="text-center">
+                            <!-- UPDATED: Link to Service-details.html with #shelter anchor -->
+                            <a href="Service-details.html#shelter" class="btn-service-special">
+                                <i class="fas fa-info-circle mr-2"></i>Learn More
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Impact Stats -->
+    <section class="py-16 bg-gradient-to-r from-sky/5 via-sage/5 to-ocean/5 dark:from-sky/10 dark:via-sage/10 dark:to-ocean/10">
+        <div class="container mx-auto px-4 tablet-px-6">
+            <div class="text-center mb-12">
+                <h3 class="font-serif text-3xl font-bold mb-4 dark:text-dark-text">Our Service Impact</h3>
+                <p class="text-gray-600 max-w-2xl mx-auto dark:text-gray-400">
+                    Measurable results from our comprehensive service delivery across 48 countries
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 tablet-grid-2">
+                <div class="text-center observable">
+                    <span class="impact-number">1,240+</span>
+                    <p class="text-gray-600 font-medium dark:text-gray-400">Schools & Learning Centers</p>
+                </div>
+                
+                <div class="text-center observable" style="animation-delay: 200ms">
+                    <span class="impact-number">850K+</span>
+                    <p class="text-gray-600 font-medium dark:text-gray-400">People with Clean Water Access</p>
+                </div>
+                
+                <div class="text-center observable" style="animation-delay: 400ms">
+                    <span class="impact-number">2.1M+</span>
+                    <p class="text-gray-600 font-medium dark:text-gray-400">Healthcare Services Provided</p>
+                </div>
+                
+                <div class="text-center observable" style="animation-delay: 600ms">
+                    <span class="impact-number">45K+</span>
+                    <p class="text-gray-600 font-medium dark:text-gray-400">Livelihoods Created</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Our Approach -->
+    <section class="py-24 tablet-py-16 bg-gray-50 dark:bg-dark-bg">
+        <div class="container mx-auto px-4 tablet-px-6">
+            <div class="grid lg:grid-cols-2 gap-12 items-center tablet-grid-1">
+                <div class="observable-left">
+                    <div class="inline-flex items-center space-x-2 bg-sun/10 text-clay rounded-full px-4 py-2 mb-4">
+                        <i class="fas fa-bullseye"></i>
+                        <span class="font-medium">Our Methodology</span>
+                    </div>
+                    <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6 dark:text-dark-text">Our Service Delivery Approach</h2>
+                    <p class="text-xl text-gray-600 mb-8 dark:text-gray-400">
+                        We follow a proven, community-centered approach that ensures sustainable impact and local ownership of all projects.
+                    </p>
+                    
+                    <div class="space-y-8">
+                        <div class="process-step">
+                            <h4 class="text-xl font-bold mb-3 dark:text-dark-text">Community Assessment & Partnership</h4>
+                            <p class="text-gray-600 dark:text-gray-400">We begin by working closely with local communities to identify their most pressing needs and develop solutions together.</p>
+                        </div>
+                        
+                        <div class="process-step">
+                            <h4 class="text-xl font-bold mb-3 dark:text-dark-text">Sustainable Solution Design</h4>
+                            <p class="text-gray-600 dark:text-gray-400">Our experts design interventions that are culturally appropriate, environmentally sustainable, and locally maintainable.</p>
+                        </div>
+                        
+                        <div class="process-step">
+                            <h4 class="text-xl font-bold mb-3 dark:text-dark-text">Local Capacity Building</h4>
+                            <p class="text-gray-600 dark:text-gray-400">We train local leaders and community members to implement, manage, and sustain the projects long-term.</p>
+                        </div>
+                        
+                        <div class="process-step">
+                            <h4 class="text-xl font-bold mb-3 dark:text-dark-text">Monitoring & Continuous Improvement</h4>
+                            <p class="text-gray-600 dark:text-gray-400">We track progress, measure impact, and adapt our approach based on data and community feedback.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="observable-right">
+                    <div class="bg-white rounded-2xl shadow-xl p-8 dark:bg-dark-card">
+                        <h3 class="text-2xl font-bold mb-6 dark:text-dark-text">Service Delivery Principles</h3>
+                        
+                        <div class="space-y-6">
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 rounded-full bg-sky/20 flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-users text-sky text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold mb-2 dark:text-dark-text">Community-Led</h4>
+                                    <p class="text-gray-600 dark:text-gray-400">Local communities lead the design, implementation, and evaluation of all projects.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 rounded-full bg-ocean/20 flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-leaf text-ocean text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold mb-2 dark:text-dark-text">Environmentally Sustainable</h4>
+                                    <p class="text-gray-600 dark:text-gray-400">All solutions are designed with minimal environmental impact and long-term sustainability.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 rounded-full bg-sage/20 flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-chart-line text-sage text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold mb-2 dark:text-dark-text">Evidence-Based</h4>
+                                    <p class="text-gray-600 dark:text-gray-400">Our approaches are grounded in research and continuously evaluated for effectiveness.</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="w-12 h-12 rounded-full bg-sun/20 flex items-center justify-center mr-4 flex-shrink-0">
+                                    <i class="fas fa-handshake text-clay text-xl"></i>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-bold mb-2 dark:text-dark-text">Collaborative Partnerships</h4>
+                                    <p class="text-gray-600 dark:text-gray-400">We work with local governments, NGOs, and private sector partners to maximize impact.</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-10 pt-6 border-t border-gray-200 dark:border-gray-700">
+                            <p class="text-gray-600 italic dark:text-gray-400">
+                                "Our success is measured not by the number of projects completed, but by the long-term transformation in the communities we serve."
+                            </p>
+                            <p class="mt-2 font-semibold dark:text-dark-text">— Maria Rodriguez, Director of Programs</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Areas -->
+    <section class="py-24 tablet-py-16 bg-white dark:bg-dark-bg">
+        <div class="container mx-auto px-4 tablet-px-6">
+            <div class="text-center mb-16 observable">
+                <div class="inline-flex items-center space-x-2 bg-ocean/10 text-ocean rounded-full px-4 py-2 mb-4">
+                    <i class="fas fa-globe-americas"></i>
+                    <span class="font-medium">Where We Work</span>
+                </div>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6 dark:text-dark-text">Global Service Areas</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto dark:text-gray-400">
+                    We deliver our comprehensive services across diverse regions, adapting our approach to local contexts and needs.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-3 gap-8 tablet-grid-1">
+                <div class="observable-left">
+                    <div class="impact-card p-8 h-full">
+                        <div class="w-16 h-16 rounded-full bg-sky/10 flex items-center justify-center mb-6">
+                            <i class="fas fa-globe-africa text-sky text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 dark:text-dark-text">Sub-Saharan Africa</h3>
+                        <p class="text-gray-600 mb-6 dark:text-gray-400">Focus on education, clean water, and healthcare in rural communities across 18 countries.</p>
+                        <div class="mb-6">
+                            <span class="service-badge bg-sky/20 text-sky">Education</span>
+                            <span class="service-badge bg-ocean/20 text-ocean">Water Access</span>
+                            <span class="service-badge bg-sage/20 text-sage">Healthcare</span>
+                        </div>
+                        <!-- UPDATED: Link to Service-details.html with #education anchor -->
+                        <a href="Service-details.html#education" class="text-sky font-semibold inline-flex items-center">
+                            Explore Africa Programs
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="observable">
+                    <div class="impact-card p-8 h-full">
+                        <div class="w-16 h-16 rounded-full bg-ocean/10 flex items-center justify-center mb-6">
+                            <i class="fas fa-globe-asia text-ocean text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 dark:text-dark-text">South & Southeast Asia</h3>
+                        <p class="text-gray-600 mb-6 dark:text-gray-400">Economic empowerment, disaster relief, and education programs across 12 countries.</p>
+                        <div class="mb-6">
+                            <span class="service-badge bg-sun/20 text-clay">Economic Development</span>
+                            <span class="service-badge bg-storm/20 text-storm">Disaster Response</span>
+                            <span class="service-badge bg-sky/20 text-sky">Education</span>
+                        </div>
+                        <!-- UPDATED: Link to Service-details.html with #economic anchor -->
+                        <a href="Service-details.html#economic" class="text-ocean font-semibold inline-flex items-center">
+                            Explore Asia Programs
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+                
+                <div class="observable-right">
+                    <div class="impact-card p-8 h-full">
+                        <div class="w-16 h-16 rounded-full bg-sage/10 flex items-center justify-center mb-6">
+                            <i class="fas fa-globe-americas text-sage text-2xl"></i>
+                        </div>
+                        <h3 class="text-2xl font-bold mb-4 dark:text-dark-text">Latin America & Caribbean</h3>
+                        <p class="text-gray-600 mb-6 dark:text-gray-400">Food security, infrastructure, and community development across 10 countries.</p>
+                        <div class="mb-6">
+                            <span class="service-badge bg-earth/20 text-earth">Infrastructure</span>
+                            <span class="service-badge bg-sage/20 text-sage">Food Security</span>
+                            <span class="service-badge bg-sun/20 text-clay">Community Development</span>
+                        </div>
+                        <!-- UPDATED: Link to Service-details.html with #shelter anchor -->
+                        <a href="Service-details.html#shelter" class="text-sage font-semibold inline-flex items-center">
+                            Explore Americas Programs
+                            <i class="fas fa-arrow-right ml-2"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Get Involved -->
+    <section id="contact" class="py-24 tablet-py-16 bg-gradient-to-br from-sky/5 via-white to-ocean/5 dark:from-sky/10 dark:via-dark-bg dark:to-ocean/10">
+        <div class="container mx-auto px-4 tablet-px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-white rounded-2xl shadow-xl p-8 md:p-12 observable dark:bg-dark-card">
+                    <div class="text-center mb-10">
+                        <h2 class="font-serif text-4xl md:text-5xl font-bold mb-4 dark:text-dark-text">Partner With Our Services</h2>
+                        <p class="text-xl text-gray-600 dark:text-gray-400">
+                            Whether you're a donor, volunteer, or community leader, there are many ways to engage with our services.
+                        </p>
+                    </div>
+                    
+                    <div class="grid md:grid-cols-3 gap-8 mb-10 tablet-grid-3">
+                        <div class="text-center p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow dark:bg-dark-bg">
+                            <div class="w-16 h-16 rounded-full bg-sky/10 flex items-center justify-center mb-4 mx-auto">
+                                <i class="fas fa-donate text-sky text-2xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold mb-3 dark:text-dark-text">Fund a Service</h4>
+                            <p class="text-gray-600 mb-4 dark:text-gray-400">Support a specific service area with a targeted donation.</p>
+                            <a href="#services" class="text-sky font-semibold">Learn More →</a>
+                        </div>
+                        
+                        <div class="text-center p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow dark:bg-dark-bg">
+                            <div class="w-16 h-16 rounded-full bg-ocean/10 flex items-center justify-center mb-4 mx-auto">
+                                <i class="fas fa-hands-helping text-ocean text-2xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold mb-3 dark:text-dark-text">Volunteer Expertise</h4>
+                            <p class="text-gray-600 mb-4 dark:text-gray-400">Share your skills in education, healthcare, engineering, or business.</p>
+                            <a href="Contact.html" class="text-ocean font-semibold">Learn More →</a>
+                        </div>
+                        
+                        <div class="text-center p-6 bg-gray-50 rounded-xl hover:shadow-lg transition-shadow dark:bg-dark-bg">
+                            <div class="w-16 h-16 rounded-full bg-sage/10 flex items-center justify-center mb-4 mx-auto">
+                                <i class="fas fa-handshake text-sage text-2xl"></i>
+                            </div>
+                            <h4 class="text-xl font-bold mb-3 dark:text-dark-text">Partnership</h4>
+                            <p class="text-gray-600 mb-4 dark:text-gray-400">Align your company's CSR goals with our service delivery.</p>
+                            <a href="Contact.html" class="text-sage font-semibold">Learn More →</a>
+                        </div>
+                    </div>
+                    
+                    <div class="text-center">
+                        <h3 class="text-2xl font-bold mb-6 dark:text-dark-text">Request Service Information</h3>
+                        <p class="text-gray-600 mb-8 max-w-2xl mx-auto dark:text-gray-400">
+                            Are you a community leader, government representative, or partner organization interested in our services? Contact our team for more information.
+                        </p>
+                        
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="Contact.html" class="btn-service-special inline-flex items-center justify-center">
+                                <i class="fas fa-envelope mr-3"></i>
+                                Contact Our Team
+                            </a>
+                            <a href="#" class="btn-service-special inline-flex items-center justify-center">
+                                <i class="fas fa-download mr-3"></i>
+                                Download Service Catalog
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desktop Footer -->
+    <footer class="hidden lg:block bg-gray-900 text-white pt-16 pb-8 dark:bg-dark-bg">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <!-- Logo and Social Media -->
+                <div>
+                    <div class="pl-20">
+                        <a href="index.html" class="flex items-center space-x-3 mb-6">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-sky to-ocean flex items-center justify-center">
+                                <i class="fas fa-hands-helping text-white text-xl"></i>
+                            </div>
+                            <div>
+groww charity                                <h1 class="font-serif text-2xl font-bold">Groww Charity</h1>
+                                <p class="text-xs text-gray-400 -mt-1">Foundation</p>
+                            </div>
+                        </a>
+                        <p class="text-gray-400 mb-6">
+                            Creating sustainable change through community empowerment, education, and healthcare initiatives worldwide.
+                        </p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-sky transition-colors dark:bg-gray-700">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-sky transition-colors dark:bg-gray-700">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-sky transition-colors dark:bg-gray-700">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-sky transition-colors dark:bg-gray-700">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <div class="pl-40">
+                        <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+                        <ul class="space-y-3">
+                            <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                            <li><a href="Mission.html" class="text-gray-400 hover:text-white transition-colors">Our Mission</a></li>
+                            <li><a href="Service.html" class="text-gray-400 hover:text-white transition-colors">Service</a></li>
+                            <li><a href="Pricing.html" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+                            <li><a href="Stories.html" class="text-gray-400 hover:text-white transition-colors">Success Stories</a></li>
+                            <li><a href="Contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Get Involved -->
+                <div>
+                    <div class="pl-20">
+                        <h4 class="text-lg font-bold mb-6">Get Involved</h4>
+                        <ul class="space-y-3">
+                            <li><a href="#donate" class="text-gray-400 hover:text-white transition-colors">Donate</a></li>
+                            <li><a href="#volunteer" class="text-gray-400 hover:text-white transition-colors">Volunteer</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Fundraise</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Corporate Partnerships</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Contact Us -->
+                <div id="contact">
+                    <h4 class="text-lg font-bold mb-6">Contact Us</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-sky mt-1 mr-3"></i>
+                            <span class="text-gray-400">123 Hope Street, Suite 500<br>San Francisco, CA 94105</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone text-sky mr-3"></i>
+                            <span class="text-gray-400">(555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-sky mr-3"></i>
+                            <span class="text-gray-400">info@Groww Charity.org</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800 dark:border-gray-700">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-gray-500 text-sm mb-4 md:mb-0">
+                        <p>&copy; 2025Groww Charity. All rights reserved.</p>
+                        <p class="mt-1">A 501(c)(3) nonprofit organization. EIN: 12-3456789</p>
+                    </div>
+                    
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-500 hover:text-white text-sm">Privacy Policy</a>
+                        <a href="#" class="text-gray-500 hover:text-white text-sm">Financial Reports</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Tax Documents</a>
+                        <a href="#" class="text-gray-500 hover:text-white text-sm">Legal</a>
+                    </div>
+                </div>
+                
+                <div class="mt-6 text-center text-gray-600 text-xs dark:text-gray-500">
+                    <p><i class="fas fa-heart text-red-400 mr-1"></i> 91% of donations go directly to programs. We're rated 4.9/5 stars by Charity Navigator.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tablet/Mobile Footer -->
+    <footer class="lg:hidden bg-gray-900 text-white pt-12 pb-6 dark:bg-dark-bg">
+        <div class="container mx-auto px-4">
+            <!-- Logo and Social Media -->
+            <div class="text-center mb-8">
+                <a href="index.html" class="flex flex-col items-center mb-4">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-sky to-ocean flex items-center justify-center mb-3">
+                        <i class="fas fa-hands-helping text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-serif text-2xl font-bold">Groww Charity</h1>
+                    </div>
+                </a>
+                <p class="text-gray-400 mb-6 text-sm">
+                    Creating sustainable change through community empowerment, education, and healthcare initiatives worldwide.
+                </p>
+                <div class="flex justify-center space-x-4 mb-6">
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-sky transition-colors dark:bg-gray-700">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-sky transition-colors dark:bg-gray-700">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-sky transition-colors dark:bg-gray-700">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-sky transition-colors dark:bg-gray-700">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Mobile Accordion Sections -->
+            <div class="space-y-4 mb-6">
+                <!-- Quick Links Accordion -->
+                <div class="border-b border-gray-800 pb-3">
+                    <button class="mobile-accordion-btn flex justify-between items-center w-full text-left font-medium py-2">
+                        <span class="text-base">Quick Links</span>
+                        <i class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
+                    </button>
+                    <div class="mobile-accordion-content hidden mt-2 pl-4">
+                        <ul class="space-y-2">
+                            <li><a href="index.html" class="text-gray-400 hover:text-white text-sm block py-1">Home</a></li>
+                            <li><a href="Mission.html" class="text-gray-400 hover:text-white text-sm block py-1">Our Mission</a></li>
+                            <li><a href="Service.html" class="text-gray-400 hover:text-white text-sm block py-1">Service</a></li>
+                            <li><a href="Pricing.html" class="text-gray-400 hover:text-white text-sm block py-1">Pricing</a></li>
+                            <li><a href="Stories.html" class="text-gray-400 hover:text-white text-sm block py-1">Success Stories</a></li>
+                            <li><a href="Contact.html" class="text-gray-400 hover:text-white text-sm block py-1">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Get Involved Accordion -->
+                <div class="border-b border-gray-800 pb-3">
+                    <button class="mobile-accordion-btn flex justify-between items-center w-full text-left font-medium py-2">
+                        <span class="text-base">Get Involved</span>
+                        <i class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
+                    </button>
+                    <div class="mobile-accordion-content hidden mt-2 pl-4">
+                        <ul class="space-y-2">
+                            <li><a href="#donate" class="text-gray-400 hover:text-white text-sm block py-1">Donate</a></li>
+                            <li><a href="#volunteer" class="text-gray-400 hover:text-white text-sm block py-1">Volunteer</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white text-sm block py-1">Fundraise</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white text-sm block py-1">Corporate Partnerships</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white text-sm block py-1">Careers</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Contact Info (Always Visible) -->
+                <div class="border-b border-gray-800 pb-4">
+                    <h4 class="text-base font-bold mb-3">Contact Us</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-sky mt-1 mr-2 text-sm"></i>
+                            <span class="text-gray-400 text-sm">123 Hope Street, Suite 500<br>San Francisco, CA 94105</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone text-sky mr-2 text-sm"></i>
+                            <span class="text-gray-400 text-sm">(555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-sky mr-2 text-sm"></i>
+                            <span class="text-gray-400 text-sm">info@Groww Charity.org</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bottom Section -->
+            <div class="border-gray-800">
+                <div class="text-center text-gray-500 text-xs mb-4">
+                    <p>&copy; 2025Groww Charity. All rights reserved.</p>
+                    <p class="mt-1">A 501(c)(3) nonprofit organization. EIN: 12-3456789</p>
+                </div>
+                
+                <div class="flex flex-wrap justify-center gap-3 mb-3">
+                    <a href="#" class="text-gray-400 hover:text-white text-xs">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-xs">Financial Reports</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-xs">Tax Documents</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-xs">Legal</a>
+                </div>
+                
+                <div class="text-center text-gray-500 text-xs">
+                    <p><i class="fas fa-heart text-red-400 mr-1"></i> 91% of donations go directly to programs.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-sky text-white rounded-full shadow-lg hover:bg-ocean transition-colors z-40 hidden">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
+        // ========== FIXED HAMBURGER MENU FUNCTIONALITY ==========
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileBackdrop = document.getElementById('mobileBackdrop');
+
+        function toggleMobileMenu() {
+            mobileMenuBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            mobileBackdrop.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        }
+
+        // Mobile menu toggle
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMobileMenu();
+        });
+
+        // Close mobile menu when clicking backdrop
+        mobileBackdrop.addEventListener('click', toggleMobileMenu);
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (mobileMenu.classList.contains('active')) {
+                    toggleMobileMenu();
+                }
+            });
+        });
+
+        // Mobile Home Dropdown Toggle
+        const mobileHomeBtn = document.getElementById('mobileHomeBtn');
+        const mobileHomeDropdown = document.getElementById('mobileHomeDropdown');
+
+        if (mobileHomeBtn && mobileHomeDropdown) {
+            mobileHomeBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                mobileHomeDropdown.classList.toggle('active');
+                const icon = mobileHomeBtn.querySelector('i');
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            });
+        }
+
+        // Mobile Dashboard Dropdown Toggle
+        const mobileDashboardBtn = document.getElementById('mobileDashboardBtn');
+        const mobileDashboardDropdown = document.getElementById('mobileDashboardDropdown');
+
+        if (mobileDashboardBtn && mobileDashboardDropdown) {
+            mobileDashboardBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                mobileDashboardDropdown.classList.toggle('active');
+                const icon = mobileDashboardBtn.querySelector('i');
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            });
+        }
+
+        // Close mobile dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+            if (mobileHomeDropdown && mobileHomeDropdown.classList.contains('active') && 
+                !mobileHomeBtn.contains(e.target) && !mobileHomeDropdown.contains(e.target)) {
+                mobileHomeDropdown.classList.remove('active');
+                const icon = mobileHomeBtn.querySelector('i');
+                icon.classList.add('fa-chevron-down');
+                icon.classList.remove('fa-chevron-up');
+            }
+
+            if (mobileDashboardDropdown && mobileDashboardDropdown.classList.contains('active') && 
+                !mobileDashboardBtn.contains(e.target) && !mobileDashboardDropdown.contains(e.target)) {
+                mobileDashboardDropdown.classList.remove('active');
+                const icon = mobileDashboardBtn.querySelector('i');
+                icon.classList.add('fa-chevron-down');
+                icon.classList.remove('fa-chevron-up');
+            }
+        });
+
+        // Close mobile menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                toggleMobileMenu();
+            }
+        });
+
+        // Close mobile menu when window is resized to desktop size
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1280 && mobileMenu.classList.contains('active')) {
+                toggleMobileMenu();
+            }
+        });
+
+        // ========== THEME TOGGLE FUNCTIONALITY ==========
+        const themeToggle = document.getElementById('themeToggle');
+        const themeToggleMobile = document.getElementById('themeToggleMobile');
+
+        // Function to set theme
+        function setTheme(theme) {
+            if (theme === 'dark') {
+                document.documentElement.classList.add('dark');
+                document.body.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+                document.body.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Function to toggle theme
+        function toggleTheme() {
+            const isDark = document.documentElement.classList.contains('dark');
+            setTheme(isDark ? 'light' : 'dark');
+        }
+
+        // Event listeners for theme toggle buttons
+        if (themeToggle) {
+            themeToggle.addEventListener('click', toggleTheme);
+        }
+        if (themeToggleMobile) {
+            themeToggleMobile.addEventListener('click', toggleTheme);
+        }
+
+        // Load saved theme on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                setTheme(savedTheme);
+            } else {
+                // Check for system preference
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    setTheme('dark');
+                }
+            }
+        });
+
+        // Listen for system theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            if (!localStorage.getItem('theme')) {
+                setTheme(e.matches ? 'dark' : 'light');
+            }
+        });
+
+        // ========== RTL TOGGLE FUNCTIONALITY ==========
+        const rtlToggle = document.getElementById('rtl-toggle');
+        const rtlToggleTablet = document.getElementById('rtl-toggle-tablet');
+        const htmlElement = document.documentElement;
+
+        // Function to set direction and update icons
+        function setDirection(direction) {
+            htmlElement.dir = direction;
+            localStorage.setItem('text-direction', direction);
+            
+            // Update icon based on direction
+            const updateIcon = (button) => {
+                if (button) {
+                    const icon = button.querySelector('i');
+                    if (icon) {
+                        icon.className = direction === 'rtl' ? 'fas fa-language' : 'fas fa-globe';
+                        if (button.id === 'rtl-toggle' || button.id === 'rtl-toggle-tablet') {
+                            icon.className += ' text-storm dark:text-sky';
+                        }
+                    }
+                }
+            };
+            
+            updateIcon(rtlToggle);
+            updateIcon(rtlToggleTablet);
+        }
+
+        // Toggle direction on button click
+        if (rtlToggle) {
+            rtlToggle.addEventListener('click', function() {
+                const currentDirection = htmlElement.dir || 'ltr';
+                const newDirection = currentDirection === 'rtl' ? 'ltr' : 'rtl';
+                setDirection(newDirection);
+            });
+        }
+
+        if (rtlToggleTablet) {
+            rtlToggleTablet.addEventListener('click', function() {
+                const currentDirection = htmlElement.dir || 'ltr';
+                const newDirection = currentDirection === 'rtl' ? 'ltr' : 'rtl';
+                setDirection(newDirection);
+            });
+        }
+
+        // Load saved direction on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedDirection = localStorage.getItem('text-direction');
+            if (savedDirection) {
+                setDirection(savedDirection);
+            }
+        });
+
+        // ========== SCROLL ANIMATIONS ==========
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all elements with observable classes
+        document.querySelectorAll('.observable, .observable-left, .observable-right').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // ========== BACK TO TOP BUTTON ==========
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.remove('hidden');
+            } else {
+                backToTopBtn.classList.add('hidden');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+        
+        // ========== HERO WAVE ANIMATION ==========
+        const heroWave = document.querySelector('.hero-wave');
+        if (heroWave) {
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const rate = scrolled * -0.5;
+                heroWave.style.transform = `translateX(${rate}px)`;
+            });
+        }
+
+        // ========== MOBILE FOOTER ACCORDION ==========
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileAccordionBtns = document.querySelectorAll('.mobile-accordion-btn');
+            
+            mobileAccordionBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    
+                    // Close other open accordions
+                    document.querySelectorAll('.mobile-accordion-content').forEach(otherContent => {
+                        if (otherContent !== content && !otherContent.classList.contains('hidden')) {
+                            otherContent.classList.add('hidden');
+                            otherContent.previousElementSibling.querySelector('i').classList.remove('rotate-180');
+                        }
+                    });
+                    
+                    // Toggle current accordion
+                    content.classList.toggle('hidden');
+                    icon.classList.toggle('rotate-180');
+                });
+            });
+        });
+    </script>
+</body>
+</html>

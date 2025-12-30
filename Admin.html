@@ -1,0 +1,1579 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="description" content="Groww Charity Admin Dashboard">
+    <title>Groww Charity | Admin Dashboard</title>
+    <link rel="icon" type="Assest/jpeg" href="Assest/groww charity_logo.jpg">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        'primary': '#4A90E2',
+                        'secondary': '#2E8B57',
+                        'accent': '#FFB347',
+                        'dark-bg': '#0f172a',
+                        'dark-card': '#1e293b',
+                        'dark-text': '#cbd5e1'
+                    },
+                    fontFamily: {
+                        'sans': ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', system-ui, -apple-system, sans-serif;
+            background: #f8fafc;
+            color: #334155;
+            transition: background-color 0.3s ease;
+            overflow-x: hidden;
+        }
+        
+        body.dark {
+            background: #0f172a;
+            color: #cbd5e1;
+        }
+        
+        /* Prevent scrolling when menu is open */
+        body.menu-open {
+            overflow: hidden;
+        }
+        
+        /* Mobile Header - Fixed at top */
+        .mobile-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 64px;
+            background: white;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 0 16px;
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+        
+        .dark .mobile-header {
+            background: #1e293b;
+            border-bottom: 1px solid #334155;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Sidebar Styles */
+        .sidebar {
+            width: 280px;
+            height: 100vh;
+            position: fixed;
+            left: -280px;
+            top: 0;
+            background: white;
+            border-right: 1px solid #e2e8f0;
+            transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1001;
+            display: flex;
+            flex-direction: column;
+            box-shadow: 4px 0 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dark .sidebar {
+            background: #1e293b;
+            border-right: 1px solid #334155;
+            box-shadow: 4px 0 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .sidebar.active {
+            transform: translateX(280px);
+        }
+        
+        .sidebar-header {
+            padding: 24px;
+            border-bottom: 1px solid #e2e8f0;
+            background: linear-gradient(135deg, #4A90E2 0%, #2E8B57 100%);
+        }
+        
+        .dark .sidebar-header {
+            border-bottom: 1px solid #334155;
+        }
+        
+        .sidebar-content {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px 0;
+            -webkit-overflow-scrolling: touch;
+        }
+        
+        .sidebar-footer {
+            padding: 20px;
+            border-top: 1px solid #e2e8f0;
+            background: #f8fafc;
+        }
+        
+        .dark .sidebar-footer {
+            background: #1e293b;
+            border-top: 1px solid #334155;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 80px 16px 24px;
+            width: 100%;
+            min-height: 100vh;
+            transition: padding-left 0.3s ease;
+        }
+        
+        /* Desktop Styles */
+        @media (min-width: 1025px) {
+            .mobile-header {
+                display: none;
+            }
+            
+            .sidebar {
+                left: 0;
+                transform: translateX(0);
+                box-shadow: none;
+            }
+            
+            .sidebar.active {
+                transform: translateX(0);
+            }
+            
+            .main-content {
+                padding-left: 296px;
+                padding-right: 24px;
+                padding-top: 24px;
+            }
+            
+            .overlay {
+                display: none !important;
+            }
+        }
+        
+        /* Mobile Overlay */
+        .overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            backdrop-filter: blur(2px);
+        }
+        
+        .overlay.active {
+            display: block;
+        }
+        
+        /* Control Buttons */
+        .control-buttons {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .control-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f1f5f9;
+            border: none;
+            color: #64748b;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 16px;
+        }
+        
+        .dark .control-btn {
+            background: #334155;
+            color: #cbd5e1;
+        }
+        
+        .control-btn:hover {
+            background: #e2e8f0;
+            color: #4A90E2;
+            transform: translateY(-2px);
+        }
+        
+        .dark .control-btn:hover {
+            background: #475569;
+        }
+        
+        /* Stats Cards */
+        .stat-card {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid #e2e8f0;
+            width: 100%;
+        }
+        
+        .dark .stat-card {
+            background: #1e293b;
+            border: 1px solid #334155;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dark .stat-card:hover {
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* CHART CONTAINER - FIXED FOR MOBILE */
+        .chart-container {
+            background: white;
+            border-radius: 16px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            height: 380px;
+            width: 100%;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .dark .chart-container {
+            background: #1e293b;
+            border: 1px solid #334155;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+        /* Chart canvas wrapper for responsive sizing */
+        .chart-wrapper {
+            position: relative;
+            height: calc(100% - 60px);
+            width: 100%;
+        }
+        
+        /* TABLE CONTAINER - FIXED FOR MOBILE */
+        .table-container {
+            background: white;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+            height: 380px;
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        
+        .dark .table-container {
+            background: #1e293b;
+            border: 1px solid #334155;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+        
+      .table-header {
+    padding: 16px 20px;
+    border-bottom: none !important;
+    background: transparent;
+}
+        /* Remove line under Recent Trends (table header line) */
+.table-container thead tr {
+    border-bottom: none !important;
+}
+
+.table-container thead th {
+    border-bottom: none !important;
+}
+
+        .dark .table-header {
+    border-bottom: none !important;
+    background: transparent;
+}
+        
+        .table-content {
+            flex: 1;
+            overflow-x: auto;
+            overflow-y: auto;
+            position: relative;
+        }
+        
+        .table-responsive {
+            min-width: 100%;
+            width: max-content;
+        }
+        
+        /* Button Styles */
+        .btn-primary {
+            background: #4A90E2;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 10px;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+        }
+        
+        .btn-primary:hover {
+            background: #3a80d2;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+        }
+        
+        .btn-success {
+            background: #10b981;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 8px;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            font-size: 14px;
+        }
+        
+        .btn-success:hover {
+            background: #0da271;
+        }
+        
+        /* Navigation Items */
+        .nav-item {
+            display: flex;
+            align-items: center;
+            padding: 12px 24px;
+            margin: 4px 0;
+            color: #64748b;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            position: relative;
+            cursor: pointer;
+            font-size: 15px;
+        }
+        
+        .dark .nav-item {
+            color: #94a3b8;
+        }
+        
+        .nav-item:hover {
+            background: rgba(74, 144, 226, 0.08);
+            color: #4A90E2;
+        }
+        
+        .dark .nav-item:hover {
+            background: rgba(74, 144, 226, 0.15);
+        }
+        
+        .nav-item.active {
+            background: rgba(74, 144, 226, 0.12);
+            color: #4A90E2;
+            border-left: 4px solid #4A90E2;
+        }
+        
+        .dark .nav-item.active {
+            background: rgba(74, 144, 226, 0.2);
+        }
+        
+        .nav-item i {
+            width: 20px;
+            margin-right: 12px;
+            font-size: 1.1rem;
+        }
+        
+        /* Scrollbar Styling */
+        .sidebar-content::-webkit-scrollbar {
+            width: 4px;
+        }
+        
+        .sidebar-content::-webkit-scrollbar-track {
+            background: transparent;
+        }
+        
+        .sidebar-content::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 2px;
+        }
+        
+        .dark .sidebar-content::-webkit-scrollbar-thumb {
+            background: #475569;
+        }
+        
+        /* Table Scrollbar */
+        .table-content::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        
+        .table-content::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        
+        .dark .table-content::-webkit-scrollbar-track {
+            background: #334155;
+        }
+        
+        .table-content::-webkit-scrollbar-thumb {
+            background: #cbd5e1;
+            border-radius: 3px;
+        }
+        
+        .dark .table-content::-webkit-scrollbar-thumb {
+            background: #475569;
+        }
+        
+        /* Status Badges */
+        .status-badge {
+            padding: 4px 10px;
+            border-radius: 12px;
+            font-size: 12px;
+            font-weight: 500;
+            display: inline-block;
+            white-space: nowrap;
+        }
+        
+        .status-active {
+            background: rgba(16, 185, 129, 0.1);
+            color: #10b981;
+        }
+        
+        .status-pending {
+            background: rgba(245, 158, 11, 0.1);
+            color: #f59e0b;
+        }
+        
+        /* Progress Bar */
+        .progress-bar {
+            width: 100%;
+            height: 6px;
+            background: #e2e8f0;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        
+        .dark .progress-bar {
+            background: #334155;
+        }
+        
+        .progress-fill {
+            height: 100%;
+            border-radius: 3px;
+        }
+        
+        /* GRID LAYOUT - UPDATED FOR MOBILE */
+        .dashboard-grid {
+            display: grid;
+            gap: 20px;
+            width: 100%;
+        }
+        
+        /* Stats Grid */
+        .stats-grid {
+            grid-template-columns: repeat(1, 1fr);
+        }
+        
+        /* Charts Grid - FIXED FOR MOBILE */
+        .charts-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        /* Features Grid */
+        .features-grid {
+            grid-template-columns: 1fr;
+        }
+        
+        /* Responsive Grid Adjustments */
+        @media (min-width: 640px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .chart-container,
+            .table-container {
+                height: 400px;
+            }
+        }
+        
+        @media (min-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .features-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .stats-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+            
+            .charts-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .features-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .chart-container,
+            .table-container {
+                height: 420px;
+            }
+        }
+        
+        /* Mobile Optimizations */
+        @media (max-width: 640px) {
+            .stat-card {
+                padding: 16px;
+            }
+            
+            .chart-container,
+            .table-container {
+                height: 340px;
+                padding: 16px;
+            }
+            
+            .mobile-header {
+                padding: 0 12px;
+            }
+            
+            .control-btn {
+                width: 36px;
+                height: 36px;
+            }
+            
+            /* Compact table for mobile */
+            .table-container .table-content {
+                font-size: 13px;
+            }
+            
+            .status-badge {
+                padding: 3px 8px;
+                font-size: 11px;
+            }
+            
+            .btn-success,
+            .btn-primary {
+                padding: 6px 12px;
+                font-size: 12px;
+            }
+        }
+        
+        /* RTL Support */
+        [dir="rtl"] .sidebar {
+            left: auto;
+            right: -280px;
+            border-right: none;
+            border-left: 1px solid #e2e8f0;
+        }
+        
+        [dir="rtl"] .sidebar.active {
+            transform: translateX(-280px);
+        }
+        
+        .dark[dir="rtl"] .sidebar {
+            border-left: 1px solid #334155;
+        }
+        
+        [dir="rtl"] .main-content {
+            padding-left: 16px;
+            padding-right: 0;
+        }
+        
+       @media (min-width: 1025px) {
+    [dir="rtl"] .sidebar {
+        left: auto;
+        right: 0;
+    }
+    
+    [dir="rtl"] .main-content {
+        padding-left: 24px;
+        padding-right: 296px;
+    }
+}
+        
+        [dir="rtl"] .nav-item.active {
+            border-left: none;
+            border-right: 4px solid #4A90E2;
+        }
+        
+        /* Loading animation */
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        
+        .loading {
+            animation: spin 1s linear infinite;
+        }
+        
+        /* Chart period buttons */
+        .chart-period-btn {
+            padding: 6px 12px;
+            border-radius: 8px;
+            font-size: 12px;
+            font-weight: 500;
+            border: none;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            background: #f1f5f9;
+            color: #64748b;
+        }
+        
+        .dark .chart-period-btn {
+            background: #334155;
+            color: #cbd5e1;
+        }
+        
+        .chart-period-btn.active {
+            background: #4A90E2;
+            color: white;
+        }
+        
+        .dark .chart-period-btn.active {
+            background: #4A90E2;
+            color: white;
+        }
+        
+        /* Mobile-specific table styles */
+        @media (max-width: 767px) {
+            .mobile-table-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding: 12px 16px;
+            }
+            
+            .mobile-table-title {
+                font-size: 16px;
+                font-weight: 600;
+            }
+            
+            .mobile-table-view-all {
+                font-size: 13px;
+                color: #4A90E2;
+                text-decoration: none;
+            }
+            
+            /* Make table cells more compact */
+            .table-responsive td,
+            .table-responsive th {
+                padding: 10px 8px;
+            }
+            
+            /* Hide email on mobile for donor column */
+            .donor-email {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+    <!-- Mobile Header -->
+    <div class="mobile-header">
+        <div class="flex items-center gap-3">
+            <button id="mobileMenuBtn" class="control-btn">
+                <i class="fas fa-bars"></i>
+            </button>
+            <div class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
+                    <i class="fas fa-hands-helping text-white text-sm"></i>
+                </div>
+                <div>
+                    <h1 class="font-bold text-base text-gray-800 dark:text-dark-text">Groww Charity</h1>
+                </div>
+            </div>
+        </div>
+        
+        <div class="control-buttons">
+            
+            <button id="themeToggle" class="control-btn" title="Toggle Theme">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun" style="display: none;"></i>
+            </button>
+            <button id="rtlToggle" class="control-btn" title="Toggle RTL">
+                <i class="fas fa-globe"></i>
+            </button>
+            <button id="logoutBtn" class="control-btn text-red-500 hover:text-red-600" title="Logout">
+                <i class="fas fa-sign-out-alt"></i>
+            </button>
+        </div>
+    </div>
+    
+    <!-- Overlay for Mobile -->
+    <div class="overlay" id="overlay"></div>
+    
+    <!-- Sidebar -->
+    <div class="sidebar">
+        <!-- Sidebar Header -->
+        <div class="sidebar-header">
+            <div class="flex items-center gap-3 mb-6">
+               <a href="index.html" class="flex items-center gap-3 cursor-pointer">
+    <div class="w-12 h-12 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+        <i class="fas fa-hands-helping text-white text-xl"></i>
+    </div>
+    <div>
+        <h1 class="text-xl font-bold text-white">Groww Charity</h1>
+    </div>
+</a>
+
+            </div>
+            <div class="flex items-center gap-3 p-3 bg-white/10 backdrop-blur-sm rounded-lg">
+                <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center">
+                    <span class="font-bold text-primary">A</span>
+                </div>
+                <div>
+                    <p class="text-sm font-medium text-white">Admin User</p>
+                    <p class="text-xs text-white/70">Administrator</p>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Sidebar Navigation -->
+        <div class="sidebar-content">
+            <nav>
+                <a href="#" class="nav-item active">
+                    <i class="fas fa-tachometer-alt"></i>
+                    Dashboard
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-users"></i>
+                    Users
+                    <span class="ml-auto bg-primary/10 text-primary text-xs px-2 py-1 rounded-full">12</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-donate"></i>
+                    Donations
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-handshake"></i>
+                    Volunteers
+                    <span class="ml-auto bg-accent/10 text-accent text-xs px-2 py-1 rounded-full">7</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-project-diagram"></i>
+                    Projects
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-chart-line"></i>
+                    Analytics
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-cog"></i>
+                    Settings
+                </a>
+                <a href="#" class="nav-item">
+                    <i class="fas fa-file-alt"></i>
+                    Reports
+                </a>
+            </nav>
+        </div>
+        
+        <!-- Sidebar Footer -->
+        <div class="sidebar-footer">
+            <div class="space-y-4">
+                <div class="flex items-center justify-between">
+                    <span class="text-sm text-gray-600 dark:text-gray-400">Online Status</span>
+                    <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
+                </div>
+                <div class="flex items-center justify-center gap-3">
+                    <button id="sidebarThemeToggle" class="control-btn" title="Toggle Theme">
+                        <i class="fas fa-moon"></i>
+                                                <i class="fas fa-sun"></i>
+
+                    </button>
+                    <button id="sidebarRtlToggle" class="control-btn" title="Toggle RTL">
+                        <i class="fas fa-globe"></i>
+                    </button>
+                    
+                    <button id="sidebarLogoutBtn" class="control-btn text-red-500 hover:text-red-600" title="Logout">
+                        <i class="fas fa-sign-out-alt"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Main Content -->
+    <div class="main-content">
+        <!-- Page Header -->
+        <div class="mb-8">
+            <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                <div>
+              <h1 class="text-2xl sm:text-3xl font-bold text-gray-800 dark:text-gray-600">
+    Dashboard Overview
+</h1>
+
+<p class="text-gray-600 dark:text-gray-600 mt-2 text-sm sm:text-base">
+    Welcome back! Here's what's happening today.
+</p>
+
+
+                </div>
+                <div class="flex items-center gap-3">
+                    <div class="text-sm text-gray-500 dark:text-gray-400 hidden sm:block">
+                        <i class="fas fa-clock mr-2"></i>
+                        <span id="currentTime">Loading...</span>
+                    </div>
+                    <button class="btn-primary text-sm sm:text-base">
+                        <i class="fas fa-plus"></i>
+                        <span class="hidden sm:inline">Add New</span>
+                        <span class="sm:hidden">New</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Stats Grid -->
+        <div class="dashboard-grid stats-grid mb-8">
+            <div class="stat-card">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm mb-2">Total Donations</p>
+                        <h3 class="text-xl sm:text-2xl font-bold text-gray-800 dark:text-dark-text">$125,430</h3>
+                        <div class="flex items-center mt-2">
+                            <span class="text-green-600 text-xs sm:text-sm font-medium flex items-center">
+                                <i class="fas fa-arrow-up mr-1 text-xs"></i>
+                                12.5%
+                            </span>
+                            <span class="text-gray-500 dark:text-gray-400 text-xs sm:text-sm ml-2">from last month</span>
+                        </div>
+                    </div>
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-blue-50 dark:bg-blue-900/30 flex items-center justify-center">
+                        <i class="fas fa-donate text-blue-600 dark:text-blue-400 text-lg sm:text-xl"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm mb-2">Active Volunteers</p>
+                        <h3 class="text-xl sm:text-2xl font-bold text-gray-800 dark:text-dark-text">1,245</h3>
+                        <div class="flex items-center mt-2">
+                            <span class="text-green-600 text-xs sm:text-sm font-medium flex items-center">
+                                <i class="fas fa-arrow-up mr-1 text-xs"></i>
+                                8.2%
+                            </span>
+                            <span class="text-gray-500 dark:text-gray-400 text-xs sm:text-sm ml-2">from last month</span>
+                        </div>
+                    </div>
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-green-50 dark:bg-green-900/30 flex items-center justify-center">
+                        <i class="fas fa-hands-helping text-green-600 dark:text-green-400 text-lg sm:text-xl"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm mb-2">Active Projects</p>
+                        <h3 class="text-xl sm:text-2xl font-bold text-gray-800 dark:text-dark-text">24</h3>
+                        <div class="flex items-center mt-2">
+                            <span class="text-blue-600 text-xs sm:text-sm font-medium flex items-center">
+                                <i class="fas fa-minus mr-1 text-xs"></i>
+                                0%
+                            </span>
+                            <span class="text-gray-500 dark:text-gray-400 text-xs sm:text-sm ml-2">no change</span>
+                        </div>
+                    </div>
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-purple-50 dark:bg-purple-900/30 flex items-center justify-center">
+                        <i class="fas fa-project-diagram text-purple-600 dark:text-purple-400 text-lg sm:text-xl"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="stat-card">
+                <div class="flex justify-between items-start">
+                    <div>
+                        <p class="text-gray-500 dark:text-gray-400 text-sm mb-2">New Users</p>
+                        <h3 class="text-xl sm:text-2xl font-bold text-gray-800 dark:text-dark-text">156</h3>
+                        <div class="flex items-center mt-2">
+                            <span class="text-green-600 text-xs sm:text-sm font-medium flex items-center">
+                                <i class="fas fa-arrow-up mr-1 text-xs"></i>
+                                23.1%
+                            </span>
+                            <span class="text-gray-500 dark:text-gray-400 text-xs sm:text-sm ml-2">from last month</span>
+                        </div>
+                    </div>
+                    <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-orange-50 dark:bg-orange-900/30 flex items-center justify-center">
+                        <i class="fas fa-user-plus text-orange-600 dark:text-orange-400 text-lg sm:text-xl"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Charts and Tables - FIXED LAYOUT -->
+        <div class="dashboard-grid charts-grid gap-6 mb-8">
+            <!-- Donation Chart - FIXED -->
+            <div class="chart-container">
+                <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between mb-6">
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-800 dark:text-dark-text mb-2 sm:mb-0">Donation Trends</h3>
+                    <div class="flex gap-2">
+                        <button class="chart-period-btn active">Monthly</button>
+                        <button class="chart-period-btn">Quarterly</button>
+                        <button class="chart-period-btn">Yearly</button>
+                    </div>
+                </div>
+                <div class="chart-wrapper">
+                    <canvas id="donationChart"></canvas>
+                </div>
+            </div>
+            
+            <!-- Recent Donations Table - FIXED -->
+            <div class="table-container">
+             <div class="table-header flex items-center justify-between">
+    <h3 class="text-lg sm:text-xl font-bold text-gray-800 dark:text-dark-text">
+        Recent Trends
+    </h3>
+    <button class="text-xs sm:text-sm text-primary hover:text-primary/80 font-medium">
+        View All
+    </button>
+</div>
+
+
+
+                <div class="table-content">
+                    <table class="table-responsive">
+                        <thead>
+                            <tr class="text-left text-gray-500 dark:text-gray-400 text-xs sm:text-sm">
+                                <th class="pb-3 px-3 sm:px-4 font-medium whitespace-nowrap">Donor</th>
+                                <th class="pb-3 px-3 sm:px-4 font-medium whitespace-nowrap">Amount</th>
+                                <th class="pb-3 px-3 sm:px-4 font-medium whitespace-nowrap">Date</th>
+                                <th class="pb-3 px-3 sm:px-4 font-medium whitespace-nowrap">Status</th>
+                                <th class="pb-3 px-3 sm:px-4 font-medium whitespace-nowrap">Action</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+                                <td class="py-3 px-3 sm:px-4 whitespace-nowrap">
+                                    <div class="flex items-center gap-2 sm:gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center flex-shrink-0">
+                                            <span class="text-blue-600 dark:text-blue-400 font-medium text-sm">JS</span>
+                                        </div>
+                                        <div class="min-w-0">
+                                            <p class="font-medium text-gray-800 dark:text-dark-text text-sm truncate">John Smith</p>
+                                            <p class="text-xs text-gray-500 dark:text-gray-400 truncate donor-email">john@email.com</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-3 sm:px-4 font-medium text-gray-800 dark:text-dark-text text-sm whitespace-nowrap">$500</td>
+                                <td class="py-3 px-3 sm:px-4 text-gray-600 dark:text-gray-400 text-xs sm:text-sm whitespace-nowrap">Dec 10</td>
+                                <td class="py-3 px-3 sm:px-4 whitespace-nowrap">
+                                    <span class="status-badge status-active">Completed</span>
+                                </td>
+                                <td class="py-3 px-3 sm:px-4 whitespace-nowrap">
+                                    <button class="btn-success text-xs sm:text-sm view-donation">View</button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+                                <td class="py-3 px-3 sm:px-4 whitespace-nowrap">
+                                    <div class="flex items-center gap-2 sm:gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0">
+                                            <span class="text-green-600 dark:text-green-400 font-medium text-sm">SJ</span>
+                                        </div>
+                                        <div class="min-w-0">
+                                            <p class="font-medium text-gray-800 dark:text-dark-text text-sm truncate">Sarah Johnson</p>
+                                            <p class="text-xs text-gray-500 dark:text-gray-400 truncate donor-email">sarah@email.com</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-3 sm:px-4 font-medium text-gray-800 dark:text-dark-text text-sm whitespace-nowrap">$250</td>
+                                <td class="py-3 px-3 sm:px-4 text-gray-600 dark:text-gray-400 text-xs sm:text-sm whitespace-nowrap">Dec 9</td>
+                                <td class="py-3 px-3 sm:px-4 whitespace-nowrap">
+                                    <span class="status-badge status-active">Completed</span>
+                                </td>
+                                <td class="py-3 px-3 sm:px-4 whitespace-nowrap">
+                                    <button class="btn-success text-xs sm:text-sm view-donation">View</button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+                                <td class="py-3 px-3 sm:px-4 whitespace-nowrap">
+                                    <div class="flex items-center gap-2 sm:gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center flex-shrink-0">
+                                            <span class="text-purple-600 dark:text-purple-400 font-medium text-sm">MB</span>
+                                        </div>
+                                        <div class="min-w-0">
+                                            <p class="font-medium text-gray-800 dark:text-dark-text text-sm truncate">Michael Brown</p>
+                                            <p class="text-xs text-gray-500 dark:text-gray-400 truncate donor-email">michael@email.com</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-3 sm:px-4 font-medium text-gray-800 dark:text-dark-text text-sm whitespace-nowrap">$1,000</td>
+                                <td class="py-3 px-3 sm:px-4 text-gray-600 dark:text-gray-400 text-xs sm:text-sm whitespace-nowrap">Dec 8</td>
+                                <td class="py-3 px-3 sm:px-4 whitespace-nowrap">
+                                    <span class="status-badge status-pending">Pending</span>
+                                </td>
+                                <td class="py-3 px-3 sm:px-4 whitespace-nowrap">
+                                    <button class="btn-primary text-xs sm:text-sm process-donation">view</button>
+                                </td>
+                            </tr>
+                            <tr class="hover:bg-gray-50 dark:hover:bg-gray-800/50 transition-colors">
+                                <td class="py-3 px-3 sm:px-4 whitespace-nowrap">
+                                    <div class="flex items-center gap-2 sm:gap-3">
+                                        <div class="w-8 h-8 rounded-full bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center flex-shrink-0">
+                                            <span class="text-orange-600 dark:text-orange-400 font-medium text-sm">EW</span>
+                                        </div>
+                                        <div class="min-w-0">
+                                            <p class="font-medium text-gray-800 dark:text-dark-text text-sm truncate">Emma Wilson</p>
+                                            <p class="text-xs text-gray-500 dark:text-gray-400 truncate donor-email">emma@email.com</p>
+                                        </div>
+                                    </div>
+                                </td>
+                                <td class="py-3 px-3 sm:px-4 font-medium text-gray-800 dark:text-dark-text text-sm whitespace-nowrap">$750</td>
+                                <td class="py-3 px-3 sm:px-4 text-gray-600 dark:text-gray-400 text-xs sm:text-sm whitespace-nowrap">Dec 7</td>
+                                <td class="py-3 px-3 sm:px-4 whitespace-nowrap">
+                                    <span class="status-badge status-active">Completed</span>
+                                </td>
+                                <td class="py-3 px-3 sm:px-4 whitespace-nowrap">
+                                    <button class="btn-success text-xs sm:text-sm view-donation">View</button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Additional Features -->
+        <div class="dashboard-grid features-grid gap-6">
+            <!-- Campaign Progress -->
+            <div class="stat-card">
+                <h3 class="text-lg sm:text-xl font-bold text-gray-800 dark:text-dark-text mb-6">Campaign Progress</h3>
+                <div class="space-y-6">
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-medium text-gray-700 dark:text-gray-300 text-sm sm:text-base">Clean Water Initiative</span>
+                            <span class="font-bold text-green-600 text-sm sm:text-base">85%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 85%; background: #10b981;"></div>
+                        </div>
+                        <div class="flex justify-between text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-2">
+                            <span>$85,000 / $100,000</span>
+                            <span>45 days left</span>
+                        </div>
+                    </div>
+                    <div>
+                        <div class="flex justify-between items-center mb-2">
+                            <span class="font-medium text-gray-700 dark:text-gray-300 text-sm sm:text-base">Education for All</span>
+                            <span class="font-bold text-blue-600 text-sm sm:text-base">70%</span>
+                        </div>
+                        <div class="progress-bar">
+                            <div class="progress-fill" style="width: 70%; background: #3b82f6;"></div>
+                        </div>
+                        <div class="flex justify-between text-xs sm:text-sm text-gray-500 dark:text-gray-400 mt-2">
+                            <span>$70,000 / $100,000</span>
+                            <span>30 days left</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Quick Actions -->
+            <div class="stat-card">
+                <h3 class="text-lg sm:text-xl font-bold text-gray-800 dark:text-dark-text mb-6">Quick Actions</h3>
+                <div class="grid grid-cols-2 gap-3 sm:gap-4">
+                    <button class="flex flex-col items-center justify-center p-3 sm:p-4 bg-gray-50 dark:bg-gray-800 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors group" onclick="quickAction('Add Donation')">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-green-100 dark:bg-green-900/30 flex items-center justify-center mb-2 sm:mb-3 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-plus text-green-600 dark:text-green-400 text-lg sm:text-xl"></i>
+                        </div>
+                        <span class="font-medium text-gray-700 dark:text-gray-300 text-xs sm:text-sm text-center">Add Donation</span>
+                    </button>
+                    <button class="flex flex-col items-center justify-center p-3 sm:p-4 bg-gray-50 dark:bg-gray-800 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors group" onclick="quickAction('Generate Report')">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center mb-2 sm:mb-3 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-file-alt text-blue-600 dark:text-blue-400 text-lg sm:text-xl"></i>
+                        </div>
+                        <span class="font-medium text-gray-700 dark:text-gray-300 text-xs sm:text-sm text-center">Generate Report</span>
+                    </button>
+                    <button class="flex flex-col items-center justify-center p-3 sm:p-4 bg-gray-50 dark:bg-gray-800 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors group" onclick="quickAction('Send Newsletter')">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center mb-2 sm:mb-3 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-envelope text-purple-600 dark:text-purple-400 text-lg sm:text-xl"></i>
+                        </div>
+                        <span class="font-medium text-gray-700 dark:text-gray-300 text-xs sm:text-sm text-center">Send Newsletter</span>
+                    </button>
+                    <button class="flex flex-col items-center justify-center p-3 sm:p-4 bg-gray-50 dark:bg-gray-800 rounded-xl hover:bg-gray-100 dark:hover:bg-gray-700 transition-colors group" onclick="quickAction('Add Volunteer')">
+                        <div class="w-10 h-10 sm:w-12 sm:h-12 rounded-xl bg-orange-100 dark:bg-orange-900/30 flex items-center justify-center mb-2 sm:mb-3 group-hover:scale-110 transition-transform">
+                            <i class="fas fa-user-plus text-orange-600 dark:text-orange-400 text-lg sm:text-xl"></i>
+                        </div>
+                        <span class="font-medium text-gray-700 dark:text-gray-300 text-xs sm:text-sm text-center">Add Volunteer</span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Recent Activity -->
+            <div class="stat-card">
+                <div class="flex items-center justify-between mb-6">
+                    <h3 class="text-lg sm:text-xl font-bold text-gray-800 dark:text-dark-text">Recent Activity</h3>
+                    <button class="text-xs sm:text-sm text-primary hover:text-primary/80 font-medium">See All</button>
+                </div>
+                <div class="space-y-4">
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-blue-100 dark:bg-blue-900/30 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-donate text-blue-600 dark:text-blue-400 text-sm"></i>
+                        </div>
+                        <div class="min-w-0">
+                            <p class="font-medium text-gray-800 dark:text-dark-text text-sm truncate">New donation received</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 truncate">From John Smith • $500 • 2 min ago</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-green-100 dark:bg-green-900/30 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-user-plus text-green-600 dark:text-green-400 text-sm"></i>
+                        </div>
+                        <div class="min-w-0">
+                            <p class="font-medium text-gray-800 dark:text-dark-text text-sm truncate">New volunteer joined</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 truncate">Lisa Martinez registered • 30 min ago</p>
+                        </div>
+                    </div>
+                    <div class="flex items-start gap-3">
+                        <div class="w-8 h-8 sm:w-10 sm:h-10 rounded-xl bg-purple-100 dark:bg-purple-900/30 flex items-center justify-center flex-shrink-0">
+                            <i class="fas fa-project-diagram text-purple-600 dark:text-purple-400 text-sm"></i>
+                        </div>
+                        <div class="min-w-0">
+                            <p class="font-medium text-gray-800 dark:text-dark-text text-sm truncate">Project milestone reached</p>
+                            <p class="text-xs text-gray-500 dark:text-gray-400 truncate">Education for All • 70% completed</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // DOM Elements
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const sidebar = document.querySelector('.sidebar');
+        const overlay = document.getElementById('overlay');
+        const themeToggle = document.getElementById('themeToggle');
+        const sidebarThemeToggle = document.getElementById('sidebarThemeToggle');
+        const rtlToggle = document.getElementById('rtlToggle');
+        const sidebarRtlToggle = document.getElementById('sidebarRtlToggle');
+        const homeBtn = document.getElementById('homeBtn');
+        const sidebarHomeBtn = document.getElementById('sidebarHomeBtn');
+        const logoutBtn = document.getElementById('logoutBtn');
+        const sidebarLogoutBtn = document.getElementById('sidebarLogoutBtn');
+        const htmlElement = document.documentElement;
+        const currentTime = document.getElementById('currentTime');
+        const body = document.body;
+
+        // Chart variable
+        let donationChart = null;
+
+        // Initialize current time
+        function updateTime() {
+            const now = new Date();
+            const timeString = now.toLocaleTimeString([], {hour: '2-digit', minute:'2-digit'});
+            const dateString = now.toLocaleDateString('en-US', { 
+                weekday: 'short', 
+                year: 'numeric', 
+                month: 'short', 
+                day: 'numeric' 
+            });
+            if (currentTime) {
+                currentTime.textContent = `${dateString} • ${timeString}`;
+            }
+        }
+
+        // ========== MOBILE MENU FUNCTIONALITY ==========
+        function toggleMobileMenu() {
+            sidebar.classList.toggle('active');
+            overlay.classList.toggle('active');
+            body.classList.toggle('menu-open');
+        }
+
+        if (mobileMenuBtn) {
+            mobileMenuBtn.addEventListener('click', toggleMobileMenu);
+        }
+
+        if (overlay) {
+            overlay.addEventListener('click', toggleMobileMenu);
+        }
+
+        // Close sidebar when clicking a link
+        document.querySelectorAll('.nav-item').forEach(link => {
+            link.addEventListener('click', (e) => {
+                if (window.innerWidth <= 1024 && sidebar.classList.contains('active')) {
+                    e.preventDefault();
+                    toggleMobileMenu();
+                    
+                    // Simulate navigation
+                    const icon = link.querySelector('i');
+                    const originalClass = icon.className;
+                    icon.className = 'fas fa-spinner loading';
+                    
+                    setTimeout(() => {
+                        icon.className = originalClass;
+                        document.querySelectorAll('.nav-item').forEach(item => item.classList.remove('active'));
+                        link.classList.add('active');
+                        console.log(`Navigating to: ${link.textContent.trim()}`);
+                    }, 500);
+                }
+            });
+        });
+
+        // ========== THEME TOGGLE FUNCTIONALITY ==========
+        function setTheme(theme) {
+            if (theme === 'dark') {
+                htmlElement.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+                // Update icons
+                document.querySelectorAll('.fa-moon').forEach(icon => {
+                    icon.style.display = 'none';
+                });
+                document.querySelectorAll('.fa-sun').forEach(icon => {
+                    icon.style.display = 'block';
+                });
+            } else {
+                htmlElement.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+                // Update icons
+                document.querySelectorAll('.fa-moon').forEach(icon => {
+                    icon.style.display = 'block';
+                });
+                document.querySelectorAll('.fa-sun').forEach(icon => {
+                    icon.style.display = 'none';
+                });
+            }
+            updateChartTheme();
+        }
+
+        function toggleTheme() {
+            const isDark = htmlElement.classList.contains('dark');
+            setTheme(isDark ? 'light' : 'dark');
+        }
+
+        // Theme toggle event listeners
+        [themeToggle, sidebarThemeToggle].forEach(btn => {
+            if (btn) btn.addEventListener('click', toggleTheme);
+        });
+
+        // ========== RTL TOGGLE FUNCTIONALITY ==========
+        function setDirection(direction) {
+            htmlElement.dir = direction;
+            localStorage.setItem('text-direction', direction);
+            
+            // Update icon
+            const icon = direction === 'rtl' ? 'fa-language' : 'fa-globe';
+            document.querySelectorAll('#rtlToggle i, #sidebarRtlToggle i').forEach(el => {
+                el.className = `fas ${icon}`;
+            });
+        }
+
+        function toggleDirection() {
+            const currentDirection = htmlElement.dir || 'ltr';
+            setDirection(currentDirection === 'rtl' ? 'ltr' : 'rtl');
+        }
+
+        // RTL toggle event listeners
+        [rtlToggle, sidebarRtlToggle].forEach(btn => {
+            if (btn) btn.addEventListener('click', toggleDirection);
+        });
+
+        // ========== HOME BUTTON FUNCTIONALITY ==========
+        function goToHome() {
+            window.location.href = 'index.html';
+        }
+
+        // Home button event listeners
+        [homeBtn, sidebarHomeBtn].forEach(btn => {
+            if (btn) btn.addEventListener('click', goToHome);
+        });
+
+        // ========== LOGOUT FUNCTIONALITY ==========
+        function logout() {
+            if (confirm('Are you sure you want to logout?')) {
+                // Show loading
+                const logoutBtns = [logoutBtn, sidebarLogoutBtn];
+                logoutBtns.forEach(btn => {
+                    if (btn) {
+                        const icon = btn.querySelector('i');
+                        if (icon) {
+                            icon.className = 'fas fa-spinner loading';
+                        }
+                    }
+                });
+                
+                setTimeout(() => {
+                    localStorage.removeItem('theme');
+                    localStorage.removeItem('text-direction');
+                    window.location.href = 'Login.html';
+                }, 1000);
+            }
+        }
+
+        // Logout event listeners
+        [logoutBtn, sidebarLogoutBtn].forEach(btn => {
+            if (btn) btn.addEventListener('click', logout);
+        });
+
+        // ========== INITIALIZE ON LOAD ==========
+        document.addEventListener('DOMContentLoaded', function() {
+            // Set initial time and update every minute
+            updateTime();
+            setInterval(updateTime, 60000);
+
+            // Load saved theme
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                setTheme(savedTheme);
+            } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                setTheme('dark');
+            }
+
+            // Load saved direction
+            const savedDirection = localStorage.getItem('text-direction');
+            if (savedDirection) {
+                setDirection(savedDirection);
+            }
+
+            // Initialize chart
+            initChart();
+            
+            // Set up chart period buttons
+            setupChartPeriodButtons();
+        });
+
+        // ========== CHART.JS FUNCTIONALITY ==========
+        function initChart() {
+            const ctx = document.getElementById('donationChart');
+            if (!ctx) return;
+            
+            const canvasCtx = ctx.getContext('2d');
+            if (donationChart) {
+                donationChart.destroy();
+            }
+            
+            const isDark = htmlElement.classList.contains('dark');
+            const gridColor = isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.05)';
+            const textColor = isDark ? '#cbd5e1' : '#334155';
+            
+            donationChart = new Chart(canvasCtx, {
+                type: 'line',
+                data: {
+                    labels: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
+                    datasets: [{
+                        label: 'Donations ($)',
+                        data: [8500, 9200, 7800, 10500, 12000, 11000, 13500, 12800, 14200, 15000, 16500, 18000],
+                        borderColor: '#4A90E2',
+                        backgroundColor: 'rgba(74, 144, 226, 0.1)',
+                        borderWidth: 2,
+                        fill: true,
+                        tension: 0.4,
+                        pointBackgroundColor: '#4A90E2',
+                        pointBorderColor: '#ffffff',
+                        pointBorderWidth: 2,
+                        pointRadius: 3,
+                        pointHoverRadius: 5
+                    }]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: {
+                            display: false
+                        },
+                        tooltip: {
+                            backgroundColor: isDark ? '#1e293b' : '#ffffff',
+                            titleColor: textColor,
+                            bodyColor: textColor,
+                            borderColor: gridColor,
+                            borderWidth: 1,
+                            padding: 10,
+                            boxPadding: 5,
+                            callbacks: {
+                                label: function(context) {
+                                    return `$${context.parsed.y.toLocaleString()}`;
+                                }
+                            }
+                        }
+                    },
+                    scales: {
+                        y: {
+                            beginAtZero: true,
+                            grid: {
+                                color: gridColor,
+                                drawBorder: false
+                            },
+                            ticks: {
+                                color: textColor,
+                                callback: function(value) {
+                                    return '$' + value.toLocaleString();
+                                },
+                                font: {
+                                    size: window.innerWidth < 640 ? 10 : 11
+                                }
+                            }
+                        },
+                        x: {
+                            grid: {
+                                color: gridColor,
+                                drawBorder: false
+                            },
+                            ticks: {
+                                color: textColor,
+                                font: {
+                                    size: window.innerWidth < 640 ? 10 : 11
+                                }
+                            }
+                        }
+                    }
+                }
+            });
+        }
+
+        function updateChartTheme() {
+            if (!donationChart) return;
+            
+            const isDark = htmlElement.classList.contains('dark');
+            const gridColor = isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.05)';
+            const textColor = isDark ? '#cbd5e1' : '#334155';
+            
+            donationChart.options.scales.x.grid.color = gridColor;
+            donationChart.options.scales.x.ticks.color = textColor;
+            donationChart.options.scales.y.grid.color = gridColor;
+            donationChart.options.scales.y.ticks.color = textColor;
+            donationChart.options.plugins.tooltip.backgroundColor = isDark ? '#1e293b' : '#ffffff';
+            donationChart.options.plugins.tooltip.titleColor = textColor;
+            donationChart.options.plugins.tooltip.bodyColor = textColor;
+            donationChart.options.plugins.tooltip.borderColor = gridColor;
+            
+            // Update font sizes for mobile
+            const fontSize = window.innerWidth < 640 ? 10 : 11;
+            donationChart.options.scales.x.ticks.font.size = fontSize;
+            donationChart.options.scales.y.ticks.font.size = fontSize;
+            
+            donationChart.update('none');
+        }
+
+        // ========== CHART PERIOD BUTTONS ==========
+        function setupChartPeriodButtons() {
+            const buttons = document.querySelectorAll('.chart-period-btn');
+            buttons.forEach(button => {
+                button.addEventListener('click', function() {
+                    // Remove active class from all buttons
+                    buttons.forEach(btn => btn.classList.remove('active'));
+                    // Add active class to clicked button
+                    this.classList.add('active');
+                    
+                    const period = this.textContent;
+                    alert(`Switching to ${period} view...`);
+                });
+            });
+        }
+
+        // ========== TABLE BUTTONS ==========
+        document.querySelectorAll('.view-donation').forEach(button => {
+            button.addEventListener('click', function() {
+                const row = this.closest('tr');
+                const donor = row.querySelector('td:nth-child(1) .font-medium').textContent;
+                const amount = row.querySelector('td:nth-child(2)').textContent;
+                alert(`Viewing donation details:\n\nDonor: ${donor}\nAmount: ${amount}`);
+            });
+        });
+
+        document.querySelectorAll('.process-donation').forEach(button => {
+            button.addEventListener('click', function() {
+                const row = this.closest('tr');
+                const donor = row.querySelector('td:nth-child(1) .font-medium').textContent;
+                
+                if (confirm(`Process donation from ${donor}?`)) {
+                    const originalText = this.textContent;
+                    this.textContent = 'Processing...';
+                    this.disabled = true;
+                    
+                    setTimeout(() => {
+                        this.textContent = 'View';
+                        this.disabled = false;
+                        this.className = 'btn-success text-xs sm:text-sm';
+                        
+                        // Update status
+                        const statusCell = row.querySelector('td:nth-child(4)');
+                        if (statusCell) {
+                            statusCell.innerHTML = '<span class="status-badge status-active">Completed</span>';
+                        }
+                        
+                        alert(`Donation from ${donor} processed successfully!`);
+                    }, 1500);
+                }
+            });
+        });
+
+        // ========== QUICK ACTIONS ==========
+        function quickAction(action) {
+            const actions = {
+                'Add Donation': 'Opening donation form...',
+                'Generate Report': 'Generating report...',
+                'Send Newsletter': 'Preparing newsletter...',
+                'Add Volunteer': 'Opening volunteer form...'
+            };
+            
+            if (actions[action]) {
+                alert(actions[action]);
+            }
+        }
+
+        // ========== WINDOW RESIZE ==========
+        window.addEventListener('resize', function() {
+            if (donationChart) {
+                donationChart.resize();
+            }
+            
+            // Close sidebar on desktop
+            if (window.innerWidth > 1024 && sidebar.classList.contains('active')) {
+                toggleMobileMenu();
+            }
+            
+            // Update chart font sizes
+            if (donationChart) {
+                const fontSize = window.innerWidth < 640 ? 10 : 11;
+                donationChart.options.scales.x.ticks.font.size = fontSize;
+                donationChart.options.scales.y.ticks.font.size = fontSize;
+                donationChart.update();
+            }
+        });
+
+        // Listen for system theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            if (!localStorage.getItem('theme')) {
+                setTheme(e.matches ? 'dark' : 'light');
+            }
+        });
+
+        console.log('Dashboard loaded successfully!');
+    </script>
+</body>
+</html>

@@ -1,0 +1,1355 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Groww Charity- Page not found. The page you're looking for doesn't exist or has been moved.">
+    <title>Groww Charity | 404</title>
+    <link rel="icon" type="image/jpeg" href="images/growwpark_logo.jpg">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Add Arabic font for RTL support -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    screens: {
+                        'sm': '640px',
+                        'md': '768px',
+                        'lg': '1024px',
+                        'xl': '1280px',
+                        '2xl': '1536px',
+                    },
+                    colors: {
+                        'earth': '#8B4513',
+                        'sage': '#90A955',
+                        'sky': '#4A90E2',
+                        'sun': '#FFB347',
+                        'clay': '#D2691E',
+                        'ocean': '#2E8B57',
+                        'storm': '#4682B4',
+                        'sand': '#F4A460',
+                        'dark-bg': '#0f172a',
+                        'dark-card': '#1e293b',
+                        'dark-text': '#cbd5e1',
+                        'green-primary': '#0de292',
+                        'green-dark': '#0bc578'
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Nunito', 'sans-serif'],
+                        'arabic': ['Amiri', 'serif'],
+                    },
+                    animation: {
+                        'wave': 'wave 8s linear infinite',
+                        'ripple': 'ripple 3s linear infinite',
+                        'float-slow': 'float-slow 6s ease-in-out infinite',
+                        'pulse-gentle': 'pulse-gentle 4s ease-in-out infinite',
+                        'slide-in': 'slideIn 0.8s ease-out forwards',
+                        'fade-up': 'fadeUp 1s ease-out forwards',
+                        'bounce-gentle': 'bounceGentle 2s infinite'
+                    },
+                    keyframes: {
+                        wave: {
+                            '0%': { transform: 'translateX(0) translateY(0) rotate(0deg)' },
+                            '50%': { transform: 'translateX(-25px) translateY(-10px) rotate(2deg)' },
+                            '100%': { transform: 'translateX(0) translateY(0) rotate(0deg)' }
+                        },
+                        ripple: {
+                            '0%': { transform: 'scale(1)', opacity: '1' },
+                            '100%': { transform: 'scale(1.5)', opacity: '0' }
+                        },
+                        'float-slow': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        'pulse-gentle': {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0.7' }
+                        },
+                        slideIn: {
+                            '0%': { transform: 'translateX(-100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' }
+                        },
+                        fadeUp: {
+                            '0%': { transform: 'translateY(30px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        },
+                        bounceGentle: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-10px)' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        body.dark {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #cbd5e1;
+        }
+        
+        .error-gradient {
+            background: linear-gradient(135deg, 
+                rgba(144, 169, 85, 0.1) 0%, 
+                rgba(74, 144, 226, 0.1) 50%, 
+                rgba(46, 139, 87, 0.1) 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .dark .error-gradient {
+            background: linear-gradient(135deg, 
+                rgba(144, 169, 85, 0.15) 0%, 
+                rgba(74, 144, 226, 0.15) 50%, 
+                rgba(46, 139, 87, 0.15) 100%);
+        }
+        
+        .error-wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 300%;
+            height: 150px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="0.2" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            animation: wave 25s linear infinite;
+        }
+        
+        .dark .error-wave {
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%230f172a" fill-opacity="0.2" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+        }
+        
+        .error-card {
+            background: white;
+            border-radius: 30px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+            position: relative;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .dark .error-card {
+            background: #1e293b;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .error-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.15);
+        }
+        
+        .dark .error-card:hover {
+            box-shadow: 0 30px 80px rgba(0, 0, 0, 0.4);
+        }
+        
+        .error-number {
+            font-family: 'Playfair Display', serif;
+            font-size: 12rem;
+            font-weight: 900;
+            line-height: 1;
+            background: linear-gradient(135deg, #4A90E2, #2E8B57, #90A955);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .dark .error-number {
+            background: linear-gradient(135deg, #4A90E2, #2E8B57, #FFB347);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+        
+        .error-number::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(135deg, rgba(74, 144, 226, 0.1), rgba(46, 139, 87, 0.1), rgba(144, 169, 85, 0.1));
+            filter: blur(20px);
+            z-index: -1;
+            border-radius: 50%;
+        }
+        
+        /* UPDATED BUTTON STYLES WITH #0de292 COLOR - ONLY FOR ERROR PAGE BUTTONS */
+        .btn-error {
+            background: linear-gradient(135deg, #0de292 0%, #0bc578 100%);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .btn-error::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0bc578 0%, #0de292 100%);
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+        
+        .btn-error:hover::before {
+            left: 0;
+        }
+        
+        .btn-error:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(13, 226, 146, 0.3);
+        }
+        
+        .dark .btn-error:hover {
+            box-shadow: 0 15px 30px rgba(13, 226, 146, 0.5);
+        }
+        
+        /* Control buttons container */
+        .control-buttons {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 100;
+        }
+        
+        @media (max-width: 768px) {
+            .control-buttons {
+                top: 15px;
+                right: 15px;
+                flex-direction: column;
+                align-items: flex-end;
+            }
+        }
+        
+        /* Control button styles - REDUCED SIZE */
+        .control-btn {
+            background: white;
+            border: none;
+            border-radius: 50%;
+            width: 45px;
+            height: 45px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            color: #4A90E2;
+        }
+        
+        .dark .control-btn {
+            background: #1e293b;
+            color: #cbd5e1;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .control-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .dark .control-btn:hover {
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+        }
+        
+        .control-btn i {
+            font-size: 1.1rem;
+        }
+        
+        /* Back home button - REDUCED SIZE */
+        .back-home-btn {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: linear-gradient(135deg, #0de292 0%, #0bc578 100%);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
+            box-shadow: 0 5px 15px rgba(13, 226, 146, 0.2);
+            z-index: 100;
+            font-size: 0.9rem;
+        }
+        
+        .dark .back-home-btn {
+            box-shadow: 0 5px 15px rgba(13, 226, 146, 0.3);
+        }
+        
+        .back-home-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(13, 226, 146, 0.3);
+        }
+        
+        .dark .back-home-btn:hover {
+            box-shadow: 0 8px 20px rgba(13, 226, 146, 0.4);
+        }
+        
+        @media (max-width: 768px) {
+            .back-home-btn {
+                top: 15px;
+                left: 15px;
+                padding: 8px 16px;
+                font-size: 0.85rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .back-home-btn {
+                padding: 6px 12px;
+                font-size: 0.8rem;
+            }
+            
+            .control-btn {
+                width: 40px;
+                height: 40px;
+            }
+        }
+        
+        .floating-elements .element {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: float-slow ease-in-out infinite;
+        }
+        
+        .observable {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .observable.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* COMPREHENSIVE RTL SUPPORT STYLES */
+        body.rtl-mode {
+            direction: rtl;
+            text-align: right;
+        }
+        
+        body.rtl-mode .text-left {
+            text-align: right !important;
+        }
+        
+        body.rtl-mode .text-right {
+            text-align: left !important;
+        }
+        
+        body.rtl-mode .text-center {
+            text-align: center !important;
+        }
+        
+        body.rtl-mode .ml-auto {
+            margin-left: 0 !important;
+            margin-right: auto !important;
+        }
+        
+        body.rtl-mode .mr-auto {
+            margin-right: 0 !important;
+            margin-left: auto !important;
+        }
+        
+        body.rtl-mode .space-x-3 > :not([hidden]) ~ :not([hidden]) {
+            margin-left: 0 !important;
+            margin-right: 0.75rem !important;
+        }
+        
+        body.rtl-mode .space-x-4 > :not([hidden]) ~ :not([hidden]) {
+            margin-left: 0 !important;
+            margin-right: 1rem !important;
+        }
+        
+        body.rtl-mode .space-x-8 > :not([hidden]) ~ :not([hidden]) {
+            margin-left: 0 !important;
+            margin-right: 2rem !important;
+        }
+        
+        body.rtl-mode .flex-row {
+            flex-direction: row-reverse !important;
+        }
+        
+        body.rtl-mode .flex-row-reverse {
+            flex-direction: row !important;
+        }
+        
+        /* Fix for flex items with margins in RTL */
+        body.rtl-mode .flex.items-start .mr-3 {
+            margin-right: 0 !important;
+            margin-left: 0.75rem !important;
+        }
+        
+        body.rtl-mode .quick-link .quick-link-icon {
+            margin-right: 0 !important;
+            margin-left: 15px !important;
+        }
+        
+        body.rtl-mode .btn-error i.mr-3 {
+            margin-right: 0 !important;
+            margin-left: 0.75rem !important;
+        }
+        
+        /* Control buttons position in RTL */
+        body.rtl-mode .control-buttons {
+            right: auto;
+            left: 20px;
+        }
+        
+        body.rtl-mode .back-home-btn {
+            left: auto;
+            right: 20px;
+        }
+        
+        body.rtl-mode .back-home-btn i {
+            order: 1;
+            margin-left: 8px;
+            margin-right: 0;
+        }
+        
+        /* Fix for search box in RTL */
+        body.rtl-mode .search-box .search-button {
+            right: auto;
+            left: 5px;
+        }
+        
+        body.rtl-mode .search-input {
+            padding-left: 60px;
+            padding-right: 20px;
+        }
+        
+        /* Grid adjustments for RTL */
+        body.rtl-mode .grid-cols-2 > *:nth-child(odd) {
+            order: 2;
+        }
+        
+        body.rtl-mode .grid-cols-2 > *:nth-child(even) {
+            order: 1;
+        }
+        
+        /* Fix for floating elements in RTL */
+        body.rtl-mode .floating-elements .element.-left-10 {
+            left: auto;
+            right: -10px;
+        }
+        
+        body.rtl-mode .floating-elements .element.right-1\/4 {
+            right: auto;
+            left: 25%;
+        }
+        
+        body.rtl-mode .floating-elements .element.left-1\/3 {
+            left: auto;
+            right: 33.333%;
+        }
+        
+        /* Dark mode styles for sections */
+        .dark section.bg-white {
+            background-color: #0f172a;
+            color: #cbd5e1;
+        }
+        
+        .dark section.bg-gray-50 {
+            background-color: #1e293b;
+        }
+        
+        .dark .bg-gray-50 {
+            background-color: #1e293b;
+        }
+        
+        .dark .bg-white {
+            background-color: #1e293b;
+            color: #cbd5e1;
+        }
+        
+        .dark .text-gray-600 {
+            color: #94a3b8;
+        }
+        
+        .dark .text-gray-700 {
+            color: #cbd5e1;
+        }
+        
+        .dark .text-gray-800 {
+            color: #e2e8f0;
+        }
+        
+        .dark .border-gray-100 {
+            border-color: #334155;
+        }
+        
+        .dark .border-gray-300 {
+            border-color: #475569;
+        }
+        
+        .dark .bg-gray-900 {
+            background-color: #0f172a;
+        }
+        
+        .dark .bg-gray-800 {
+            background-color: #1e293b;
+        }
+        
+        .dark .text-gray-400 {
+            color: #94a3b8;
+        }
+        
+        .dark .text-gray-500 {
+            color: #94a3b8;
+        }
+        
+        .dark .border-gray-800 {
+            border-color: #334155;
+        }
+        
+        .dark .shadow-lg {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+        
+        .dark .shadow-xl {
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.5);
+        }
+        
+        .dark .shadow-sm {
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Dark mode toggle button */
+        .theme-toggle {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .theme-toggle:hover {
+            background: rgba(0, 0, 0, 0.1);
+        }
+        
+        .dark .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .theme-toggle i {
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+        }
+        
+        .dark .theme-toggle i.fa-sun {
+            display: block;
+        }
+        
+        .dark .theme-toggle i.fa-moon {
+            display: none;
+        }
+        
+        .theme-toggle i.fa-sun {
+            display: none;
+            color: #FFB347;
+        }
+        
+        .theme-toggle i.fa-moon {
+            display: block;
+            color: #4A90E2;
+        }
+        
+        .dark .theme-toggle i.fa-sun {
+            display: block;
+        }
+        
+        .dark .theme-toggle i.fa-moon {
+            display: none;
+        }
+        
+        /* Fix for floating elements in dark mode */
+        .dark .floating-elements .element {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        /* Error page specific styles */
+        .error-icon {
+            font-size: 5rem;
+            color: #4A90E2;
+            margin-bottom: 2rem;
+            animation: bounceGentle 2s infinite;
+        }
+        
+        .dark .error-icon {
+            color: #4A90E2;
+        }
+        
+        .search-box {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto;
+        }
+        
+        .search-input {
+            width: 100%;
+            padding: 16px 20px;
+            padding-right: 60px;
+            border-radius: 50px;
+            border: 2px solid #e9ecef;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .dark .search-input {
+            background: #1e293b;
+            border-color: #334155;
+            color: #cbd5e1;
+        }
+        
+        .search-input:focus {
+            outline: none;
+            border-color: #4A90E2;
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1);
+        }
+        
+        .search-button {
+            position: absolute;
+            right: 5px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: #4A90E2;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .search-button:hover {
+            background: #3a80d2;
+            transform: translateY(-50%) scale(1.05);
+        }
+        
+        .quick-link {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            color: #333;
+        }
+        
+        .dark .quick-link {
+            background: #1e293b;
+            color: #cbd5e1;
+        }
+        
+        .quick-link:hover {
+            transform: translateY(-5px);
+            background: #e9ecef;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .dark .quick-link:hover {
+            background: #2d3748;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .quick-link-icon {
+            width: 40px;
+            height: 40px;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .error-animation {
+            position: relative;
+            width: 300px;
+            height: 300px;
+            margin: 0 auto;
+        }
+        
+        .error-circle {
+            position: absolute;
+            border-radius: 50%;
+            opacity: 0.1;
+        }
+        
+        .error-circle-1 {
+            width: 300px;
+            height: 300px;
+            background: #4A90E2;
+            top: 0;
+            left: 0;
+            animation: pulse-gentle 4s infinite;
+        }
+        
+        .error-circle-2 {
+            width: 200px;
+            height: 200px;
+            background: #2E8B57;
+            top: 50px;
+            left: 50px;
+            animation: pulse-gentle 4s infinite 0.5s;
+        }
+        
+        .error-circle-3 {
+            width: 100px;
+            height: 100px;
+            background: #FFB347;
+            top: 100px;
+            left: 100px;
+            animation: pulse-gentle 4s infinite 1s;
+        }
+        
+        .error-404 {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            font-size: 80px;
+            font-weight: 900;
+            color: #4A90E2;
+            z-index: 10;
+        }
+        
+        .dark .error-404 {
+            color: #4A90E2;
+        }
+        
+        .error-content {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .main-content {
+            flex-grow: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+        }
+        
+        /* Tablet responsive styles */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            .error-card {
+                margin: 2rem;
+            }
+            
+            .error-number {
+                font-size: 10rem;
+            }
+            
+            .error-animation {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .error-circle-1 {
+                width: 250px;
+                height: 250px;
+            }
+            
+            .error-circle-2 {
+                width: 170px;
+                height: 170px;
+                top: 40px;
+                left: 40px;
+            }
+            
+            .error-circle-3 {
+                width: 90px;
+                height: 90px;
+                top: 80px;
+                left: 80px;
+            }
+            
+            .error-404 {
+                font-size: 70px;
+            }
+            
+            .grid-cols-2 {
+                grid-template-columns: 1fr;
+            }
+            
+            .quick-link {
+                padding: 12px 16px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .error-card {
+                margin: 1rem;
+                padding: 2rem;
+            }
+            
+            .error-number {
+                font-size: 8rem;
+            }
+            
+            .error-animation {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .error-circle-1 {
+                width: 200px;
+                height: 200px;
+            }
+            
+            .error-circle-2 {
+                width: 130px;
+                height: 130px;
+                top: 35px;
+                left: 35px;
+            }
+            
+            .error-circle-3 {
+                width: 70px;
+                height: 70px;
+                top: 65px;
+                left: 65px;
+            }
+            
+            .error-404 {
+                font-size: 50px;
+            }
+            
+            .grid-cols-2, .grid-cols-4 {
+                grid-template-columns: 1fr;
+            }
+            
+            .quick-link {
+                padding: 12px 16px;
+            }
+            
+            .control-buttons {
+                top: 80px;
+            }
+            
+            .back-home-btn {
+                top: 80px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .error-card {
+                padding: 1.5rem;
+                margin: 0.5rem;
+            }
+            
+            .error-number {
+                font-size: 6rem;
+            }
+            
+            .error-animation {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .error-circle-1 {
+                width: 150px;
+                height: 150px;
+            }
+            
+            .error-circle-2 {
+                width: 100px;
+                height: 100px;
+                top: 25px;
+                left: 25px;
+            }
+            
+            .error-circle-3 {
+                width: 50px;
+                height: 50px;
+                top: 50px;
+                left: 50px;
+            }
+            
+            .error-404 {
+                font-size: 40px;
+            }
+            
+            .btn-error {
+                padding: 12px 24px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+    <!-- Control buttons (Dark mode, RTL, Back to home) -->
+    <div class="control-buttons">
+        <button id="themeToggle" class="control-btn theme-toggle" title="Toggle Dark Mode">
+            <i class="fas fa-moon"></i>
+            <i class="fas fa-sun"></i>
+        </button>
+        
+        <button id="rtl-toggle" class="control-btn" title="Toggle Right-to-Left Mode">
+            <i class="fas fa-globe"></i>
+        </button>
+    </div>
+    
+    <!-- Back to Home Button - SIZE REDUCED -->
+    <a href="index.html" class="back-home-btn">
+        <i class="fas fa-arrow-left"></i>
+        Back to Home
+    </a>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <!-- Error Hero Section -->
+        <section class="error-gradient w-full py-12 md:py-20 relative overflow-hidden">
+            <div class="floating-elements">
+                <div class="element w-24 h-24 -top-10 -left-10 animate-float-slow"></div>
+                <div class="element w-16 h-16 top-1/4 right-1/4 animate-float-slow" style="animation-delay: 1000ms"></div>
+                <div class="element w-20 h-20 bottom-1/4 left-1/3 animate-float-slow" style="animation-delay: 2000ms"></div>
+            </div>
+            
+            <div class="container mx-auto px-4 tablet-px-6 relative z-10">
+                <div class="max-w-6xl mx-auto">
+                    <div class="error-card p-8 md:p-12 observable">
+                        <div class="text-center mb-10">
+                            <!-- Animated 404 -->
+                            <div class="error-animation mb-10">
+                                <div class="error-circle error-circle-1"></div>
+                                <div class="error-circle error-circle-2"></div>
+                                <div class="error-circle error-circle-3"></div>
+                                <div class="error-404">404</div>
+                            </div>
+                            
+                            <h1 class="font-serif text-4xl md:text-5xl font-bold mb-6 dark:text-dark-text">Page Not Found</h1>
+                            <p class="text-xl text-gray-600 mb-8 max-w-2xl mx-auto dark:text-gray-400">
+                                The page you're looking for doesn't exist or has been moved. Don't worry - you can find your way back to our mission of creating hope for all.
+                            </p>
+                            
+                            <div class="error-icon">
+                                <i class="fas fa-compass"></i>
+                            </div>
+                        </div>
+                        
+                        <div class="grid md:grid-cols-2 gap-8 mb-12">
+                            <div>
+                                <h3 class="text-2xl font-bold mb-6 dark:text-dark-text">What might have happened?</h3>
+                                <ul class="space-y-4">
+                                    <li class="flex items-start">
+                                        <div class="w-8 h-8 rounded-full bg-sky/20 flex items-center justify-center mr-3 flex-shrink-0">
+                                            <i class="fas fa-link text-sky"></i>
+                                        </div>
+                                        <p class="text-gray-600 dark:text-gray-400">The page may have been moved or renamed</p>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="w-8 h-8 rounded-full bg-ocean/20 flex items-center justify-center mr-3 flex-shrink-0">
+                                            <i class="fas fa-backspace text-ocean"></i>
+                                        </div>
+                                        <p class="text-gray-600 dark:text-gray-400">You might have typed the URL incorrectly</p>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="w-8 h-8 rounded-full bg-sage/20 flex items-center justify-center mr-3 flex-shrink-0">
+                                            <i class="fas fa-history text-sage"></i>
+                                        </div>
+                                        <p class="text-gray-600 dark:text-gray-400">The page could be temporarily unavailable</p>
+                                    </li>
+                                </ul>
+                            </div>
+                            
+                            <div>
+                                <h3 class="text-2xl font-bold mb-6 dark:text-dark-text">How to find what you need?</h3>
+                                <ul class="space-y-4">
+                                    <li class="flex items-start">
+                                        <div class="w-8 h-8 rounded-full bg-sun/20 flex items-center justify-center mr-3 flex-shrink-0">
+                                            <i class="fas fa-search text-clay"></i>
+                                        </div>
+                                        <p class="text-gray-600 dark:text-gray-400">Use the search bar below to find specific content</p>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="w-8 h-8 rounded-full bg-storm/20 flex items-center justify-center mr-3 flex-shrink-0">
+                                            <i class="fas fa-home text-storm"></i>
+                                        </div>
+                                        <p class="text-gray-600 dark:text-gray-400">Return to our homepage and navigate from there</p>
+                                    </li>
+                                    <li class="flex items-start">
+                                        <div class="w-8 h-8 rounded-full bg-earth/20 flex items-center justify-center mr-3 flex-shrink-0">
+                                            <i class="fas fa-envelope text-earth"></i>
+                                        </div>
+                                        <p class="text-gray-600 dark:text-gray-400">Contact our support team for assistance</p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        
+                        <!-- Search Bar -->
+                        <div class="mb-12">
+                            <h3 class="text-2xl font-bold mb-6 text-center dark:text-dark-text">Search Our Website</h3>
+                            <div class="search-box">
+                                <input type="text" class="search-input" placeholder="What are you looking for?">
+                                <button class="search-button">
+                                    <i class="fas fa-search"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <!-- Quick Links -->
+                        <div class="mb-12">
+                            <h3 class="text-2xl font-bold mb-6 text-center dark:text-dark-text">Quick Links to Get You Back on Track</h3>
+                            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-4">
+                                <a href="index.html" class="quick-link">
+                                    <div class="quick-link-icon bg-sky/20 text-sky">
+                                        <i class="fas fa-home"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold dark:text-dark-text">Home</h4>
+                                        <p class="text-sm text-gray-500 dark:text-gray-400">Return to homepage</p>
+                                    </div>
+                                </a>
+                                
+                                <a href="Service.html" class="quick-link">
+                                    <div class="quick-link-icon bg-ocean/20 text-ocean">
+                                        <i class="fas fa-hands-helping"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold dark:text-dark-text">Our Services</h4>
+                                        <p class="text-sm text-gray-500 dark:text-gray-400">Explore our programs</p>
+                                    </div>
+                                </a>
+                                
+                                <a href="Mission.html" class="quick-link">
+                                    <div class="quick-link-icon bg-sage/20 text-sage">
+                                        <i class="fas fa-bullseye"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold dark:text-dark-text">Our Mission</h4>
+                                        <p class="text-sm text-gray-500 dark:text-gray-400">Learn about our purpose</p>
+                                    </div>
+                                </a>
+                                
+                                <a href="Contact.html" class="quick-link">
+                                    <div class="quick-link-icon bg-sun/20 text-clay">
+                                        <i class="fas fa-envelope"></i>
+                                    </div>
+                                    <div>
+                                        <h4 class="font-bold dark:text-dark-text">Contact Us</h4>
+                                        <p class="text-sm text-gray-500 dark:text-gray-400">Get in touch with us</p>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- CTA Buttons -->
+                        <div class="flex flex-col sm:flex-row gap-4 justify-center">
+                            <a href="index.html" class="btn-error inline-flex items-center justify-center">
+                                <i class="fas fa-home mr-3"></i>
+                                Return to Homepage
+                            </a>
+
+                            <a href="Contact.html" class="btn-error inline-flex items-center justify-center">
+                                <i class="fas fa-life-ring mr-3"></i>
+                                Get Help & Support
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="error-wave"></div>
+        </section>
+    </main>
+
+    <script>
+        // ========== THEME TOGGLE FUNCTIONALITY ==========
+        const themeToggle = document.getElementById('themeToggle');
+
+        // Function to set theme
+        function setTheme(theme) {
+            if (theme === 'dark') {
+                document.documentElement.classList.add('dark');
+                document.body.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+                document.body.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Function to toggle theme
+        function toggleTheme() {
+            const isDark = document.documentElement.classList.contains('dark');
+            setTheme(isDark ? 'light' : 'dark');
+        }
+
+        // Event listeners for theme toggle button
+        if (themeToggle) {
+            themeToggle.addEventListener('click', toggleTheme);
+        }
+
+        // Load saved theme on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                setTheme(savedTheme);
+            } else {
+                // Check for system preference
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    setTheme('dark');
+                }
+            }
+        });
+
+        // Listen for system theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            if (!localStorage.getItem('theme')) {
+                setTheme(e.matches ? 'dark' : 'light');
+            }
+        });
+
+        // ========== RTL TOGGLE FUNCTIONALITY - COMPLETE PAGE LAYOUT ==========
+        const rtlToggle = document.getElementById('rtl-toggle');
+        const bodyElement = document.body;
+
+        // Function to set RTL mode
+        function setRTLMode(isRTL) {
+            if (isRTL) {
+                bodyElement.classList.add('rtl-mode');
+                document.documentElement.dir = 'rtl';
+                localStorage.setItem('rtl-mode', 'true');
+                
+                // Update icon and tooltip
+                if (rtlToggle) {
+                    const icon = rtlToggle.querySelector('i');
+                    if (icon) {
+                        icon.className = 'fas fa-exchange-alt';
+                        rtlToggle.title = 'Switch to LTR (Left-to-Right)';
+                    }
+                }
+            } else {
+                bodyElement.classList.remove('rtl-mode');
+                document.documentElement.dir = 'ltr';
+                localStorage.setItem('rtl-mode', 'false');
+                
+                // Update icon and tooltip
+                if (rtlToggle) {
+                    const icon = rtlToggle.querySelector('i');
+                    if (icon) {
+                        icon.className = 'fas fa-globe';
+                        rtlToggle.title = 'Switch to RTL (Right-to-Left)';
+                    }
+                }
+            }
+        }
+
+        // Toggle RTL mode on button click
+        if (rtlToggle) {
+            rtlToggle.addEventListener('click', function() {
+                const isCurrentlyRTL = bodyElement.classList.contains('rtl-mode');
+                setRTLMode(!isCurrentlyRTL);
+                
+                // Show feedback
+                const directionText = !isCurrentlyRTL ? 'Right-to-Left' : 'Left-to-Right';
+                showToast(`Page layout changed to ${directionText} mode`);
+            });
+        }
+
+        // Load saved RTL mode on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedRTLMode = localStorage.getItem('rtl-mode');
+            if (savedRTLMode === 'true') {
+                setRTLMode(true);
+            } else {
+                // Check if Arabic language is detected
+                const userLang = navigator.language || navigator.userLanguage;
+                if (userLang.startsWith('ar') || userLang.startsWith('fa') || userLang.startsWith('he')) {
+                    setRTLMode(true);
+                }
+            }
+        });
+
+        // ========== TOAST NOTIFICATION FUNCTION ==========
+        function showToast(message) {
+            // Remove existing toast if any
+            const existingToast = document.querySelector('.toast-notification');
+            if (existingToast) {
+                existingToast.remove();
+            }
+            
+            // Create toast element
+            const toast = document.createElement('div');
+            toast.className = 'toast-notification fixed bottom-4 right-4 bg-green-primary text-white px-4 py-3 rounded-lg shadow-lg z-50';
+            toast.textContent = message;
+            
+            // Add styles for the toast
+            toast.style.minWidth = '250px';
+            toast.style.textAlign = 'center';
+            toast.style.fontWeight = '500';
+            toast.style.animation = 'fadeUp 0.5s ease-out forwards';
+            
+            // Add RTL support for toast
+            if (bodyElement.classList.contains('rtl-mode')) {
+                toast.style.right = 'auto';
+                toast.style.left = '20px';
+            }
+            
+            document.body.appendChild(toast);
+            
+            // Remove toast after 3 seconds
+            setTimeout(() => {
+                toast.style.opacity = '0';
+                toast.style.transform = 'translateY(20px)';
+                toast.style.transition = 'all 0.3s ease';
+                
+                setTimeout(() => {
+                    if (toast.parentNode) {
+                        toast.parentNode.removeChild(toast);
+                    }
+                }, 300);
+            }, 3000);
+        }
+
+        // ========== SCROLL ANIMATIONS ==========
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all elements with observable classes
+        document.querySelectorAll('.observable').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Error wave animation
+        const errorWave = document.querySelector('.error-wave');
+        if (errorWave) {
+            window.addEventListener('scroll', () => {
+                const scrolled = window.pageYOffset;
+                const rate = scrolled * -0.5;
+                errorWave.style.transform = `translateX(${rate}px)`;
+            });
+        }
+        
+        // Error page specific functionality
+        // Search functionality
+        const searchInput = document.querySelector('.search-input');
+        const searchButton = document.querySelector('.search-button');
+        
+        if (searchButton && searchInput) {
+            searchButton.addEventListener('click', function() {
+                const query = searchInput.value.trim();
+                if (query) {
+                    alert(`Searching for "${query}"... You would be redirected to search results in a fully functional website.`);
+                    // In a real implementation, this would redirect to search results
+                    // window.location.href = `/search?q=${encodeURIComponent(query)}`;
+                } else {
+                    searchInput.focus();
+                }
+            });
+            
+            searchInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    searchButton.click();
+                }
+            });
+        }
+        
+        // Quick links hover effects
+        document.querySelectorAll('.quick-link').forEach(link => {
+            link.addEventListener('mouseenter', function() {
+                const icon = this.querySelector('.quick-link-icon i');
+                if (icon) {
+                    icon.style.transform = 'scale(1.1)';
+                }
+            });
+            
+            link.addEventListener('mouseleave', function() {
+                const icon = this.querySelector('.quick-link-icon i');
+                if (icon) {
+                    icon.style.transform = 'scale(1)';
+                }
+            });
+        });
+        
+        // Error animation enhancement
+        const error404 = document.querySelector('.error-404');
+        if (error404) {
+            // Add subtle pulse animation to the 404 text
+            setInterval(() => {
+                error404.style.transform = 'translate(-50%, -50%) scale(1.05)';
+                setTimeout(() => {
+                    error404.style.transform = 'translate(-50%, -50%) scale(1)';
+                }, 300);
+            }, 3000);
+        }
+        
+        // Auto focus search input on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            setTimeout(() => {
+                if (searchInput) {
+                    searchInput.focus();
+                }
+            }, 1000);
+        });
+    </script>
+</body>
+</html>

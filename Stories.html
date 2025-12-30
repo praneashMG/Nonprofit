@@ -1,0 +1,2262 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Groww Charity- Read inspiring stories of transformation and impact from communities we serve worldwide.">
+    <title>Groww Charity | Impact Stories</title>
+<link rel="icon" type="image/jpeg" href="images/growwpark_logo.jpg">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Add Arabic font for RTL support -->
+    <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+    
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    screens: {
+                        'sm': '640px',
+                        'md': '768px',
+                        'lg': '1024px',
+                        'xl': '1280px',
+                        '2xl': '1536px',
+                    },
+                    colors: {
+                        'earth': '#8B4513',
+                        'sage': '#90A955',
+                        'sky': '#4A90E2',
+                        'sun': '#FFB347',
+                        'clay': '#D2691E',
+                        'ocean': '#2E8B57',
+                        'storm': '#4682B4',
+                        'sand': '#F4A460',
+                        'dark-bg': '#0f172a',
+                        'dark-card': '#1e293b',
+                        'dark-text': '#cbd5e1',
+                        'mission-green': '#0de292',
+                        'mission-green-dark': '#0bc97a'
+                    },
+                    fontFamily: {
+                        'serif': ['Playfair Display', 'serif'],
+                        'sans': ['Nunito', 'sans-serif'],
+                        'arabic': ['Amiri', 'serif'],
+                    },
+                    animation: {
+                        'wave': 'wave 8s linear infinite',
+                        'ripple': 'ripple 3s linear infinite',
+                        'float-slow': 'float-slow 6s ease-in-out infinite',
+                        'pulse-gentle': 'pulse-gentle 4s ease-in-out infinite',
+                        'slide-in': 'slideIn 0.8s ease-out forwards',
+                        'fade-up': 'fadeUp 1s ease-out forwards'
+                    },
+                    keyframes: {
+                        wave: {
+                            '0%': { transform: 'translateX(0) translateY(0) rotate(0deg)' },
+                            '50%': { transform: 'translateX(-25px) translateY(-10px) rotate(2deg)' },
+                            '100%': { transform: 'translateX(0) translateY(0) rotate(0deg)' }
+                        },
+                        ripple: {
+                            '0%': { transform: 'scale(1)', opacity: '1' },
+                            '100%': { transform: 'scale(1.5)', opacity: '0' }
+                        },
+                        'float-slow': {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-20px)' }
+                        },
+                        'pulse-gentle': {
+                            '0%, 100%': { opacity: '1' },
+                            '50%': { opacity: '0.7' }
+                        },
+                        slideIn: {
+                            '0%': { transform: 'translateX(-100%)', opacity: '0' },
+                            '100%': { transform: 'translateX(0)', opacity: '1' }
+                        },
+                        fadeUp: {
+                            '0%': { transform: 'translateY(30px)', opacity: '0' },
+                            '100%': { transform: 'translateY(0)', opacity: '1' }
+                        }
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <style>
+        * {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Nunito', sans-serif;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            overflow-x: hidden;
+            transition: background-color 0.3s ease, color 0.3s ease;
+        }
+        
+        body.dark {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);
+            color: #cbd5e1;
+        }
+        
+        .stories-hero {
+            background: linear-gradient(135deg, 
+                rgba(144, 169, 85, 0.9) 0%, 
+                rgba(74, 144, 226, 0.85) 50%, 
+                rgba(46, 139, 87, 0.8) 100%),
+                url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .dark .stories-hero {
+            background: linear-gradient(135deg, 
+                rgba(144, 169, 85, 0.9) 0%, 
+                rgba(74, 144, 226, 0.85) 50%, 
+                rgba(46, 139, 87, 0.8) 100%),
+                url('https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .hero-wave {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 300%;
+            height: 150px;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%23ffffff" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+            animation: wave 25s linear infinite;
+        }
+        
+        .dark .hero-wave {
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320"><path fill="%230f172a" fill-opacity="1" d="M0,96L48,112C96,128,192,160,288,160C384,160,480,128,576,112C672,96,768,96,864,112C960,128,1056,160,1152,160C1248,160,1344,128,1392,112L1440,96L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path></svg>');
+        }
+        
+        .section-curve {
+            border-radius: 0 0 100px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .section-curve-reverse {
+            border-radius: 100px 0 0 0;
+        }
+        
+        .story-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+            overflow: hidden;
+            height: 100%;
+        }
+        
+        .dark .story-card {
+            background: #1e293b;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.3);
+        }
+        
+        .story-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .dark .story-card:hover {
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+        }
+        
+        .story-category {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 50px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-right: 8px;
+            margin-bottom: 8px;
+        }
+        
+        .category-education {
+            background-color: rgba(74, 144, 226, 0.1);
+            color: #4A90E2;
+        }
+        
+        .category-healthcare {
+            background-color: rgba(144, 169, 85, 0.1);
+            color: #90A955;
+        }
+        
+        .category-water {
+            background-color: rgba(46, 139, 87, 0.1);
+            color: #2E8B57;
+        }
+        
+        .category-economic {
+            background-color: rgba(255, 179, 71, 0.1);
+            color: #FFB347;
+        }
+        
+        .category-emergency {
+            background-color: rgba(212, 105, 30, 0.1);
+            color: #D2691E;
+        }
+        
+        .btn-read-more {
+            background: transparent;
+            color: #4A90E2;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid #4A90E2;
+        }
+        
+        .dark .btn-read-more {
+            color: #4A90E2;
+            border-color: #4A90E2;
+        }
+        
+        .btn-read-more:hover {
+            background: #4A90E2;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .dark .btn-read-more:hover {
+            background: #4A90E2;
+            color: white;
+        }
+        
+        /* UPDATED: New green button styles with #0de292 */
+        .btn-mission {
+            background: linear-gradient(135deg, #0de292 0%, #0bc97a 100%);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            border: none;
+        }
+        
+        .btn-mission::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0bc97a 0%, #0de292 100%);
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+        
+        .btn-mission:hover::before {
+            left: 0;
+        }
+        
+        .btn-mission:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(13, 226, 146, 0.3);
+        }
+        
+        .dark .btn-mission:hover {
+            box-shadow: 0 15px 30px rgba(13, 226, 146, 0.5);
+        }
+        
+        .btn-login {
+            background: transparent;
+            color: #4A90E2;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid #4A90E2;
+        }
+        
+        .dark .btn-login {
+            color: #4A90E2;
+            border-color: #4A90E2;
+        }
+        
+        .btn-login:hover {
+            background: #4A90E2;
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .dark .btn-login:hover {
+            background: #4A90E2;
+            color: white;
+        }
+        
+        .btn-signup {
+            background: #4A90E2;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-signup:hover {
+            background: #3a80d2;
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(74, 144, 226, 0.2);
+        }
+        
+        .dark .btn-signup:hover {
+            box-shadow: 0 10px 20px rgba(74, 144, 226, 0.4);
+        }
+        
+        .nav-link {
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: linear-gradient(90deg, #4A90E2, #2E8B57);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .dark .nav-link {
+            color: #cbd5e1;
+        }
+        
+        .floating-elements .element {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.1);
+            animation: float-slow ease-in-out infinite;
+        }
+        
+        .observable {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.8s ease;
+        }
+        
+        .observable.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        .observable-left {
+            opacity: 0;
+            transform: translateX(-50px);
+            transition: all 0.8s ease;
+        }
+        
+        .observable-left.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        .observable-right {
+            opacity: 0;
+            transform: translateX(50px);
+            transition: all 0.8s ease;
+        }
+        
+        .observable-right.visible {
+            opacity: 1;
+            transform: translateX(0);
+        }
+        
+        /* Dropdown animation */
+        .group:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        /* Custom arrow for dropdown */
+        .dropdown-arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .group:hover .dropdown-arrow {
+            transform: rotate(180deg);
+        }
+        
+        /* RTL Support Styles */
+        [dir="rtl"] .text-left { text-align: right; }
+        [dir="rtl"] .text-right { text-align: left; }
+        [dir="rtl"] .ml-auto { margin-left: 0; margin-right: auto; }
+        [dir="rtl"] .mr-auto { margin-right: 0; margin-left: auto; }
+        [dir="rtl"] .space-x-3 > :not([hidden]) ~ :not([hidden]) { margin-left: 0; margin-right: 0.75rem; }
+        [dir="rtl"] .space-x-4 > :not([hidden]) ~ :not([hidden]) { margin-left: 0; margin-right: 1rem; }
+        [dir="rtl"] .space-x-8 > :not([hidden]) ~ :not([hidden]) { margin-left: 0; margin-right: 2rem; }
+        
+        /* Adjust flex order for RTL */
+        [dir="rtl"] .flex-row-reverse { flex-direction: row-reverse; }
+        
+        /* Adjust dropdown positioning for RTL */
+        [dir="rtl"] .dropdown-content { left: auto; right: 0; }
+        
+        /* Tablet-specific styles */
+        @media (min-width: 768px) and (max-width: 1023px) {
+            /* Tablet navigation will use hamburger menu */
+            .tablet-nav {
+                display: flex;
+                align-items: center;
+                justify-content: flex-end;
+            }
+            
+            .tablet-desktop-nav {
+                display: none !important;
+            }
+            
+            /* Adjust hero section for tablet */
+            .stories-hero h1 {
+                font-size: 3.5rem !important;
+            }
+            
+            /* Adjust grid layouts for tablet */
+            .tablet-grid-1 {
+                grid-template-columns: 1fr !important;
+            }
+            
+            .tablet-grid-2 {
+                grid-template-columns: repeat(2, 1fr) !important;
+            }
+            
+            /* Adjust padding for tablet */
+            .tablet-py-16 {
+                padding-top: 4rem !important;
+                padding-bottom: 4rem !important;
+            }
+            
+            .tablet-px-6 {
+                padding-left: 1.5rem !important;
+                padding-right: 1.5rem !important;
+            }
+        }
+        
+        /* Fixed Hamburger Menu Styles */
+        #mobileMenuBtn {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            width: 24px;
+            height: 18px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: transparent;
+            border: none;
+            padding: 0;
+        }
+        
+        #mobileMenuBtn .hamburger-line {
+            width: 100%;
+            height: 2px;
+            background-color: #4682B4;
+            transition: all 0.3s ease;
+            transform-origin: left center;
+        }
+        
+        .dark #mobileMenuBtn .hamburger-line {
+            background-color: #cbd5e1;
+        }
+        
+        #mobileMenuBtn.active .hamburger-line:nth-child(1) {
+            transform: rotate(45deg) translateY(1px);
+            background-color: #4682B4;
+        }
+        
+        .dark #mobileMenuBtn.active .hamburger-line:nth-child(1) {
+            background-color: #cbd5e1;
+        }
+        
+        #mobileMenuBtn.active .hamburger-line:nth-child(2) {
+            opacity: 0;
+            transform: translateX(-10px);
+        }
+        
+        #mobileMenuBtn.active .hamburger-line:nth-child(3) {
+            transform: rotate(-45deg) translateY(-1px);
+            background-color: #4682B4;
+        }
+        
+        .dark #mobileMenuBtn.active .hamburger-line:nth-child(3) {
+            background-color: #cbd5e1;
+        }
+        
+        /* Mobile Menu Styles */
+        #mobileMenu {
+            display: none;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            position: static;
+            margin-top: 8px;
+            max-height: 80vh;
+            overflow-y: auto;
+        }
+        
+        .dark #mobileMenu {
+            background: #1e293b;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+        }
+        
+        #mobileMenu.active {
+            display: block;
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Mobile dropdown animation */
+        .mobile-dropdown-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        /* Make sure the mobile menu content has proper spacing */
+        #mobileMenu .p-6 {
+            padding: 1.5rem;
+        }
+        
+        .mobile-dropdown-content.active {
+            max-height: 200px;
+        }
+        
+        /* Prevent body scroll when menu is open */
+        body.menu-open {
+            overflow: hidden;
+        }
+        
+        /* Backdrop for mobile menu - FIXED */
+        .mobile-backdrop {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 40;
+            display: none;
+        }
+        
+        .mobile-backdrop.active {
+            display: block;
+        }
+        
+        /* Dark mode styles for sections */
+        .dark section.bg-white {
+            background-color: #0f172a;
+            color: #cbd5e1;
+        }
+        
+        .dark section.bg-gray-50 {
+            background-color: #1e293b;
+        }
+        
+        .dark .bg-gray-50 {
+            background-color: #1e293b;
+        }
+        
+        .dark .bg-white {
+            background-color: #1e293b;
+            color: #cbd5e1;
+        }
+        
+        .dark .text-gray-600 {
+            color: #94a3b8;
+        }
+        
+        .dark .text-gray-700 {
+            color: #cbd5e1;
+        }
+        
+        .dark .text-gray-800 {
+            color: #e2e8f0;
+        }
+        
+        .dark .border-gray-100 {
+            border-color: #334155;
+        }
+        
+        .dark .border-gray-300 {
+            border-color: #475569;
+        }
+        
+        .dark .bg-gray-900 {
+            background-color: #0f172a;
+        }
+        
+        .dark .bg-gray-800 {
+            background-color: #1e293b;
+        }
+        
+        .dark .text-gray-400 {
+            color: #94a3b8;
+        }
+        
+        .dark .text-gray-500 {
+            color: #94a3b8;
+        }
+        
+        .dark .border-gray-800 {
+            border-color: #334155;
+        }
+        
+        .dark .shadow-lg {
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+        }
+        
+        .dark .shadow-xl {
+            box-shadow: 0 20px 25px rgba(0, 0, 0, 0.5);
+        }
+        
+        .dark .shadow-sm {
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Dark mode toggle button */
+        .theme-toggle {
+            background: transparent;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 50%;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .theme-toggle:hover {
+            background: rgba(0, 0, 0, 0.1);
+        }
+        
+        .dark .theme-toggle:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .theme-toggle i {
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .dark .theme-toggle i.fa-sun {
+            display: block;
+        }
+        
+        .dark .theme-toggle i.fa-moon {
+            display: none;
+        }
+        
+        .theme-toggle i.fa-sun {
+            display: none;
+            color: #FFB347;
+        }
+        
+        .theme-toggle i.fa-moon {
+            display: block;
+            color: #4A90E2;
+        }
+        
+        .dark .theme-toggle i.fa-sun {
+            display: block;
+        }
+        
+        .dark .theme-toggle i.fa-moon {
+            display: none;
+        }
+        
+        /* Fix for floating elements in dark mode */
+        .dark .floating-elements .element {
+            background: rgba(255, 255, 255, 0.05);
+        }
+        
+        /* Mobile dropdown animation for dashboard */
+        #mobileDashboardDropdown {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease-out;
+        }
+        
+        #mobileDashboardDropdown.active {
+            max-height: 200px;
+        }
+        
+        /* Story Detail Modal */
+        .story-modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            padding: 20px;
+        }
+        
+        .story-modal-content {
+            background: white;
+            border-radius: 20px;
+            width: 90%;
+            max-width: 800px;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+        }
+        
+        .dark .story-modal-content {
+            background: #1e293b;
+            color: #cbd5e1;
+        }
+        
+        .story-modal-close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 10;
+            transition: all 0.3s ease;
+        }
+        
+        .story-modal-close:hover {
+            background: rgba(0, 0, 0, 0.3);
+        }
+        
+        .story-modal-img {
+            height: 300px;
+            width: 100%;
+            object-fit: cover;
+            border-radius: 20px 20px 0 0;
+        }
+        
+        /* Filter buttons */
+        .filter-btn {
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+            background: white;
+            color: #4A90E2;
+        }
+        
+        .dark .filter-btn {
+            background: #1e293b;
+            color: #cbd5e1;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background: #4A90E2;
+            color: white;
+        }
+        
+        .dark .filter-btn:hover, .dark .filter-btn.active {
+            background: #4A90E2;
+            color: white;
+        }
+        
+        /* Updated button for "Load More Stories" */
+        .btn-load-more {
+            background: linear-gradient(135deg, #0de292 0%, #0bc97a 100%);
+            color: white;
+            padding: 12px 28px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            border: none;
+        }
+        
+        .btn-load-more::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, #0bc97a 0%, #0de292 100%);
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+        
+        .btn-load-more:hover::before {
+            left: 0;
+        }
+        
+        .btn-load-more:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(13, 226, 146, 0.3);
+        }
+        
+        .dark .btn-load-more:hover {
+            box-shadow: 0 15px 30px rgba(13, 226, 146, 0.5);
+        }
+    </style>
+</head>
+<body class="text-gray-800">
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-sm dark:bg-dark-card/95">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center py-4">
+                <!-- Logo -->
+                <a href="index.html" class="flex items-center space-x-3">
+                    <div class="w-12 h-12 rounded-full bg-gradient-to-br from-sky to-ocean flex items-center justify-center">
+                        <i class="fas fa-hands-helping text-white text-xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-serif text-2xl font-bold text-storm dark:text-sky">Groww Charity</h1>
+                    </div>
+                </a>
+                
+                <!-- Desktop Navigation (hidden on tablet and mobile) -->
+                <div class="hidden xl:flex items-center space-x-6 tablet-desktop-nav">
+                    <!-- Home Dropdown -->
+                    <div class="relative group">
+                        <button class="nav-link text-gray-700 font-medium flex items-center space-x-1 focus:outline-none dark:text-dark-text">
+                            <span>Home</span>
+                            <i class="fas fa-chevron-down text-xs dropdown-arrow"></i>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 -translate-y-2 z-50 dropdown-content dark:bg-dark-card dark:border-gray-700">
+                            <div class="py-2">
+                                <a href="index.html" class="block px-4 py-3 text-gray-700 hover:bg-sky/10 hover:text-sky transition-colors flex items-center dark:text-dark-text dark:hover:bg-sky/20">
+                                    <i class="fas fa-home mr-3 text-sky"></i>
+                                    Home 1
+                                </a>
+                                <a href="Home2.html" class="block px-4 py-3 text-gray-700 hover:bg-sky/10 hover:text-sky transition-colors flex items-center dark:text-dark-text dark:hover:bg-sky/20">
+                                    <i class="fas fa-home mr-3 text-ocean"></i>
+                                    Home 2
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <a href="About.html" class="nav-link text-gray-700 font-medium dark:text-dark-text">About us</a>
+                    <a href="Mission.html" class="nav-link text-gray-700 font-medium dark:text-dark-text">Mission</a>
+                    <a href="Service.html" class="nav-link text-gray-700 font-medium dark:text-dark-text">Service</a>
+                    <a href="Pricing.html" class="nav-link text-gray-700 font-medium dark:text-dark-text">Pricing</a>
+                    <a href="Stories.html" class="text-gray-700 font-medium py-2 hover:text-sky transition-colors dark:text-dark-text dark:hover:text-sky font-bold text-sky">Stories</a>
+                    <a href="Contact.html" class="nav-link text-gray-700 font-medium dark:text-dark-text">Contact</a>
+                    
+                    <!-- Dashboard Dropdown -->
+                    <div class="relative group">
+                        <button class="nav-link text-gray-700 font-medium flex items-center space-x-1 focus:outline-none dark:text-dark-text">
+                            <span>Dashboard</span>
+                            <i class="fas fa-chevron-down text-xs dropdown-arrow"></i>
+                        </button>
+                        <div class="absolute left-0 mt-2 w-48 bg-white rounded-lg shadow-xl border border-gray-200 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 transform group-hover:translate-y-0 -translate-y-2 z-50 dropdown-content dark:bg-dark-card dark:border-gray-700">
+                            <div class="py-2">
+                                <div class="px-4 py-2 text-xs text-gray-500 dark:text-gray-400 font-semibold">Access Areas</div>
+                                <a href="Admin.html" class="block px-4 py-3 text-gray-700 hover:bg-sky/10 hover:text-sky transition-colors flex items-center dark:text-dark-text dark:hover:bg-sky/20">
+                                    <i class="fas fa-user-shield mr-3 text-sky"></i>
+                                    Admin Dashboard
+                                </a>
+                                <a href="Client.html" class="block px-4 py-3 text-gray-700 hover:bg-sky/10 hover:text-sky transition-colors flex items-center dark:text-dark-text dark:hover:bg-sky/20">
+                                    <i class="fas fa-users mr-3 text-ocean"></i>
+                                    Client Portal
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Theme Toggle Button -->
+                    <button id="themeToggle" class="theme-toggle" title="Toggle Dark Mode">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun"></i>
+                    </button>
+                    
+                    <!-- RTL Toggle Button -->
+                    <button id="rtl-toggle" class="p-2 rounded-full hover:bg-gray-100 transition-colors dark:hover:bg-gray-700" title="Toggle Text Direction">
+                        <i class="fas fa-globe text-storm dark:text-sky"></i>
+                    </button>
+                    
+                    <!-- Login/Signup Buttons -->
+                    <div class="flex items-center space-x-3">
+                        <a href="login.html" class="btn-login">
+                            <i class="fas fa-sign-in-alt mr-2"></i>Login
+                        </a>
+                        <a href="signup.html" class="btn-signup">
+                            <i class="fas fa-user-plus mr-2"></i>Sign Up
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Tablet and Mobile menu button (shows on tablet and mobile) -->
+                <div class="flex items-center space-x-4 tablet-nav xl:hidden">
+                    <!-- Theme Toggle Button for Tablet/Mobile -->
+                    <button id="themeToggleMobile" class="theme-toggle" title="Toggle Dark Mode">
+                        <i class="fas fa-moon"></i>
+                        <i class="fas fa-sun"></i>
+                    </button>
+                    
+                    <!-- RTL Toggle for Tablet/Mobile -->
+                    <button id="rtl-toggle-tablet" class="p-2 rounded-full hover:bg-gray-100 transition-colors dark:hover:bg-gray-700" title="Toggle Text Direction">
+                        <i class="fas fa-globe text-storm dark:text-sky"></i>
+                    </button>
+                    
+                    <button id="mobileMenuBtn" class="text-storm dark:text-dark-text">
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                        <span class="hamburger-line"></span>
+                    </button>
+                </div>
+            </div>
+            
+            <!-- Mobile Navigation - Shows on tablet and mobile -->
+            <div id="mobileMenu" class="xl:hidden">
+                <div class="p-6">
+                    <div class="flex flex-col space-y-4">
+                        <!-- Home dropdown in mobile -->
+                        <div class="mb-2">
+                            <div class="text-gray-700 font-medium py-2 flex items-center justify-between cursor-pointer dark:text-dark-text" id="mobileHomeBtn">
+                                <span>Home</span>
+                                <i class="fas fa-chevron-down text-sm"></i>
+                            </div>
+                            <div id="mobileHomeDropdown" class="mobile-dropdown-content pl-4 space-y-2 mt-2 border-l-2 border-sky/30">
+                                <a href="index.html" class="block text-gray-600 hover:text-sky py-2 transition-colors dark:text-gray-400 dark:hover:text-sky">Home 1</a>
+                                <a href="Home2.html" class="block text-gray-600 hover:text-sky py-2 transition-colors dark:text-gray-400 dark:hover:text-sky">Home 2</a>
+                            </div>
+                        </div>
+                        <a href="About.html" class="text-gray-700 font-medium py-2 hover:text-sky transition-colors dark:text-dark-text dark:hover:text-sky">About us</a>
+                        <a href="Mission.html" class="text-gray-700 font-medium py-2 hover:text-sky transition-colors dark:text-dark-text dark:hover:text-sky">Mission</a>
+                        <a href="Service.html" class="text-gray-700 font-medium py-2 hover:text-sky transition-colors dark:text-dark-text dark:hover:text-sky">Service</a>
+                        <a href="Pricing.html" class="text-gray-700 font-medium py-2 hover:text-sky transition-colors dark:text-dark-text dark:hover:text-sky">Pricing</a>
+                        <a href="Stories.html" class="text-gray-700 font-medium py-2 hover:text-sky transition-colors dark:text-dark-text dark:hover:text-sky font-bold text-sky">Stories</a>
+                        <a href="Contact.html" class="text-gray-700 font-medium py-2 hover:text-sky transition-colors dark:text-dark-text dark:hover:text-sky">Contact</a>
+                        
+                        <!-- Dashboard dropdown in mobile -->
+                        <div class="mb-2">
+                            <div class="text-gray-700 font-medium py-2 flex items-center justify-between cursor-pointer dark:text-dark-text" id="mobileDashboardBtn">
+                                <span>Dashboard</span>
+                                <i class="fas fa-chevron-down text-sm"></i>
+                            </div>
+                            <div id="mobileDashboardDropdown" class="mobile-dropdown-content pl-4 space-y-2 mt-2 border-l-2 border-sky/30">
+                                <a href="Admin.html" class="block text-gray-600 hover:text-sky py-2 transition-colors dark:text-gray-400 dark:hover:text-sky">Admin Dashboard</a>
+                                <a href="Client.html" class="block text-gray-600 hover:text-sky py-2 transition-colors dark:text-gray-400 dark:hover:text-sky">Client Portal</a>
+                            </div>
+                        </div>
+                        
+                        <!-- Login/Signup for Tablet/Mobile -->
+                        <div class="pt-4 border-t border-gray-100 dark:border-gray-700">
+                            <div class="flex flex-col space-y-3">
+                                <a href="login.html" class="btn-login text-center">
+                                    <i class="fas fa-sign-in-alt mr-2"></i>Login
+                                </a>
+                                <a href="signup.html" class="btn-signup text-center">
+                                    <i class="fas fa-user-plus mr-2"></i>Sign Up
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu Backdrop -->
+    <div class="mobile-backdrop" id="mobileBackdrop"></div>
+
+    <!-- Story Detail Modal -->
+    <div id="storyModal" class="story-modal-overlay hidden">
+        <div class="story-modal-content">
+            <div class="story-modal-close" id="closeStoryModal">
+                <i class="fas fa-times text-white text-lg"></i>
+            </div>
+            <img id="storyModalImg" src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Story" class="story-modal-img">
+            <div class="p-8">
+                <div class="flex flex-wrap mb-4" id="storyModalCategories"></div>
+                <h2 id="storyModalTitle" class="font-serif text-3xl font-bold mb-4 dark:text-dark-text"></h2>
+                <div class="flex items-center mb-6 text-gray-500 dark:text-gray-400">
+                    <i class="fas fa-map-marker-alt mr-2"></i>
+                    <span id="storyModalLocation"></span>
+                    <span class="mx-3">•</span>
+                    <i class="fas fa-calendar-alt mr-2"></i>
+                    <span id="storyModalDate"></span>
+                </div>
+                <div id="storyModalContent" class="text-gray-600 dark:text-gray-400 text-lg leading-relaxed mb-6"></div>
+                <div class="pt-6 border-t border-gray-200 dark:border-gray-700">
+                    <h4 class="text-lg font-bold mb-3 dark:text-dark-text">How This Story Was Made Possible</h4>
+                    <p id="storyModalImpact" class="text-gray-600 dark:text-gray-400 mb-6"></p>
+                    <div class="flex space-x-4">
+                        <button class="btn-read-more">
+                            <i class="fas fa-share-alt mr-2"></i> Share This Story
+                        </button>
+                        <button class="btn-mission">
+                            <i class="fas fa-heart mr-2"></i> Support Our Work
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Hero Section for Stories -->
+    <section class="stories-hero text-white pt-16 pb-32 relative overflow-hidden">
+        <div class="floating-elements">
+            <div class="element w-24 h-24 -top-8 -left-8 animate-float-slow" style="animation-delay: 0s"></div>
+            <div class="element w-16 h-16 top-1/4 right-12 animate-float-slow" style="animation-delay: 1000ms"></div>
+            <div class="element w-20 h-20 bottom-1/4 left-1/3 animate-float-slow" style="animation-delay: 2000ms"></div>
+        </div>
+        
+        <div class="container mx-auto px-4 tablet-px-6 relative z-10">
+            <div class="max-w-3xl mx-auto text-center">
+                <div class="inline-flex items-center space-x-2 bg-white/20 backdrop-blur-sm rounded-full px-4 py-2 mb-6">
+                    <span class="w-2 h-2 rounded-full bg-sun"></span>
+                    <span class="text-sm font-medium">Real Stories, Real Impact</span>
+                </div>
+                
+                <h1 class="font-serif text-5xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
+                    Stories of <span class="text-sun">Hope</span> & Transformation
+                </h1>
+                
+                <p class="text-xl mb-8 text-white/90 max-w-2xl mx-auto">
+                    Discover how lives are being transformed through sustainable community development, education, and healthcare initiatives worldwide.
+                </p>
+                
+                <div class="flex flex-wrap justify-center gap-4 mb-12">
+                    <button class="filter-btn active" data-filter="all">All Stories</button>
+                    <button class="filter-btn" data-filter="education">Education</button>
+                    <button class="filter-btn" data-filter="healthcare">Healthcare</button>
+                    <button class="filter-btn" data-filter="water">Clean Water</button>
+                    <button class="filter-btn" data-filter="economic">Economic Empowerment</button>
+                    <button class="filter-btn" data-filter="emergency">Emergency Relief</button>
+                </div>
+                
+                <div class="flex items-center justify-center space-x-8">
+                    <div class="text-center">
+                        <div class="text-3xl font-bold">120+</div>
+                        <div class="text-sm opacity-80">Stories Shared</div>
+                    </div>
+                    <div class="h-12 w-px bg-white/30"></div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold">48</div>
+                        <div class="text-sm opacity-80">Countries</div>
+                    </div>
+                    <div class="h-12 w-px bg-white/30"></div>
+                    <div class="text-center">
+                        <div class="text-3xl font-bold">10K+</div>
+                        <div class="text-sm opacity-80">Lives Impacted</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-wave"></div>
+    </section>
+
+    <!-- Featured Stories -->
+    <section class="py-24 tablet-py-16 bg-white dark:bg-dark-bg">
+        <div class="container mx-auto px-4 tablet-px-6">
+            <div class="text-center mb-16 observable">
+                <div class="inline-flex items-center space-x-2 bg-sun/10 text-clay rounded-full px-4 py-2 mb-4">
+                    <i class="fas fa-star"></i>
+                    <span class="font-medium">Featured Stories</span>
+                </div>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6 dark:text-dark-text">Most Impactful Stories</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto dark:text-gray-400">
+                    These powerful stories showcase the profound impact of Groww Charity's work in communities around the world.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16 tablet-grid-2">
+                <!-- Featured Story 1 -->
+                <div class="story-card observable-left featured-story" data-categories="education,economic">
+                    <div class="h-48 bg-gradient-to-br from-sky to-storm relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="From Student to Community Leader" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4">
+                            <span class="story-category category-education">Education</span>
+                            <span class="story-category category-economic">Economic</span>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                            <h3 class="text-white text-xl font-bold">From Student to Community Leader</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-sky to-ocean flex items-center justify-center text-white text-lg font-bold mr-3">
+                                AM
+                            </div>
+                            <div>
+                                <h4 class="font-bold dark:text-dark-text">Amina Mohammed</h4>
+                                <p class="text-gray-500 text-sm dark:text-gray-400">Kenya • June 2023</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-6 dark:text-gray-400">
+                            Amina received a Groww Charity scholarship to study medicine. Now she's back in her village as the first doctor, transforming healthcare access for thousands.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <button class="btn-read-more read-story-btn" data-story="1">
+                                Read Full Story
+                            </button>
+                            <div class="text-gray-400 dark:text-gray-500">
+                                <i class="fas fa-heart mr-1"></i> 142
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Featured Story 2 -->
+                <div class="story-card observable featured-story" data-categories="water,healthcare">
+                    <div class="h-48 bg-gradient-to-br from-ocean to-sage relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Clean Water Project" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4">
+                            <span class="story-category category-water">Clean Water</span>
+                            <span class="story-category category-healthcare">Healthcare</span>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                            <h3 class="text-white text-xl font-bold">The Well That Changed Everything</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-sage to-ocean flex items-center justify-center text-white text-lg font-bold mr-3">
+                                RC
+                            </div>
+                            <div>
+                                <h4 class="font-bold dark:text-dark-text">Rafael Cruz</h4>
+                                <p class="text-gray-500 text-sm dark:text-gray-400">Guatemala • March 2023</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-6 dark:text-gray-400">
+                            After years of waterborne illnesses, Rafael's village received a clean water system. Now children are healthier and school attendance has doubled.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <button class="btn-read-more read-story-btn" data-story="2">
+                                Read Full Story
+                            </button>
+                            <div class="text-gray-400 dark:text-gray-500">
+                                <i class="fas fa-heart mr-1"></i> 89
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Featured Story 3 -->
+                <div class="story-card observable-right featured-story" data-categories="economic,education">
+                    <div class="h-48 bg-gradient-to-br from-sand to-clay relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Women's Cooperative" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4">
+                            <span class="story-category category-economic">Economic</span>
+                            <span class="story-category category-education">Education</span>
+                        </div>
+                        <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+                            <h3 class="text-white text-xl font-bold">Stitching a Better Future</h3>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <div class="flex items-center mb-4">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-sun to-clay flex items-center justify-center text-white text-lg font-bold mr-3">
+                                SP
+                            </div>
+                            <div>
+                                <h4 class="font-bold dark:text-dark-text">Sunita Patel</h4>
+                                <p class="text-gray-500 text-sm dark:text-gray-400">India • January 2024</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-600 mb-6 dark:text-gray-400">
+                            With a micro-loan from Groww Charity, Sunita started a tailoring business. She now employs six women and sends all their children to school.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <button class="btn-read-more read-story-btn" data-story="3">
+                                Read Full Story
+                            </button>
+                            <div class="text-gray-400 dark:text-gray-500">
+                                <i class="fas fa-heart mr-1"></i> 117
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center">
+                <button id="loadMoreStories" class="btn-load-more">
+                    <i class="fas fa-plus mr-2"></i> Load More Stories
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- All Stories Grid -->
+    <section class="py-24 tablet-py-16 bg-gray-50 dark:bg-dark-bg">
+        <div class="container mx-auto px-4 tablet-px-6">
+            <div class="text-center mb-16 observable">
+                <div class="inline-flex items-center space-x-2 bg-sky/10 text-sky rounded-full px-4 py-2 mb-4">
+                    <i class="fas fa-book-open"></i>
+                    <span class="font-medium">More Stories</span>
+                </div>
+                <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6 dark:text-dark-text">All Impact Stories</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto dark:text-gray-400">
+                    Browse through our collection of inspiring stories from communities around the world.
+                </p>
+            </div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 tablet-grid-2" id="storiesGrid">
+                <!-- Story 1 -->
+                <div class="story-card observable-left" data-categories="healthcare">
+                    <div class="h-40 bg-gradient-to-br from-sage to-ocean relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Mobile Clinic Reaches Remote Village" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4">
+                            <span class="story-category category-healthcare">Healthcare</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 dark:text-dark-text">Mobile Clinic Reaches Remote Village</h3>
+                        <p class="text-gray-600 mb-4 dark:text-gray-400">
+                            For the first time, residents of a remote Ethiopian village have access to regular medical care through our mobile clinic program.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <div class="text-gray-500 text-sm dark:text-gray-400">
+                                <i class="fas fa-map-marker-alt mr-1"></i> Ethiopia
+                            </div>
+                            <button class="btn-read-more read-story-btn text-sm py-2 px-4" data-story="4">
+                                Read
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Story 2 - UPDATED IMAGE -->
+                <div class="story-card observable" data-categories="education">
+                    <div class="h-40 bg-gradient-to-br from-sky to-storm relative overflow-hidden">
+                        <!-- UPDATED: Changed image to a school/education related image -->
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80" alt="New School Brings Hope to Rural Community" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4">
+                            <span class="story-category category-education">Education</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 dark:text-dark-text">New School Brings Hope to Rural Community</h3>
+                        <p class="text-gray-600 mb-4 dark:text-gray-400">
+                            A new school built by Groww Charity is now educating 300 children in a Nepalese village that previously had no school.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <div class="text-gray-500 text-sm dark:text-gray-400">
+                                <i class="fas fa-map-marker-alt mr-1"></i> Nepal
+                            </div>
+                            <button class="btn-read-more read-story-btn text-sm py-2 px-4" data-story="5">
+                                Read
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Story 3 - UPDATED IMAGE -->
+                <div class="story-card observable-right" data-categories="emergency">
+                    <div class="h-40 bg-gradient-to-br from-clay to-sand relative overflow-hidden">
+                        <!-- UPDATED: Changed image to a flood/emergency relief related image -->
+                        <img src="https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Rebuilding After the Floods" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4">
+                            <span class="story-category category-emergency">Emergency</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 dark:text-dark-text">Rebuilding After the Floods</h3>
+                        <p class="text-gray-600 mb-4 dark:text-gray-400">
+                            Groww Charity provided emergency shelter, food, and supplies to 500 families affected by devastating floods in Bangladesh.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <div class="text-gray-500 text-sm dark:text-gray-400">
+                                <i class="fas fa-map-marker-alt mr-1"></i> Bangladesh
+                            </div>
+                            <button class="btn-read-more read-story-btn text-sm py-2 px-4" data-story="6">
+                                Read
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Story 4 -->
+                <div class="story-card observable-left" data-categories="water">
+                    <div class="h-40 bg-gradient-to-br from-ocean to-sage relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Water Well" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4">
+                            <span class="story-category category-water">Clean Water</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 dark:text-dark-text">Clean Water Transforms Village Health</h3>
+                        <p class="text-gray-600 mb-4 dark:text-gray-400">
+                            Installation of a water purification system in a Tanzanian village reduced waterborne diseases by 80% in just six months.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <div class="text-gray-500 text-sm dark:text-gray-400">
+                                <i class="fas fa-map-marker-alt mr-1"></i> Tanzania
+                            </div>
+                            <button class="btn-read-more read-story-btn text-sm py-2 px-4" data-story="7">
+                                Read
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Story 5 - UPDATED IMAGE -->
+                <div class="story-card observable" data-categories="economic">
+                    <div class="h-40 bg-gradient-to-br from-sand to-clay relative overflow-hidden">
+                        <!-- UPDATED: Changed image to a farming/agriculture related image -->
+                        <img src="https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="From Subsistence to Sustainable Farming" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4">
+                            <span class="story-category category-economic">Economic</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 dark:text-dark-text">From Subsistence to Sustainable Farming</h3>
+                        <p class="text-gray-600 mb-4 dark:text-gray-400">
+                            Agricultural training and microloans helped 50 Honduran farmers transition to sustainable practices, doubling their incomes.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <div class="text-gray-500 text-sm dark:text-gray-400">
+                                <i class="fas fa-map-marker-alt mr-1"></i> Honduras
+                            </div>
+                            <button class="btn-read-more read-story-btn text-sm py-2 px-4" data-story="8">
+                                Read
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Story 6 -->
+                <div class="story-card observable-right" data-categories="education,healthcare">
+                    <div class="h-40 bg-gradient-to-br from-sky to-sage relative overflow-hidden">
+                        <img src="https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Youth Leadership Program Creates Change Agents" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4">
+                            <span class="story-category category-education">Education</span>
+                            <span class="story-category category-healthcare">Healthcare</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 dark:text-dark-text">Youth Leadership Program Creates Change Agents</h3>
+                        <p class="text-gray-600 mb-4 dark:text-gray-400">
+                            A youth leadership program in Ghana is training the next generation of community health workers and educators.
+                        </p>
+                        <div class="flex justify-between items-center">
+                            <div class="text-gray-500 text-sm dark:text-gray-400">
+                                <i class="fas fa-map-marker-alt mr-1"></i> Ghana
+                            </div>
+                            <button class="btn-read-more read-story-btn text-sm py-2 px-4" data-story="9">
+                                Read
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Share Your Story Section -->
+    <section class="py-24 tablet-py-16 bg-white dark:bg-dark-bg">
+        <div class="container mx-auto px-4 tablet-px-6">
+            <div class="max-w-4xl mx-auto">
+                <div class="bg-gradient-to-br from-sky/5 to-ocean/5 rounded-3xl p-8 md:p-12 observable">
+                    <div class="text-center mb-10">
+                        <div class="inline-flex items-center space-x-2 bg-sky/10 text-sky rounded-full px-4 py-2 mb-4">
+                            <i class="fas fa-microphone-alt"></i>
+                            <span class="font-medium">Share Your Story</span>
+                        </div>
+                        <h2 class="font-serif text-4xl md:text-5xl font-bold mb-6 dark:text-dark-text">Has Groww Charity Impacted Your Life?</h2>
+                        <p class="text-xl text-gray-600 dark:text-gray-400 mb-8">
+                            We'd love to hear your story of transformation and hope. Share how Groww Charity has made a difference in your life or community.
+                        </p>
+                    </div>
+                    
+                    <form id="shareStoryForm" class="space-y-6">
+                        <div class="grid md:grid-cols-2 gap-6">
+                            <div>
+                                <label class="block text-gray-700 mb-2 dark:text-gray-300">First Name</label>
+                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky focus:border-sky dark:bg-dark-card dark:border-gray-600 dark:text-dark-text" required>
+                            </div>
+                            <div>
+                                <label class="block text-gray-700 mb-2 dark:text-gray-300">Last Name</label>
+                                <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky focus:border-sky dark:bg-dark-card dark:border-gray-600 dark:text-dark-text" required>
+                            </div>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 mb-2 dark:text-gray-300">Email Address</label>
+                            <input type="email" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky focus:border-sky dark:bg-dark-card dark:border-gray-600 dark:text-dark-text" required>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 mb-2 dark:text-gray-300">Location</label>
+                            <input type="text" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky focus:border-sky dark:bg-dark-card dark:border-gray-600 dark:text-dark-text" placeholder="City, Country" required>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 mb-2 dark:text-gray-300">Story Category</label>
+                            <select class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky focus:border-sky dark:bg-dark-card dark:border-gray-600 dark:text-dark-text">
+                                <option>Select a category</option>
+                                <option>Education</option>
+                                <option>Healthcare</option>
+                                <option>Clean Water</option>
+                                <option>Economic Empowerment</option>
+                                <option>Emergency Relief</option>
+                                <option>Other</option>
+                            </select>
+                        </div>
+                        
+                        <div>
+                            <label class="block text-gray-700 mb-2 dark:text-gray-300">Your Story</label>
+                            <textarea rows="6" class="w-full px-4 py-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-sky focus:border-sky dark:bg-dark-card dark:border-gray-600 dark:text-dark-text" placeholder="Tell us your story of transformation..."></textarea>
+                        </div>
+                        
+                        <div class="flex items-center">
+                            <input type="checkbox" id="consent" class="w-4 h-4 text-sky rounded focus:ring-sky" required>
+                            <label for="consent" class="ml-2 text-gray-600 dark:text-gray-400">
+                                I give Groww Charity permission to share my story on their website and social media (we will contact you first for approval).
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn-mission w-full text-lg py-4">
+                            <i class="fas fa-paper-plane mr-2"></i> Share My Story
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Desktop Footer -->
+    <footer class="hidden lg:block bg-gray-900 text-white pt-16 pb-8 dark:bg-dark-bg">
+        <div class="container mx-auto px-4">
+            <div class="grid md:grid-cols-4 gap-8 mb-12">
+                <!-- Logo and Social Media -->
+                <div>
+                    <div class="pl-20">
+                        <a href="index.html" class="flex items-center space-x-3 mb-6">
+                            <div class="w-12 h-12 rounded-full bg-gradient-to-br from-sky to-ocean flex items-center justify-center">
+                                <i class="fas fa-hands-helping text-white text-xl"></i>
+                            </div>
+                            <div>
+groww charity                                <h1 class="font-serif text-2xl font-bold">Groww Charity</h1>
+                                <p class="text-xs text-gray-400 -mt-1">Foundation</p>
+                            </div>
+                        </a>
+                        <p class="text-gray-400 mb-6">
+                            Creating sustainable change through community empowerment, education, and healthcare initiatives worldwide.
+                        </p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-sky transition-colors dark:bg-gray-700">
+                                <i class="fab fa-facebook-f"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-sky transition-colors dark:bg-gray-700">
+                                <i class="fab fa-twitter"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-sky transition-colors dark:bg-gray-700">
+                                <i class="fab fa-instagram"></i>
+                            </a>
+                            <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-sky transition-colors dark:bg-gray-700">
+                                <i class="fab fa-linkedin-in"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quick Links -->
+                <div>
+                    <div class="pl-40">
+                        <h4 class="text-lg font-bold mb-6">Quick Links</h4>
+                        <ul class="space-y-3">
+                            <li><a href="index.html" class="text-gray-400 hover:text-white transition-colors">Home</a></li>
+                            <li><a href="Mission.html" class="text-gray-400 hover:text-white transition-colors">Our Mission</a></li>
+                            <li><a href="Service.html" class="text-gray-400 hover:text-white transition-colors">Service</a></li>
+                            <li><a href="Pricing.html" class="text-gray-400 hover:text-white transition-colors">Pricing</a></li>
+                            <li><a href="Stories.html" class="text-gray-400 hover:text-white transition-colors">Success Stories</a></li>
+                            <li><a href="Contact.html" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Get Involved -->
+                <div>
+                    <div class="pl-20">
+                        <h4 class="text-lg font-bold mb-6">Get Involved</h4>
+                        <ul class="space-y-3">
+                            <li><a href="#donate" class="text-gray-400 hover:text-white transition-colors">Donate</a></li>
+                            <li><a href="#volunteer" class="text-gray-400 hover:text-white transition-colors">Volunteer</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Fundraise</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Corporate Partnerships</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Careers</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Contact Us -->
+                <div id="contact">
+                    <h4 class="text-lg font-bold mb-6">Contact Us</h4>
+                    <ul class="space-y-4">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-sky mt-1 mr-3"></i>
+                            <span class="text-gray-400">123 Hope Street, Suite 500<br>San Francisco, CA 94105</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone text-sky mr-3"></i>
+                            <span class="text-gray-400">(555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-sky mr-3"></i>
+                            <span class="text-gray-400">info@Groww Charity.org</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="pt-8 border-t border-gray-800 dark:border-gray-700">
+                <div class="flex flex-col md:flex-row justify-between items-center">
+                    <div class="text-gray-500 text-sm mb-4 md:mb-0">
+                        <p>&copy; 2025Groww Charity. All rights reserved.</p>
+                        <p class="mt-1">A 501(c)(3) nonprofit organization. EIN: 12-3456789</p>
+                    </div>
+                    
+                    <div class="flex space-x-6">
+                        <a href="#" class="text-gray-500 hover:text-white text-sm">Privacy Policy</a>
+                        <a href="#" class="text-gray-500 hover:text-white text-sm">Financial Reports</a>
+                        <a href="#" class="text-gray-400 hover:text-white text-sm">Tax Documents</a>
+                        <a href="#" class="text-gray-500 hover:text-white text-sm">Legal</a>
+                    </div>
+                </div>
+                
+                <div class="mt-6 text-center text-gray-600 text-xs dark:text-gray-500">
+                    <p><i class="fas fa-heart text-red-400 mr-1"></i> 91% of donations go directly to programs. We're rated 4.9/5 stars by Charity Navigator.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Tablet/Mobile Footer -->
+    <footer class="lg:hidden bg-gray-900 text-white pt-12 pb-6 dark:bg-dark-bg">
+        <div class="container mx-auto px-4">
+            <!-- Logo and Social Media -->
+            <div class="text-center mb-8">
+                <a href="index.html" class="flex flex-col items-center mb-4">
+                    <div class="w-16 h-16 rounded-full bg-gradient-to-br from-sky to-ocean flex items-center justify-center mb-3">
+                        <i class="fas fa-hands-helping text-white text-2xl"></i>
+                    </div>
+                    <div>
+                        <h1 class="font-serif text-2xl font-bold">Groww Charity</h1>
+                    </div>
+                </a>
+                <p class="text-gray-400 mb-6 text-sm">
+                    Creating sustainable change through community empowerment, education, and healthcare initiatives worldwide.
+                </p>
+                <div class="flex justify-center space-x-4 mb-6">
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-sky transition-colors dark:bg-gray-700">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-sky transition-colors dark:bg-gray-700">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-sky transition-colors dark:bg-gray-700">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="#" class="w-10 h-10 rounded-full bg-gray-800 flex items-center justify-center hover:bg-sky transition-colors dark:bg-gray-700">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <!-- Mobile Accordion Sections -->
+            <div class="space-y-4 mb-6">
+                <!-- Quick Links Accordion -->
+                <div class="border-b border-gray-800 pb-3">
+                    <button class="mobile-accordion-btn flex justify-between items-center w-full text-left font-medium py-2">
+                        <span class="text-base">Quick Links</span>
+                        <i class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
+                    </button>
+                    <div class="mobile-accordion-content hidden mt-2 pl-4">
+                        <ul class="space-y-2">
+                            <li><a href="index.html" class="text-gray-400 hover:text-white text-sm block py-1">Home</a></li>
+                            <li><a href="Mission.html" class="text-gray-400 hover:text-white text-sm block py-1">Our Mission</a></li>
+                            <li><a href="Service.html" class="text-gray-400 hover:text-white text-sm block py-1">Service</a></li>
+                            <li><a href="Pricing.html" class="text-gray-400 hover:text-white text-sm block py-1">Pricing</a></li>
+                            <li><a href="Stories.html" class="text-gray-400 hover:text-white text-sm block py-1">Success Stories</a></li>
+                            <li><a href="Contact.html" class="text-gray-400 hover:text-white text-sm block py-1">Contact</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Get Involved Accordion -->
+                <div class="border-b border-gray-800 pb-3">
+                    <button class="mobile-accordion-btn flex justify-between items-center w-full text-left font-medium py-2">
+                        <span class="text-base">Get Involved</span>
+                        <i class="fas fa-chevron-down text-xs transition-transform duration-300"></i>
+                    </button>
+                    <div class="mobile-accordion-content hidden mt-2 pl-4">
+                        <ul class="space-y-2">
+                            <li><a href="#donate" class="text-gray-400 hover:text-white text-sm block py-1">Donate</a></li>
+                            <li><a href="#volunteer" class="text-gray-400 hover:text-white text-sm block py-1">Volunteer</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white text-sm block py-1">Fundraise</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white text-sm block py-1">Corporate Partnerships</a></li>
+                            <li><a href="#" class="text-gray-400 hover:text-white text-sm block py-1">Careers</a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Contact Info (Always Visible) -->
+                <div class="border-b border-gray-800 pb-4">
+                    <h4 class="text-base font-bold mb-3">Contact Us</h4>
+                    <ul class="space-y-2">
+                        <li class="flex items-start">
+                            <i class="fas fa-map-marker-alt text-sky mt-1 mr-2 text-sm"></i>
+                            <span class="text-gray-400 text-sm">123 Hope Street, Suite 500<br>San Francisco, CA 94105</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-phone text-sky mr-2 text-sm"></i>
+                            <span class="text-gray-400 text-sm">(555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <i class="fas fa-envelope text-sky mr-2 text-sm"></i>
+                            <span class="text-gray-400 text-sm">info@Groww Charity.org</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Bottom Section -->
+            <div class="border-gray-800">
+                <div class="text-center text-gray-500 text-xs mb-4">
+                    <p>&copy; 2025Groww Charity. All rights reserved.</p>
+                    <p class="mt-1">A 501(c)(3) nonprofit organization. EIN: 12-3456789</p>
+                </div>
+                
+                <div class="flex flex-wrap justify-center gap-3 mb-3">
+                    <a href="#" class="text-gray-400 hover:text-white text-xs">Privacy Policy</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-xs">Financial Reports</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-xs">Tax Documents</a>
+                    <a href="#" class="text-gray-400 hover:text-white text-xs">Legal</a>
+                </div>
+                
+                <div class="text-center text-gray-500 text-xs">
+                    <p><i class="fas fa-heart text-red-400 mr-1"></i> 91% of donations go directly to programs.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button id="backToTop" class="fixed bottom-8 right-8 w-12 h-12 bg-sky text-white rounded-full shadow-lg hover:bg-ocean transition-colors z-40 hidden">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <script>
+        // ========== FIXED HAMBURGER MENU FUNCTIONALITY ==========
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileBackdrop = document.getElementById('mobileBackdrop');
+
+        function toggleMobileMenu() {
+            mobileMenuBtn.classList.toggle('active');
+            mobileMenu.classList.toggle('active');
+            mobileBackdrop.classList.toggle('active');
+            document.body.classList.toggle('menu-open');
+        }
+
+        // Mobile menu toggle
+        mobileMenuBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            toggleMobileMenu();
+        });
+
+        // Close mobile menu when clicking backdrop
+        mobileBackdrop.addEventListener('click', toggleMobileMenu);
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('#mobileMenu a').forEach(link => {
+            link.addEventListener('click', () => {
+                if (mobileMenu.classList.contains('active')) {
+                    toggleMobileMenu();
+                }
+            });
+        });
+
+        // Mobile Home Dropdown Toggle
+        const mobileHomeBtn = document.getElementById('mobileHomeBtn');
+        const mobileHomeDropdown = document.getElementById('mobileHomeDropdown');
+
+        if (mobileHomeBtn && mobileHomeDropdown) {
+            mobileHomeBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                mobileHomeDropdown.classList.toggle('active');
+                const icon = mobileHomeBtn.querySelector('i');
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            });
+        }
+
+        // Mobile Dashboard Dropdown Toggle
+        const mobileDashboardBtn = document.getElementById('mobileDashboardBtn');
+        const mobileDashboardDropdown = document.getElementById('mobileDashboardDropdown');
+
+        if (mobileDashboardBtn && mobileDashboardDropdown) {
+            mobileDashboardBtn.addEventListener('click', (e) => {
+                e.stopPropagation();
+                mobileDashboardDropdown.classList.toggle('active');
+                const icon = mobileDashboardBtn.querySelector('i');
+                icon.classList.toggle('fa-chevron-down');
+                icon.classList.toggle('fa-chevron-up');
+            });
+        }
+
+        // Close mobile dropdowns when clicking outside
+        document.addEventListener('click', (e) => {
+            if (mobileHomeDropdown && mobileHomeDropdown.classList.contains('active') && 
+                !mobileHomeBtn.contains(e.target) && !mobileHomeDropdown.contains(e.target)) {
+                mobileHomeDropdown.classList.remove('active');
+                const icon = mobileHomeBtn.querySelector('i');
+                icon.classList.add('fa-chevron-down');
+                icon.classList.remove('fa-chevron-up');
+            }
+
+            if (mobileDashboardDropdown && mobileDashboardDropdown.classList.contains('active') && 
+                !mobileDashboardBtn.contains(e.target) && !mobileDashboardDropdown.contains(e.target)) {
+                mobileDashboardDropdown.classList.remove('active');
+                const icon = mobileDashboardBtn.querySelector('i');
+                icon.classList.add('fa-chevron-down');
+                icon.classList.remove('fa-chevron-up');
+            }
+        });
+
+        // Close mobile menu on escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && mobileMenu.classList.contains('active')) {
+                toggleMobileMenu();
+            }
+        });
+
+        // Close mobile menu when window is resized to desktop size
+        window.addEventListener('resize', () => {
+            if (window.innerWidth >= 1280 && mobileMenu.classList.contains('active')) {
+                toggleMobileMenu();
+            }
+        });
+
+        // ========== THEME TOGGLE FUNCTIONALITY ==========
+        const themeToggle = document.getElementById('themeToggle');
+        const themeToggleMobile = document.getElementById('themeToggleMobile');
+
+        // Function to set theme
+        function setTheme(theme) {
+            if (theme === 'dark') {
+                document.documentElement.classList.add('dark');
+                document.body.classList.add('dark');
+                localStorage.setItem('theme', 'dark');
+            } else {
+                document.documentElement.classList.remove('dark');
+                document.body.classList.remove('dark');
+                localStorage.setItem('theme', 'light');
+            }
+        }
+
+        // Function to toggle theme
+        function toggleTheme() {
+            const isDark = document.documentElement.classList.contains('dark');
+            setTheme(isDark ? 'light' : 'dark');
+        }
+
+        // Event listeners for theme toggle buttons
+        if (themeToggle) {
+            themeToggle.addEventListener('click', toggleTheme);
+        }
+        if (themeToggleMobile) {
+            themeToggleMobile.addEventListener('click', toggleTheme);
+        }
+
+        // Load saved theme on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedTheme = localStorage.getItem('theme');
+            if (savedTheme) {
+                setTheme(savedTheme);
+            } else {
+                // Check for system preference
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+                    setTheme('dark');
+                }
+            }
+        });
+
+        // Listen for system theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+            if (!localStorage.getItem('theme')) {
+                setTheme(e.matches ? 'dark' : 'light');
+            }
+        });
+
+        // ========== RTL TOGGLE FUNCTIONALITY ==========
+        const rtlToggle = document.getElementById('rtl-toggle');
+        const rtlToggleTablet = document.getElementById('rtl-toggle-tablet');
+        const htmlElement = document.documentElement;
+
+        // Function to set direction and update icons
+        function setDirection(direction) {
+            htmlElement.dir = direction;
+            localStorage.setItem('text-direction', direction);
+            
+            // Update icon based on direction
+            const updateIcon = (button) => {
+                if (button) {
+                    const icon = button.querySelector('i');
+                    if (icon) {
+                        icon.className = direction === 'rtl' ? 'fas fa-language' : 'fas fa-globe';
+                        if (button.id === 'rtl-toggle' || button.id === 'rtl-toggle-tablet') {
+                            icon.className += ' text-storm dark:text-sky';
+                        }
+                    }
+                }
+            };
+            
+            updateIcon(rtlToggle);
+            updateIcon(rtlToggleTablet);
+        }
+
+        // Toggle direction on button click
+        if (rtlToggle) {
+            rtlToggle.addEventListener('click', function() {
+                const currentDirection = htmlElement.dir || 'ltr';
+                const newDirection = currentDirection === 'rtl' ? 'ltr' : 'rtl';
+                setDirection(newDirection);
+            });
+        }
+
+        if (rtlToggleTablet) {
+            rtlToggleTablet.addEventListener('click', function() {
+                const currentDirection = htmlElement.dir || 'ltr';
+                const newDirection = currentDirection === 'rtl' ? 'ltr' : 'rtl';
+                setDirection(newDirection);
+            });
+        }
+
+        // Load saved direction on page load
+        document.addEventListener('DOMContentLoaded', function() {
+            const savedDirection = localStorage.getItem('text-direction');
+            if (savedDirection) {
+                setDirection(savedDirection);
+            }
+        });
+
+        // ========== STORIES PAGE SPECIFIC FUNCTIONALITY ==========
+        
+        // Story data for modal - UPDATED WITH ALL STORIES
+        const storiesData = {
+            1: {
+                title: "From Student to Community Leader: Amina's Journey",
+                location: "Rural Kenya",
+                date: "June 2023",
+                categories: ["Education", "Economic Empowerment"],
+                content: `<p>Amina Mohammed grew up in a small village in rural Kenya where access to education, especially for girls, was limited. Her family struggled to make ends meet, and she was often pulled out of school to help with household chores and farming.</p>
+                         <p class="mt-4">When Groww Charity established a scholarship program in her community, Amina was one of the first to apply. She received a full scholarship to attend secondary school, followed by support for her university education in medicine.</p>
+                         <p class="mt-4">"I never imagined I would become a doctor," Amina says. "In my village, most girls are married by 18 and never finish school. Groww Charity changed not just my life, but the future of my entire community."</p>
+                         <p class="mt-4">After completing her medical degree, Amina returned to her village as the first doctor. She now runs a small clinic that serves over 5,000 people, many of whom previously had to travel 50 miles for medical care.</p>`,
+                impact: "Amina's story inspired 12 more girls from her village to pursue higher education. The clinic she established has reduced maternal mortality by 60% and child mortality by 45% in her community.",
+                image: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            2: {
+                title: "The Well That Changed Everything",
+                location: "Guatemala Highlands",
+                date: "March 2023",
+                categories: ["Clean Water", "Healthcare"],
+                content: `<p>For generations, the people of San Miguel, a remote village in the Guatemalan highlands, collected water from a contaminated stream 3 kilometers away. Waterborne illnesses were common, and children missed school frequently due to sickness.</p>
+                         <p class="mt-4">Rafael Cruz, a community leader, had watched his own children suffer from recurring illnesses. "We knew the water was making us sick, but we had no alternative," he explains.</p>
+                         <p class="mt-4">Groww Charity partnered with the community to install a deep well and water purification system. The project was community-led, with local residents receiving training in maintenance and water management.</p>
+                         <p class="mt-4">"The day clean water flowed from our new taps was the happiest day of my life," Rafael recalls. "Our children stopped getting sick. School attendance doubled within months."</p>
+                         <p class="mt-4">The project also included hygiene education, teaching villagers about handwashing and safe water storage practices.</p>`,
+                impact: "Waterborne illnesses decreased by 85% in San Miguel within the first year. School attendance increased from 60% to 95%, and the community now manages the water system independently.",
+                image: "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            3: {
+                title: "Stitching a Better Future: Sunita's Tailoring Cooperative",
+                location: "Rajasthan, India",
+                date: "January 2024",
+                categories: ["Economic Empowerment", "Education"],
+                content: `<p>Sunita Patel, a widow with three children, struggled to make ends meet after her husband's passing. She had sewing skills but lacked the capital to start her own business.</p>
+                         <p class="mt-4">Through Groww Charity's micro-loan program, Sunita received a small loan to buy a sewing machine and materials. She started taking orders from neighbors and soon had more work than she could handle alone.</p>
+                         <p class="mt-4">"The loan was only $200, but it changed everything," Sunita says. "I hired two other women from my neighborhood, and together we formed a cooperative."</p>
+                         <p class="mt-4">The cooperative now has six employees, all women from low-income backgrounds. They produce school uniforms, traditional clothing, and handicrafts that are sold locally and online.</p>
+                         <p class="mt-4">With her increased income, Sunita was able to send all three of her children to school. "My daughter wants to be an engineer," she says proudly. "Because of Groww Charity, that dream is possible."</p>`,
+                impact: "Sunita's cooperative has created sustainable livelihoods for six families. All children of cooperative members now attend school regularly, breaking the cycle of poverty.",
+                image: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            4: {
+                title: "Mobile Clinic Reaches Remote Village",
+                location: "Ethiopia",
+                date: "September 2023",
+                categories: ["Healthcare"],
+                content: `<p>For the first time, residents of a remote Ethiopian village have access to regular medical care through our mobile clinic program. The village, located in the mountainous region, was previously inaccessible by road for most of the year.</p>
+                         <p class="mt-4">The mobile clinic visits monthly, providing essential healthcare services including vaccinations, prenatal care, and treatment for common illnesses. The clinic is staffed by local healthcare workers trained by Groww Charity.</p>
+                         <p class="mt-4">"Before the mobile clinic, we had to walk for two days to reach the nearest health center," says village elder Gebre. "Many people died on the journey. Now, healthcare comes to us."</p>
+                         <p class="mt-4">The program also includes health education, teaching villagers about sanitation, nutrition, and disease prevention.</p>`,
+                impact: "The mobile clinic has served over 2,000 people in its first year. Child vaccination rates increased from 30% to 85%, and maternal mortality has been reduced by 70%.",
+                image: "https://images.unsplash.com/photo-1576765608535-5f04d1e3f289?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            5: {
+                title: "New School Brings Hope to Rural Community",
+                location: "Nepal",
+                date: "August 2023",
+                categories: ["Education"],
+                content: `<p>A new school built by Groww Charity is now educating 300 children in a Nepalese village that previously had no school. Children had to walk 10 kilometers each way to attend the nearest school, resulting in high dropout rates.</p>
+                         <p class="mt-4">The school features six classrooms, a library, and computer facilities. It was built using sustainable materials and techniques, with solar panels providing electricity.</p>
+                         <p class="mt-4">"My daughter can now read and write," says parent Maya Gurung. "Before this school, she would have had to work in the fields with me. Now she dreams of becoming a teacher."</p>
+                         <p class="mt-4">The school also serves as a community center, offering adult literacy classes and vocational training in the evenings.</p>`,
+                impact: "School attendance in the village increased from 40% to 95%. 15 local teachers were trained, creating sustainable employment. Adult literacy rates increased by 50% within one year.",
+                image: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80"
+            },
+            6: {
+                title: "Rebuilding After the Floods",
+                location: "Bangladesh",
+                date: "November 2023",
+                categories: ["Emergency Relief"],
+                content: `<p>Groww Charity provided emergency shelter, food, and supplies to 500 families affected by devastating floods in Bangladesh. The floods destroyed homes, crops, and infrastructure, leaving thousands homeless.</p>
+                         <p class="mt-4">Our emergency response team arrived within 48 hours, distributing food packages, clean water, and temporary shelter materials. We also set up medical camps to treat waterborne diseases and injuries.</p>
+                         <p class="mt-4">"We lost everything in the flood," says survivor Abdul Rahman. "Groww Charity gave us food, shelter, and hope. They helped us rebuild our lives."</p>
+                         <p class="mt-4">The recovery phase included rebuilding 150 homes using flood-resistant techniques and providing seeds and tools to restart agriculture.</p>`,
+                impact: "500 families received immediate aid. 150 flood-resistant homes were built. Agricultural recovery helped 300 families regain their livelihoods within 6 months.",
+                image: "https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            7: {
+                title: "Clean Water Transforms Village Health",
+                location: "Tanzania",
+                date: "July 2023",
+                categories: ["Clean Water"],
+                content: `<p>Installation of a water purification system in a Tanzanian village reduced waterborne diseases by 80% in just six months. The village previously relied on a contaminated river for all its water needs.</p>
+                         <p class="mt-4">The system includes a deep well, solar-powered pump, and purification unit that provides clean drinking water to 800 people. Community members were trained in maintenance and water management.</p>
+                         <p class="mt-4">"My children used to get sick every month," says mother Asha. "Now they are healthy and can go to school regularly. Clean water has changed our lives."</p>
+                         <p class="mt-4">The project also included construction of sanitation facilities and hygiene education programs.</p>`,
+                impact: "Waterborne diseases decreased by 80%. School attendance increased by 60%. Women and girls saved an average of 3 hours per day previously spent collecting water.",
+                image: "https://images.unsplash.com/photo-1523348837708-15d4a09cfac2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            8: {
+                title: "From Subsistence to Sustainable Farming",
+                location: "Honduras",
+                date: "May 2023",
+                categories: ["Economic Empowerment"],
+                content: `<p>Agricultural training and microloans helped 50 Honduran farmers transition to sustainable practices, doubling their incomes. The farmers were struggling with poor soil quality and unpredictable weather patterns.</p>
+                         <p class="mt-4">Groww Charity provided training in sustainable agriculture techniques including crop rotation, organic fertilization, and water conservation. Farmers received microloans to purchase seeds, tools, and irrigation equipment.</p>
+                         <p class="mt-4">"I used to barely grow enough to feed my family," says farmer Carlos. "Now I have surplus to sell at market. I've even been able to hire two workers from my community."</p>
+                         <p class="mt-4">The farmers formed a cooperative to collectively market their produce, getting better prices and accessing new markets.</p>`,
+                impact: "Farmers' incomes doubled on average. 50 sustainable farms established. The cooperative now supplies fresh produce to local schools and markets, improving community nutrition.",
+                image: "https://images.unsplash.com/photo-1500382017468-9049fed747ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            },
+            9: {
+                title: "Youth Leadership Program Creates Change Agents",
+                location: "Ghana",
+                date: "February 2024",
+                categories: ["Education", "Healthcare"],
+                content: `<p>A youth leadership program in Ghana is training the next generation of community health workers and educators. The program targets young people aged 18-25 from underserved communities.</p>
+                         <p class="mt-4">Participants receive training in public health, education techniques, and community organizing. They then return to their communities to implement health and education projects.</p>
+                         <p class="mt-4">"I used to feel powerless to help my community," says participant Kwame. "Now I'm teaching my neighbors about malaria prevention and helping children learn to read."</p>
+                         <p class="mt-4">The program includes mentorship and ongoing support to ensure the young leaders can sustain their impact.</p>`,
+                impact: "50 youth leaders trained. 5,000 community members reached with health education. 500 children received tutoring support. Malaria rates decreased by 40% in participating communities.",
+                image: "https://images.unsplash.com/photo-1542744173-8e7e53415bb0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+            }
+        };
+
+        // Story modal functionality
+        const storyModal = document.getElementById('storyModal');
+        const closeStoryModal = document.getElementById('closeStoryModal');
+        const readStoryBtns = document.querySelectorAll('.read-story-btn');
+
+        // Open story modal
+        readStoryBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                const storyId = this.getAttribute('data-story');
+                const story = storiesData[storyId];
+                
+                if (story) {
+                    document.getElementById('storyModalTitle').textContent = story.title;
+                    document.getElementById('storyModalLocation').textContent = story.location;
+                    document.getElementById('storyModalDate').textContent = story.date;
+                    document.getElementById('storyModalContent').innerHTML = story.content;
+                    document.getElementById('storyModalImpact').textContent = story.impact;
+                    document.getElementById('storyModalImg').src = story.image;
+                    
+                    // Set categories
+                    const categoriesContainer = document.getElementById('storyModalCategories');
+                    categoriesContainer.innerHTML = '';
+                    story.categories.forEach(category => {
+                        const span = document.createElement('span');
+                        span.className = `story-category category-${category.toLowerCase().replace(' ', '-')}`;
+                        span.textContent = category;
+                        categoriesContainer.appendChild(span);
+                    });
+                    
+                    storyModal.classList.remove('hidden');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+
+        // Close story modal
+        closeStoryModal.addEventListener('click', () => {
+            storyModal.classList.add('hidden');
+            document.body.style.overflow = 'auto';
+        });
+
+        // Close modal when clicking outside
+        storyModal.addEventListener('click', (e) => {
+            if (e.target === storyModal) {
+                storyModal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Close modal with escape key
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && !storyModal.classList.contains('hidden')) {
+                storyModal.classList.add('hidden');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Story filtering
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const storyCards = document.querySelectorAll('.story-card, .featured-story');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', function() {
+                // Update active button
+                filterBtns.forEach(b => b.classList.remove('active'));
+                this.classList.add('active');
+                
+                const filter = this.getAttribute('data-filter');
+                
+                // Filter stories
+                storyCards.forEach(card => {
+                    if (filter === 'all') {
+                        card.style.display = 'block';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                        }, 10);
+                    } else {
+                        const categories = card.getAttribute('data-categories');
+                        if (categories && categories.includes(filter)) {
+                            card.style.display = 'block';
+                            setTimeout(() => {
+                                card.style.opacity = '1';
+                            }, 10);
+                        } else {
+                            card.style.opacity = '0';
+                            setTimeout(() => {
+                                card.style.display = 'none';
+                            }, 300);
+                        }
+                    }
+                });
+            });
+        });
+
+        // Load more stories
+        const loadMoreBtn = document.getElementById('loadMoreStories');
+        const storiesGrid = document.getElementById('storiesGrid');
+        
+        loadMoreBtn.addEventListener('click', function() {
+            // In a real implementation, this would load more stories from a server
+            // For now, we'll simulate adding more stories
+            const additionalStories = [
+                {
+                    title: "Solar Power Brings Light to Remote Village",
+                    category: "economic",
+                    location: "Philippines",
+                    excerpt: "Solar panels installed by Groww Charity now provide electricity to 200 homes that were previously off the grid.",
+                    image: "https://images.unsplash.com/photo-1466611653911-95081537e5b7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                },
+                {
+                    title: "Nutrition Program Reduces Childhood Malnutrition",
+                    category: "healthcare",
+                    location: "Malawi",
+                    excerpt: "A community garden and nutrition education program cut childhood malnutrition rates by 70% in just 18 months.",
+                    image: "https://images.unsplash.com/photo-1542838132-92c53300491e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                },
+                {
+                    title: "Digital Literacy Opens New Opportunities",
+                    category: "education",
+                    location: "Brazil",
+                    excerpt: "A digital literacy program is teaching coding and computer skills to youth in urban favelas, preparing them for tech jobs.",
+                    image: "https://images.unsplash.com/photo-1517077304055-6e89abbf09b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                }
+            ];
+            
+            additionalStories.forEach((story, index) => {
+                const storyId = 10 + index;
+                const card = document.createElement('div');
+                card.className = 'story-card observable';
+                card.setAttribute('data-categories', story.category);
+                
+                card.innerHTML = `
+                    <div class="h-40 bg-gradient-to-br from-sky to-storm relative overflow-hidden">
+                        <img src="${story.image}" alt="${story.title}" class="w-full h-full object-cover">
+                        <div class="absolute top-4 left-4">
+                            <span class="story-category category-${story.category}">${story.category.charAt(0).toUpperCase() + story.category.slice(1)}</span>
+                        </div>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="text-xl font-bold mb-3 dark:text-dark-text">${story.title}</h3>
+                        <p class="text-gray-600 mb-4 dark:text-gray-400">${story.excerpt}</p>
+                        <div class="flex justify-between items-center">
+                            <div class="text-gray-500 text-sm dark:text-gray-400">
+                                <i class="fas fa-map-marker-alt mr-1"></i> ${story.location}
+                            </div>
+                            <button class="btn-read-more read-story-btn text-sm py-2 px-4" data-story="${storyId}">
+                                Read
+                            </button>
+                        </div>
+                    </div>
+                `;
+                
+                storiesGrid.appendChild(card);
+                
+                // Add to storiesData for modal
+                storiesData[storyId] = {
+                    title: story.title,
+                    location: story.location,
+                    date: "Recent",
+                    categories: [story.category.charAt(0).toUpperCase() + story.category.slice(1)],
+                    content: `<p>${story.excerpt}</p><p class="mt-4">This is a detailed story about how Groww Charity made an impact in this community. In a real implementation, this would be a full story with multiple paragraphs and details.</p>`,
+                    impact: "This program has created sustainable change in the community, with measurable improvements in quality of life and future opportunities.",
+                    image: story.image
+                };
+                
+                // Add event listener to new button
+                card.querySelector('.read-story-btn').addEventListener('click', function() {
+                    const storyId = this.getAttribute('data-story');
+                    const story = storiesData[storyId];
+                    
+                    if (story) {
+                        document.getElementById('storyModalTitle').textContent = story.title;
+                        document.getElementById('storyModalLocation').textContent = story.location;
+                        document.getElementById('storyModalDate').textContent = story.date;
+                        document.getElementById('storyModalContent').innerHTML = story.content;
+                        document.getElementById('storyModalImpact').textContent = story.impact;
+                        document.getElementById('storyModalImg').src = story.image;
+                        
+                        // Set categories
+                        const categoriesContainer = document.getElementById('storyModalCategories');
+                        categoriesContainer.innerHTML = '';
+                        story.categories.forEach(category => {
+                            const span = document.createElement('span');
+                            span.className = `story-category category-${category.toLowerCase().replace(' ', '-')}`;
+                            span.textContent = category;
+                            categoriesContainer.appendChild(span);
+                        });
+                        
+                        storyModal.classList.remove('hidden');
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+            });
+            
+            // Hide load more button after loading all stories
+            loadMoreBtn.textContent = "All Stories Loaded";
+            loadMoreBtn.disabled = true;
+            loadMoreBtn.classList.remove('hover:opacity-90');
+            loadMoreBtn.classList.add('opacity-50');
+            
+            // Trigger animations for new elements
+            setTimeout(() => {
+                document.querySelectorAll('.observable').forEach(el => {
+                    el.classList.add('visible');
+                });
+            }, 100);
+        });
+
+        // Share story form
+        document.getElementById('shareStoryForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            alert('Thank you for sharing your story with us! We will review it and may contact you for more details.');
+            this.reset();
+        });
+
+        // ========== COMMON FUNCTIONALITY ==========
+        
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+        
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                }
+            });
+        }, observerOptions);
+        
+        // Observe all elements with observable classes
+        document.querySelectorAll('.observable, .observable-left, .observable-right').forEach(el => {
+            observer.observe(el);
+        });
+        
+        // Back to top button
+        const backToTopBtn = document.getElementById('backToTop');
+        
+        window.addEventListener('scroll', () => {
+            if (window.pageYOffset > 300) {
+                backToTopBtn.classList.remove('hidden');
+            } else {
+                backToTopBtn.classList.add('hidden');
+            }
+        });
+        
+        backToTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Mobile footer accordion
+        document.addEventListener('DOMContentLoaded', function() {
+            const mobileAccordionBtns = document.querySelectorAll('.mobile-accordion-btn');
+            
+            mobileAccordionBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const content = this.nextElementSibling;
+                    const icon = this.querySelector('i');
+                    
+                    // Close other open accordions
+                    document.querySelectorAll('.mobile-accordion-content').forEach(otherContent => {
+                        if (otherContent !== content && !otherContent.classList.contains('hidden')) {
+                            otherContent.classList.add('hidden');
+                            otherContent.previousElementSibling.querySelector('i').classList.remove('rotate-180');
+                        }
+                    });
+                    
+                    // Toggle current accordion
+                    content.classList.toggle('hidden');
+                    icon.classList.toggle('rotate-180');
+                });
+            });
+        });
+    </script>
+</body>
+</html>
