@@ -773,41 +773,18 @@
             </a>
         </div>
         
-      <div class="control-buttons flex items-center gap-2 sm:gap-3">
-  
-  <!-- Theme Toggle -->
-  <button
-    id="themeToggle"
-    title="Toggle Theme"
-    class="w-9 h-9 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center
-           hover:bg-gray-100 dark:hover:bg-white/10 transition-colors"
-  >
-    <i class="fas fa-moon dark:hidden"></i>
-    <i class="fas fa-sun hidden dark:block"></i>
-  </button>
-
-  <!-- RTL Toggle -->
-  <button
-    id="rtlToggle"
-    title="Toggle RTL"
-    class="w-9 h-9 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center
-           hover:bg-gray-100 dark:hover:bg-white/10 transition-colors"
-  >
-    <i class="fas fa-globe"></i>
-  </button>
-
-  <!-- Logout -->
-  <button
-    id="logoutBtn"
-    title="Logout"
-    class="w-9 h-9 sm:w-10 sm:h-10 rounded-lg flex items-center justify-center
-           text-red-500 hover:bg-red-50 hover:text-red-600 transition-colors"
-  >
-    <i class="fas fa-sign-out-alt"></i>
-  </button>
-
-</div>
-
+        <div class="control-buttons">
+            <button id="themeToggle" class="theme-toggle" title="Toggle Theme">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </button>
+            <button id="rtlToggle" class="control-btn" title="Toggle RTL">
+                <i class="fas fa-globe"></i>
+            </button>
+            <button id="logoutBtn" class="control-btn text-red-500 hover:text-red-600" title="Logout">
+                <i class="fas fa-sign-out-alt"></i>
+            </button>
+        </div>
     </div>
     
     <!-- Overlay for Mobile -->
