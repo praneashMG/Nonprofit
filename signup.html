@@ -6,7 +6,7 @@
     <title>Sign Up | Groww Charity</title>
     <link rel="icon" type="image/jpeg" href="Assest/growwpark_logo.jpg">
 
-    <meta name="description" content="Create your Growwpark Foundation account to start making a difference in communities.">
+    <meta name="description" content="Create your Groww Charity account to start making a difference in communities.">
     
     <!-- SEO Meta Tags -->
     <meta name="keywords" content="foundation signup, philanthropy, charitable giving, community impact, social work">
@@ -97,7 +97,7 @@
             color: #374151;
             min-height: 100vh;
             margin: 0;
-            padding-top: 0;
+            padding: 20px 0;
             overflow-y: auto;
         }
         
@@ -131,69 +131,48 @@
         .btn-magnetic:hover {
             background: linear-gradient(135deg, #257D49 0%, #3a80d2 100%);
             transform: scale(1.05) translateY(-2px);
-            box-shadow: 0 10px 25px rgba(74, 144, 226, 0.3);
+            box-shadow: 0 8px 20px rgba(74, 144, 226, 0.3);
         }
         
-        /* Auth Card with Curved Borders and Step-Up Effect */
+        /* Auth Card - SMALLER SIZE */
         .auth-card {
             background: white;
-            border-radius: 32px;
+            border-radius: 24px;
             overflow: hidden;
-            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.12), 0 4px 20px rgba(0, 0, 0, 0.08);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
             border: 1px solid #E5E5E5;
             transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.1);
             transform: translateY(0);
             position: relative;
+            width: 100%;
+            max-width: 420px;
+            margin: 20px auto;
         }
         
-        /* Step-up effect on hover */
         .auth-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 35px 90px rgba(0, 0, 0, 0.16), 0 8px 30px rgba(0, 0, 0, 0.12);
-        }
-        
-        /* Add a subtle glow effect for extra depth */
-        .auth-card::after {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            border-radius: 32px;
-            box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.05);
-            pointer-events: none;
-            opacity: 0;
-            transition: opacity 0.3s ease;
-        }
-        
-        .auth-card:hover::after {
-            opacity: 1;
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.12);
         }
         
         .dark .auth-card {
             background: #1e293b;
             border-color: #334155;
-            box-shadow: 0 25px 70px rgba(0, 0, 0, 0.35), 0 4px 20px rgba(0, 0, 0, 0.25);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
         }
         
         .dark .auth-card:hover {
-            box-shadow: 0 35px 90px rgba(0, 0, 0, 0.45), 0 8px 30px rgba(0, 0, 0, 0.35);
-        }
-        
-        .dark .auth-card::after {
-            box-shadow: inset 0 0 40px rgba(255, 255, 255, 0.03);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
         }
         
         /* Input Styles */
         .form-input {
             width: 100%;
-            padding: 0.875rem 1rem;
-            border-radius: 14px;
+            padding: 0.75rem 0.875rem;
+            border-radius: 10px;
             border: 2px solid #E5E5E5;
             background: white;
             transition: all 0.3s ease;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
         }
         
         .dark .form-input {
@@ -224,9 +203,9 @@
         
         /* Checkbox */
         .form-checkbox {
-            width: 18px;
-            height: 18px;
-            border-radius: 8px;
+            width: 16px;
+            height: 16px;
+            border-radius: 5px;
             border: 2px solid #D1D5DB;
             cursor: pointer;
             transition: all 0.2s ease;
@@ -254,14 +233,14 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 0.75rem;
-            border-radius: 14px;
+            padding: 0.65rem;
+            border-radius: 10px;
             border: 2px solid #E5E5E5;
             background: white;
             color: #4B5563;
             font-weight: 500;
             transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.1);
-            font-size: 0.9rem;
+            font-size: 0.8rem;
         }
         
         .dark .social-signup-btn {
@@ -273,15 +252,15 @@
         .social-signup-btn:hover {
             border-color: #4A90E2;
             color: #4A90E2;
-            transform: translateY(-3px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
         }
         
         /* Toggle Buttons - Positioned at top right */
         .toggle-container {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
+            position: fixed;
+            top: 1rem;
+            right: 1rem;
             z-index: 1000;
             display: flex;
             gap: 0.5rem;
@@ -289,9 +268,9 @@
         
         /* Individual toggle buttons with sky blue theme */
         .theme-toggle-btn {
-            width: 40px;
-            height: 40px;
-            border-radius: 12px;
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -300,13 +279,14 @@
             transition: all 0.3s ease;
             border: 1px solid #4A90E2;
             cursor: pointer;
-            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.2);
+            box-shadow: 0 4px 10px rgba(74, 144, 226, 0.2);
+            font-size: 0.85rem;
         }
         
         .rtl-toggle-btn {
-            width: 40px;
-            height: 40px;
-            border-radius: 12px;
+            width: 38px;
+            height: 38px;
+            border-radius: 10px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -315,8 +295,9 @@
             transition: all 0.3s ease;
             border: 1px solid #4A90E2;
             cursor: pointer;
-            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.2);
+            box-shadow: 0 4px 10px rgba(74, 144, 226, 0.2);
             font-weight: bold;
+            font-size: 0.85rem;
         }
         
         .dark .theme-toggle-btn,
@@ -324,15 +305,15 @@
             background: #4A90E2;
             color: white;
             border-color: #4A90E2;
-            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+            box-shadow: 0 4px 10px rgba(74, 144, 226, 0.3);
         }
         
         .theme-toggle-btn:hover,
         .rtl-toggle-btn:hover {
             background: #3a80d2;
             color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 12px 40px rgba(74, 144, 226, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 18px rgba(74, 144, 226, 0.3);
         }
         
         .theme-toggle-btn.active,
@@ -344,7 +325,7 @@
         
         [dir="rtl"] .toggle-container {
             right: auto;
-            left: 1.5rem;
+            left: 1rem;
         }
         
         /* Divider */
@@ -369,49 +350,7 @@
         
         .divider span {
             padding: 0 0.75rem;
-            font-size: 0.875rem;
-        }
-        
-        /* Back to Home Button - Positioned at top left */
-        .back-home-btn {
-            position: absolute;
-            top: 1.5rem;
-            left: 1.5rem;
-            z-index: 1000;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 0.6rem 1rem;
-            background: #4A90E2;
-            border-radius: 12px;
-            border: 1px solid #4A90E2;
-            color: white;
-            font-weight: 500;
-            transition: all 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.1);
-            box-shadow: 0 8px 32px rgba(74, 144, 226, 0.2);
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-        
-        [dir="rtl"] .back-home-btn {
-            left: auto;
-            right: 1.5rem;
-        }
-        
-        .dark .back-home-btn {
-            background: #4A90E2;
-            border-color: #4A90E2;
-            color: white;
-            box-shadow: 0 8px 32px rgba(74, 144, 226, 0.3);
-        }
-        
-        .back-home-btn:hover,
-        .theme-toggle-btn:hover,
-        .rtl-toggle-btn:hover {
-            background: #3a80d2;
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 12px 40px rgba(74, 144, 226, 0.3);
+            font-size: 0.8rem;
         }
         
         /* Logo container - CENTERED */
@@ -419,8 +358,8 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            gap: 0.75rem;
-            margin-bottom: 1.5rem;
+            gap: 0.5rem;
+            margin-bottom: 1rem;
             cursor: pointer;
             transition: transform 0.3s ease;
             flex-direction: column;
@@ -432,30 +371,30 @@
         
         /* Round logo */
         .logo-circle {
-            width: 70px;
-            height: 70px;
+            width: 60px;
+            height: 60px;
             border-radius: 50%;
             background: linear-gradient(135deg, #4A90E2, #2E8B57);
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 28px;
+            font-size: 24px;
             border: 3px solid white;
-            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.2);
+            box-shadow: 0 4px 10px rgba(74, 144, 226, 0.2);
             transition: all 0.3s ease;
             flex-shrink: 0;
-            margin-bottom: 0.75rem;
+            margin-bottom: 0.5rem;
         }
         
         .logo-container:hover .logo-circle {
             transform: scale(1.05);
-            box-shadow: 0 6px 16px rgba(74, 144, 226, 0.3);
+            box-shadow: 0 6px 14px rgba(74, 144, 226, 0.3);
         }
         
         .dark .logo-circle {
             border-color: #1e293b;
-            box-shadow: 0 4px 12px rgba(74, 144, 226, 0.3);
+            box-shadow: 0 4px 10px rgba(74, 144, 226, 0.3);
         }
         
         .logo-text {
@@ -467,14 +406,14 @@
         
         .logo-text h1 {
             font-family: 'Playfair Display', serif;
-            font-size: 2rem;
+            font-size: 1.75rem;
             font-weight: 700;
             color: #4682B4;
             line-height: 1.2;
         }
         
         .logo-text p {
-            font-size: 0.875rem;
+            font-size: 0.75rem;
             color: #64748b;
         }
         
@@ -492,8 +431,8 @@
         }
         
         [dir="rtl"] .form-input.pl-10 {
-            padding-left: 1rem;
-            padding-right: 2.5rem;
+            padding-left: 0.875rem;
+            padding-right: 2.25rem;
         }
         
         [dir="rtl"] .relative .absolute.inset-y-0.left-0 {
@@ -543,7 +482,7 @@
         /* Error Message */
         .error-message {
             color: #EF4444;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             margin-top: 0.25rem;
             display: flex;
             align-items: center;
@@ -558,7 +497,7 @@
         /* Success Message */
         .success-message {
             color: #10B981;
-            font-size: 0.75rem;
+            font-size: 0.7rem;
             margin-top: 0.25rem;
             display: flex;
             align-items: center;
@@ -575,8 +514,8 @@
         .btn-loading::after {
             content: '';
             position: absolute;
-            width: 20px;
-            height: 20px;
+            width: 18px;
+            height: 18px;
             border: 2px solid white;
             border-radius: 50%;
             border-top-color: transparent;
@@ -588,13 +527,13 @@
             to { transform: rotate(360deg); }
         }
         
-        /* Main Container - SCROLLABLE */
+        /* Main Container */
         .main-container {
-            min-height: 100vh;
+            min-height: calc(100vh - 40px);
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 4rem 1rem 2rem;
+            padding: 20px 1rem;
         }
         
         /* Terms Link - No Underline */
@@ -603,6 +542,7 @@
             font-weight: 500;
             transition: all 0.3s ease;
             text-decoration: none;
+            font-size: 0.85rem;
         }
         
         .terms-link:hover {
@@ -611,7 +551,7 @@
         
         /* Validation messages */
         .validation-message {
-            font-size: 12px;
+            font-size: 0.7rem;
             margin-top: 4px;
             display: flex;
             align-items: center;
@@ -629,25 +569,12 @@
         /* Responsive Adjustments */
         @media (max-width: 768px) {
             .main-container {
-                padding: 3.5rem 1rem 1.5rem;
-            }
-            
-            .back-home-btn {
-                top: 1rem;
-                left: 1rem;
-                padding: 0.5rem;
-                width: 40px;
-                height: 40px;
-                justify-content: center;
-            }
-            
-            .back-home-btn span {
-                display: none;
+                padding: 15px 1rem;
             }
             
             .toggle-container {
-                top: 1rem;
-                right: 1rem;
+                top: 0.75rem;
+                right: 0.75rem;
             }
             
             .theme-toggle-btn,
@@ -658,55 +585,89 @@
             }
             
             .auth-card {
-                padding: 1.5rem;
-                border-radius: 24px;
-            }
-            
-            .form-input {
-                padding: 0.75rem;
-                font-size: 0.9rem;
-            }
-            
-            .logo-circle {
-                width: 60px;
-                height: 60px;
-                font-size: 24px;
-            }
-            
-            .logo-text h1 {
-                font-size: 1.75rem;
-            }
-        }
-        
-        @media (max-width: 640px) {
-            .main-container {
-                padding: 3rem 1rem 1rem;
-            }
-            
-            .auth-card {
                 padding: 1.25rem;
                 border-radius: 20px;
+                max-width: 380px;
             }
             
             .form-input {
                 padding: 0.7rem;
-                font-size: 0.85rem;
-            }
-            
-            .logo-container {
-                gap: 0.5rem;
-                margin-bottom: 1rem;
+                font-size: 0.8rem;
             }
             
             .logo-circle {
                 width: 55px;
                 height: 55px;
                 font-size: 22px;
-                margin-bottom: 0.5rem;
             }
             
             .logo-text h1 {
                 font-size: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            .main-container {
+                padding: 10px 0.75rem;
+            }
+            
+            .auth-card {
+                padding: 1rem;
+                border-radius: 18px;
+                max-width: 340px;
+            }
+            
+            .form-input {
+                padding: 0.65rem;
+                font-size: 0.8rem;
+            }
+            
+            .logo-container {
+                gap: 0.5rem;
+                margin-bottom: 0.75rem;
+            }
+            
+            .logo-circle {
+                width: 50px;
+                height: 50px;
+                font-size: 20px;
+                margin-bottom: 0.5rem;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.4rem;
+            }
+            
+            .toggle-container {
+                top: 0.5rem;
+                right: 0.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .auth-card {
+                padding: 0.875rem;
+                max-width: 300px;
+            }
+            
+            .logo-circle {
+                width: 45px;
+                height: 45px;
+                font-size: 18px;
+                margin-bottom: 0.4rem;
+            }
+            
+            .logo-text h1 {
+                font-size: 1.3rem;
+            }
+            
+            body {
+                padding: 10px 0;
+            }
+            
+            .main-container {
+                min-height: calc(100vh - 20px);
+                padding: 10px 0.5rem;
             }
         }
         
@@ -721,11 +682,14 @@
             flex: 1;
             min-width: 0;
         }
+        
+        /* Ensure body doesn't overflow */
+        html, body {
+            overflow-x: hidden;
+        }
     </style>
 </head>
 <body class="pattern-bg animate-fade-in">
-    
-    
     
     <!-- Toggle Buttons -->
     <div class="toggle-container">
@@ -738,45 +702,45 @@
         </button>
     </div>
 
-    <!-- Main Content - SCROLLABLE -->
+    <!-- Main Content -->
     <div class="main-container">
         <div class="w-full max-w-md mx-auto px-4">
             <!-- Centered Signup Form -->
             <div class="animate-slide-in">
-                <div class="auth-card p-6 lg:p-8">
+                <div class="auth-card p-5">
                     <!-- Logo - CENTERED -->
-                    <div class="flex flex-col items-center mb-6">
+                    <div class="flex flex-col items-center mb-4">
                         <a class='logo-container' href='index.html' title="Go to Home">
                             <div class="logo-circle">
                                 <i class="fas fa-hands-helping"></i>
                             </div>
                             <div class="logo-text">
                                 <h1>Groww Charity</h1>
-                                <p class="text-sm text-gray-600 dark:text-gray-400 mt-1">Join our community</p>
+                                <p class="text-xs text-gray-600 dark:text-gray-400 mt-0.5">Join our community</p>
                             </div>
                         </a>
                     </div>
                     
                     <!-- Title -->
-                    <div class="mb-6 text-center">
-                        <h2 class="font-serif text-2xl font-bold text-gray-800 dark:text-white mb-2">
+                    <div class="mb-5 text-center">
+                        <h2 class="font-serif text-xl font-bold text-gray-800 dark:text-white mb-1.5">
                             Create your account
                         </h2>
-                        <p class="text-gray-600 dark:text-gray-300">
+                        <p class="text-gray-600 dark:text-gray-300 text-sm">
                             Join us today and start making a difference
                         </p>
                     </div>
                     
-                    <form id="signupForm" class="space-y-4">
+                    <form id="signupForm" class="space-y-3">
                         <!-- Name -->
-                        <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-3">
                             <div>
-                                <label for="firstName" class="block text-sm font-medium text-gray-800 dark:text-gray-300 mb-1 rtl:text-right">
+                                <label for="firstName" class="block text-xs font-medium text-gray-800 dark:text-gray-300 mb-1 rtl:text-right">
                                     First Name
                                 </label>
                                 <div class="relative">
                                     <div class="absolute inset-y-0 left-0 rtl:left-auto rtl:right-0 pl-3 rtl:pl-0 rtl:pr-3 flex items-center pointer-events-none">
-                                        <i class="fas fa-user text-gray-400 text-sm"></i>
+                                        <i class="fas fa-user text-gray-400 text-xs"></i>
                                     </div>
                                     <input 
                                         type="text" 
@@ -784,7 +748,7 @@
                                         name="firstName"
                                         required
                                         placeholder="John"
-                                        class="form-input pl-10 rtl:pl-0 rtl:pr-10 rtl:text-right"
+                                        class="form-input pl-9 rtl:pl-0 rtl:pr-9 rtl:text-right"
                                         dir="auto"
                                     >
                                 </div>
@@ -794,12 +758,12 @@
                                 </div>
                             </div>
                             <div>
-                                <label for="lastName" class="block text-sm font-medium text-gray-800 dark:text-gray-300 mb-1 rtl:text-right">
+                                <label for="lastName" class="block text-xs font-medium text-gray-800 dark:text-gray-300 mb-1 rtl:text-right">
                                     Last Name
                                 </label>
                                 <div class="relative">
                                     <div class="absolute inset-y-0 left-0 rtl:left-auto rtl:right-0 pl-3 rtl:pl-0 rtl:pr-3 flex items-center pointer-events-none">
-                                        <i class="fas fa-user text-gray-400 text-sm"></i>
+                                        <i class="fas fa-user text-gray-400 text-xs"></i>
                                     </div>
                                     <input 
                                         type="text" 
@@ -807,7 +771,7 @@
                                         name="lastName"
                                         required
                                         placeholder="Doe"
-                                        class="form-input pl-10 rtl:pl-0 rtl:pr-10 rtl:text-right"
+                                        class="form-input pl-9 rtl:pl-0 rtl:pr-9 rtl:text-right"
                                         dir="auto"
                                     >
                                 </div>
@@ -820,12 +784,12 @@
                         
                         <!-- Email -->
                         <div>
-                            <label for="email" class="block text-sm font-medium text-gray-800 dark:text-gray-300 mb-1 rtl:text-right">
+                            <label for="email" class="block text-xs font-medium text-gray-800 dark:text-gray-300 mb-1 rtl:text-right">
                                 Email Address
                             </label>
                             <div class="relative">
                                 <div class="absolute inset-y-0 left-0 rtl:left-auto rtl:right-0 pl-3 rtl:pl-0 rtl:pr-3 flex items-center pointer-events-none">
-                                    <i class="fas fa-envelope text-gray-400 text-sm"></i>
+                                    <i class="fas fa-envelope text-gray-400 text-xs"></i>
                                 </div>
                                 <input 
                                     type="email" 
@@ -833,7 +797,7 @@
                                     name="email"
                                     required
                                     placeholder="you@example.com"
-                                    class="form-input pl-10 rtl:pl-0 rtl:pr-10 rtl:text-right"
+                                    class="form-input pl-9 rtl:pl-0 rtl:pr-9 rtl:text-right"
                                     dir="auto"
                                 >
                             </div>
@@ -846,12 +810,12 @@
                         
                         <!-- Password -->
                         <div>
-                            <label for="password" class="block text-sm font-medium text-gray-800 dark:text-gray-300 mb-1 rtl:text-right">
+                            <label for="password" class="block text-xs font-medium text-gray-800 dark:text-gray-300 mb-1 rtl:text-right">
                                 Password
                             </label>
                             <div class="relative">
                                 <div class="absolute inset-y-0 left-0 rtl:left-auto rtl:right-0 pl-3 rtl:pl-0 rtl:pr-3 flex items-center pointer-events-none">
-                                    <i class="fas fa-lock text-gray-400 text-sm"></i>
+                                    <i class="fas fa-lock text-gray-400 text-xs"></i>
                                 </div>
                                 <input 
                                     type="password" 
@@ -859,12 +823,12 @@
                                     name="password"
                                     required
                                     placeholder="••••••••"
-                                    class="form-input pl-10 rtl:pl-0 rtl:pr-10 rtl:text-right"
+                                    class="form-input pl-9 rtl:pl-0 rtl:pr-9 rtl:text-right"
                                     dir="auto"
                                     minlength="8"
                                 >
                                 <button type="button" class="absolute inset-y-0 right-0 rtl:right-auto rtl:left-0 pr-3 rtl:pr-0 rtl:pl-3 flex items-center" id="togglePassword">
-                                    <i class="fas fa-eye text-gray-400 text-sm"></i>
+                                    <i class="fas fa-eye text-gray-400 text-xs"></i>
                                 </button>
                             </div>
                             <div id="password-error" class="error-message hidden">
@@ -876,12 +840,12 @@
                         
                         <!-- Confirm Password -->
                         <div>
-                            <label for="confirmPassword" class="block text-sm font-medium text-gray-800 dark:text-gray-300 mb-1 rtl:text-right">
+                            <label for="confirmPassword" class="block text-xs font-medium text-gray-800 dark:text-gray-300 mb-1 rtl:text-right">
                                 Confirm Password
                             </label>
                             <div class="relative">
                                 <div class="absolute inset-y-0 left-0 rtl:left-auto rtl:right-0 pl-3 rtl:pl-0 rtl:pr-3 flex items-center pointer-events-none">
-                                    <i class="fas fa-lock text-gray-400 text-sm"></i>
+                                    <i class="fas fa-lock text-gray-400 text-xs"></i>
                                 </div>
                                 <input 
                                     type="password" 
@@ -889,12 +853,12 @@
                                     name="confirmPassword"
                                     required
                                     placeholder="••••••••"
-                                    class="form-input pl-10 rtl:pl-0 rtl:pr-10 rtl:text-right"
+                                    class="form-input pl-9 rtl:pl-0 rtl:pr-9 rtl:text-right"
                                     dir="auto"
                                     minlength="8"
                                 >
                                 <button type="button" class="absolute inset-y-0 right-0 rtl:right-auto rtl:left-0 pr-3 rtl:pr-0 rtl:pl-3 flex items-center" id="toggleConfirmPassword">
-                                    <i class="fas fa-eye text-gray-400 text-sm"></i>
+                                    <i class="fas fa-eye text-gray-400 text-xs"></i>
                                 </button>
                             </div>
                             <div id="confirm-password-error" class="error-message hidden">
@@ -905,53 +869,53 @@
                         </div>
                         
                         <!-- Terms -->
-                        <div class="flex items-start space-x-2 rtl:space-x-reverse text-sm">
+                        <div class="flex items-start space-x-2 rtl:space-x-reverse text-xs">
                             <input type="checkbox" id="terms" class="form-checkbox mt-0.5" required>
-                            <label for="terms" class="text-gray-800 dark:text-gray-300 rtl:text-right">
+                            <label for="terms" class="text-gray-800 dark:text-gray-300 rtl:text-right text-xs">
                                 I agree to the 
-                                <a href="#" class="terms-link">Terms and Conditions</a> 
+                                <a href="#" class="terms-link text-xs">Terms and Conditions</a> 
                                 and 
-                                <a href="#" class="terms-link">Privacy Policy</a>
+                                <a href="#" class="terms-link text-xs">Privacy Policy</a>
                             </label>
                         </div>
                         <div id="terms-validation" class="validation-message"></div>
                         
                     
                         <!-- Submit Button -->
-                        <button type="submit" id="signup-button" class="btn-magnetic w-full py-3 rounded-lg font-medium text-sm md:text-base mt-2">
-                            <i class="fas fa-user-plus mr-2 rtl:mr-0 rtl:ml-2"></i> Create Account
+                        <button type="submit" id="signup-button" class="btn-magnetic w-full py-2.5 rounded-lg font-medium text-sm mt-1">
+                            <i class="fas fa-user-plus mr-2 rtl:mr-0 rtl:ml-2 text-xs"></i> Create Account
                         </button>
                         
                         <!-- Signup Status Message -->
-                        <div id="signup-status" class="text-center mt-2"></div>
+                        <div id="signup-status" class="text-center mt-1"></div>
                     </form>
                     
                     <!-- Divider -->
-                    <div class="divider my-6">
-                        <span class="text-sm text-gray-500 dark:text-gray-400">Or sign up with</span>
+                    <div class="divider my-4">
+                        <span class="text-xs text-gray-500 dark:text-gray-400">Or sign up with</span>
                     </div>
                     
                     <!-- Social Signup - ONE ROW -->
                     <div class="social-signup-container">
                         <button class="social-signup-btn">
-                            <i class="fab fa-google text-red-500 text-sm md:text-base"></i>
-                            <span class="text-xs md:text-sm ml-2">Google</span>
+                            <i class="fab fa-google text-red-500 text-xs"></i>
+                            <span class="text-xs ml-1.5">Google</span>
                         </button>
                         <button class="social-signup-btn">
-                            <i class="fab fa-facebook-f text-blue-600 text-sm md:text-base"></i>
-                            <span class="text-xs md:text-sm ml-2">Facebook</span>
+                            <i class="fab fa-facebook-f text-blue-600 text-xs"></i>
+                            <span class="text-xs ml-1.5">Facebook</span>
                         </button>
                         <button class="social-signup-btn">
-                            <i class="fab fa-linkedin-in text-blue-700 text-sm md:text-base"></i>
-                            <span class="text-xs md:text-sm ml-2">LinkedIn</span>
+                            <i class="fab fa-linkedin-in text-blue-700 text-xs"></i>
+                            <span class="text-xs ml-1.5">LinkedIn</span>
                         </button>
                     </div>
                     
                     <!-- Login Link -->
-                    <div class="text-center mt-6 pt-4 border-t border-gray-200 dark:border-gray-700 text-sm">
+                    <div class="text-center mt-4 pt-3 border-t border-gray-200 dark:border-gray-700 text-xs">
                         <p class="text-gray-600 dark:text-gray-300">
                             Already have an account? 
-                            <a class='terms-link font-medium' href='login.html'>
+                            <a class='terms-link font-medium text-xs' href='login.html'>
                                 Sign in here
                             </a>
                         </p>
@@ -959,12 +923,7 @@
                 </div>
                 
                 <!-- Security Note -->
-                <div class="mt-4 p-3 bg-gray-50 dark:bg-gray-900/50 rounded-xl text-xs">
-                    <div class="text-gray-600 dark:text-gray-400 text-center">
-                        <p><i class="fas fa-lock mr-1 text-green-500"></i> Secure SSL Encryption • Your data is protected</p>
-                        <p class="mt-1">© 2025 Groww Charity. All rights reserved.</p>
-                    </div>
-                </div>
+              
             </div>
         </div>
     </div>
@@ -1183,9 +1142,9 @@
             const statusElement = document.getElementById('signup-status');
             if (statusElement) {
                 statusElement.innerHTML = `
-                    <div class="success-message p-2 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-200 dark:border-green-800">
-                        <i class="fas fa-check-circle mr-2 rtl:mr-0 rtl:ml-2"></i>
-                        <span>${message}</span>
+                    <div class="success-message p-1.5 bg-green-50 dark:bg-green-900/20 rounded-lg border border-green-200 dark:border-green-800">
+                        <i class="fas fa-check-circle mr-1.5 rtl:mr-0 rtl:ml-1.5 text-xs"></i>
+                        <span class="text-xs">${message}</span>
                     </div>
                 `;
                 
@@ -1200,9 +1159,9 @@
             const statusElement = document.getElementById('signup-status');
             if (statusElement) {
                 statusElement.innerHTML = `
-                    <div class="error-message p-2 bg-red-50 dark:bg-red-900/20 rounded-lg border border-red-200 dark:border-red-800">
-                        <i class="fas fa-exclamation-circle mr-2 rtl:mr-0 rtl:ml-2"></i>
-                        <span>${message}</span>
+                    <div class="error-message p-1.5 bg-red-50 dark:bg-red-900/20 rounded-lg border border-red-200 dark:border-red-800">
+                        <i class="fas fa-exclamation-circle mr-1.5 rtl:mr-0 rtl:ml-1.5 text-xs"></i>
+                        <span class="text-xs">${message}</span>
                     </div>
                 `;
                 
@@ -1275,7 +1234,7 @@
                     // Show loading state
                     signupButton.classList.add('btn-loading');
                     signupButton.disabled = true;
-                    signupButton.innerHTML = '<span>Creating Account...</span>';
+                    signupButton.innerHTML = '<span class="text-sm">Creating Account...</span>';
                     
                     // Simulate API call
                     try {
@@ -1306,7 +1265,7 @@
                         // Reset button state
                         signupButton.classList.remove('btn-loading');
                         signupButton.disabled = false;
-                        signupButton.innerHTML = '<i class="fas fa-user-plus mr-2 rtl:mr-0 rtl:ml-2"></i><span>Create Account</span>';
+                        signupButton.innerHTML = '<i class="fas fa-user-plus mr-2 rtl:mr-0 rtl:ml-2 text-sm"></i><span class="text-sm">Create Account</span>';
                     }
                 });
             }
@@ -1384,7 +1343,7 @@
                 button.addEventListener('click', () => {
                     // Show loading state
                     const originalText = button.innerHTML;
-                    button.innerHTML = '<i class="fas fa-spinner fa-spin"></i><span class="ml-2">Connecting...</span>';
+                    button.innerHTML = '<i class="fas fa-spinner fa-spin text-xs"></i><span class="ml-1.5 text-xs">Connecting...</span>';
                     button.disabled = true;
                     
                     // Simulate social signup and redirect to login
@@ -1412,7 +1371,6 @@
             setTimeout(() => {
                 const authCard = document.querySelector('.auth-card');
                 if (authCard) {
-                    // Reset any inline styles first
                     authCard.style.transition = 'all 0.6s cubic-bezier(0.175, 0.885, 0.32, 1.275)';
                     authCard.style.transform = 'translateY(20px)';
                     authCard.style.opacity = '0';
@@ -1425,6 +1383,9 @@
                     authCard.style.opacity = '1';
                 }
             }, 100);
+            
+            // Ensure body doesn't overflow
+            document.body.style.overflow = 'auto';
         });
     </script>
 </body>
