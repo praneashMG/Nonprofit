@@ -711,18 +711,23 @@
                 <div class="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-secondary flex items-center justify-center">
                     <i class="fas fa-hands-helping text-white text-sm"></i>
                 </div>
-                <div>
-                    <h1 class="font-bold text-base text-gray-800 dark:text-dark-text">Groww Charity</h1>
-                </div>
+               <div>
+  <a href="index.html" class="block">
+    <h1 class="font-bold text-base text-gray-800 dark:text-dark-text hover:text-primary transition-colors">
+      Groww Charity
+    </h1>
+  </a>
+</div>
+
             </div>
         </div>
         
         <div class="control-buttons">
             
-            <button id="themeToggle" class="control-btn" title="Toggle Theme">
-                <i class="fas fa-moon"></i>
-                <i class="fas fa-sun" style="display: none;"></i>
-            </button>
+           <button id="themeToggle" class="control-btn" title="Toggle Theme">
+    <i class="fas fa-moon"></i>
+</button>
+
             <button id="rtlToggle" class="control-btn" title="Toggle RTL">
                 <i class="fas fa-globe"></i>
             </button>
@@ -809,11 +814,10 @@
                     <div class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></div>
                 </div>
                 <div class="flex items-center justify-center gap-3">
-                    <button id="sidebarThemeToggle" class="control-btn" title="Toggle Theme">
-                        <i class="fas fa-moon"></i>
-                                                <i class="fas fa-sun"></i>
+                   <button id="sidebarThemeToggle" class="control-btn" title="Toggle Theme">
+    <i class="fas fa-moon"></i>
+</button>
 
-                    </button>
                     <button id="sidebarRtlToggle" class="control-btn" title="Toggle RTL">
                         <i class="fas fa-globe"></i>
                     </button>
@@ -1244,36 +1248,31 @@
             });
         });
 
-        // ========== THEME TOGGLE FUNCTIONALITY ==========
-        function setTheme(theme) {
-            if (theme === 'dark') {
-                htmlElement.classList.add('dark');
-                localStorage.setItem('theme', 'dark');
-                // Update icons
-                document.querySelectorAll('.fa-moon').forEach(icon => {
-                    icon.style.display = 'none';
-                });
-                document.querySelectorAll('.fa-sun').forEach(icon => {
-                    icon.style.display = 'block';
-                });
-            } else {
-                htmlElement.classList.remove('dark');
-                localStorage.setItem('theme', 'light');
-                // Update icons
-                document.querySelectorAll('.fa-moon').forEach(icon => {
-                    icon.style.display = 'block';
-                });
-                document.querySelectorAll('.fa-sun').forEach(icon => {
-                    icon.style.display = 'none';
-                });
-            }
-            updateChartTheme();
-        }
 
-        function toggleTheme() {
-            const isDark = htmlElement.classList.contains('dark');
-            setTheme(isDark ? 'light' : 'dark');
-        }
+       // ========== THEME TOGGLE (CLEAN & FIXED) ==========
+function updateThemeIcons(isDark) {
+    [themeToggle, sidebarThemeToggle].forEach(btn => {
+        if (!btn) return;
+        const icon = btn.querySelector('i');
+        icon.className = isDark ? 'fas fa-sun' : 'fas fa-moon';
+    });
+}
+
+function setTheme(theme) {
+    const isDark = theme === 'dark';
+
+    htmlElement.classList.toggle('dark', isDark);
+    localStorage.setItem('theme', theme);
+
+    updateThemeIcons(isDark);
+    updateChartTheme();
+}
+
+function toggleTheme() {
+    const isDark = htmlElement.classList.contains('dark');
+    setTheme(isDark ? 'light' : 'dark');
+}
+
 
         // Theme toggle event listeners
         [themeToggle, sidebarThemeToggle].forEach(btn => {
