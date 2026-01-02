@@ -118,6 +118,27 @@
             transform: translateX(280px);
         }
         
+        /* Hamburger to Close Animation */
+        #mobileMenuBtn i {
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+        
+        #mobileMenuBtn i.fa-times {
+            position: absolute;
+            opacity: 0;
+            transform: rotate(-90deg);
+        }
+        
+        #mobileMenuBtn.active i.fa-bars {
+            transform: rotate(90deg);
+            opacity: 0;
+        }
+        
+        #mobileMenuBtn.active i.fa-times {
+            transform: rotate(0deg);
+            opacity: 1;
+        }
+        
         .sidebar-header {
             padding: 24px;
             border-bottom: 1px solid #e2e8f0;
@@ -935,63 +956,40 @@
     </style>
 </head>
 <body class="text-gray-800">
-    <!-- Mobile Header -->
-<div class="mobile-header flex items-center justify-between px-3 py-2">
-
-  <!-- Left: Menu + Logo -->
-  <div class="flex items-center gap-3 min-w-0">
-
-    <!-- Menu Button -->
-    <button id="mobileMenuBtn"
-      class="w-9 h-9 rounded-lg flex items-center justify-center
-             hover:bg-gray-100 dark:hover:bg-white/10 transition">
-      <i class="fas fa-bars"></i>
-    </button>
-
-    <!-- Logo -->
-    <a href="index.html"
-       class="flex items-center gap-2 whitespace-nowrap min-w-0">
-
-      <div class="w-9 h-9 rounded-full bg-gradient-to-br from-sky to-ocean
-                  flex items-center justify-center shrink-0">
-        <i class="fas fa-hands-helping text-white text-base"></i>
-      </div>
-
-      <span class="font-serif text-base sm:text-lg font-bold
-                   text-storm dark:text-sky">
-        Groww Charity
-      </span>
-    </a>
-  </div>
-
-  <!-- Right: Controls -->
-  <div class="flex items-center gap-1">
-
-    <button id="themeToggle"
-      class="w-9 h-9 rounded-lg flex items-center justify-center
-             hover:bg-gray-100 dark:hover:bg-white/10 transition"
-      title="Toggle Theme">
-      <i class="fas fa-moon dark:hidden"></i>
-      <i class="fas fa-sun hidden dark:block"></i>
-    </button>
-
-    <button id="rtlToggle"
-      class="w-9 h-9 rounded-lg flex items-center justify-center
-             hover:bg-gray-100 dark:hover:bg-white/10 transition"
-      title="Toggle RTL">
-      <i class="fas fa-globe"></i>
-    </button>
-
-    <button id="logoutBtn"
-      class="w-9 h-9 rounded-lg flex items-center justify-center
-             text-red-500 hover:bg-red-50 hover:text-red-600 transition"
-      title="Logout">
-      <i class="fas fa-sign-out-alt"></i>
-    </button>
-
-  </div>
-</div>
-
+    <!-- Mobile Header - FIXED FOR MOBILE -->
+    <div class="mobile-header">
+        <div class="flex items-center gap-3">
+            <button id="mobileMenuBtn" class="control-btn relative">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-times"></i>
+            </button>
+            <a href="index.html" class="flex items-center space-x-2">
+                <div class="w-8 h-8 rounded-full bg-gradient-to-br from-sky to-ocean flex items-center justify-center">
+                    <i class="fas fa-hands-helping text-white text-base"></i>
+                </div>
+                <div class="hidden sm:block">
+                    <h1 class="font-serif text-sm font-bold text-storm dark:text-sky">Groww Charity</h1>
+                </div>
+                <div class="sm:hidden">
+                    <h1 class="font-serif text-l font-bold text-storm dark:text-sky">Groww Charity</h1>
+                </div>
+            </a>
+        </div>
+        
+        <div class="control-buttons">
+            <button id="themeToggle" class="theme-toggle" title="Toggle Theme">
+                <i class="fas fa-moon"></i>
+                <i class="fas fa-sun"></i>
+            </button>
+            <button id="rtlToggle" class="control-btn" title="Toggle RTL">
+                <i class="fas fa-globe"></i>
+            </button>
+            <button id="logoutBtn" class="control-btn text-red-500 hover:text-red-600" title="Logout">
+                <i class="fas fa-sign-out-alt"></i>
+            </button>
+        </div>
+    </div>
+    
     <!-- Overlay for Mobile -->
     <div class="overlay" id="overlay"></div>
     
@@ -1482,9 +1480,14 @@
 
         // ========== MOBILE MENU FUNCTIONALITY ==========
         function toggleMobileMenu() {
-            sidebar.classList.toggle('active');
+            const isActive = sidebar.classList.toggle('active');
             overlay.classList.toggle('active');
             body.classList.toggle('menu-open');
+            
+            // Toggle hamburger icon
+            if (mobileMenuBtn) {
+                mobileMenuBtn.classList.toggle('active', isActive);
+            }
         }
 
         if (mobileMenuBtn) {
@@ -1501,6 +1504,11 @@
                 if (window.innerWidth <= 1024 && sidebar.classList.contains('active')) {
                     e.preventDefault();
                     toggleMobileMenu();
+                    
+                    // Also update the hamburger button state
+                    if (mobileMenuBtn) {
+                        mobileMenuBtn.classList.remove('active');
+                    }
                     
                     // Simulate navigation
                     const icon = link.querySelector('i');
